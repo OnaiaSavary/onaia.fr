@@ -1,0 +1,22 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+
+const pubs = await getCollection('publications');
+---
+<PageLayout title="Publications">
+  <div class="site-wrap">
+    <section class="read-width">
+      <h1>Publications</h1>
+      <p>Toutes les publications sont listées ci-dessous (ordre chronologique).</p>
+      <div class="publications">
+        {pubs.sort((a,b)=>b.data.year - a.data.year).map(p => (
+          <article id={p.slug} class="pub">
+            <h3>{p.data.title}</h3>
+            <div class="meta">{p.data.authors?.join(', ')} — {p.data.journal ?? ''} ({p.data.year})</div>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
+</PageLayout>

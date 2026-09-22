@@ -1,0 +1,4 @@
+---
+const { entry } = Astro.props;
+---
+<a class="publication-link" href={`/publications/#${entry.slug}`} aria-label={entry.data.title}>{entry.data.title}</a>

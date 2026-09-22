@@ -1,0 +1,8 @@
+/* Typography overrides and sensible defaults */
+h1{font-size:2rem;margin:0 0 0.5rem}
+h2{font-size:1.5rem;margin:1.25rem 0}
+h3{font-size:1.125rem;margin:0.75rem 0}
+p{margin:0.5rem 0}
+ol.themes{list-style:none;padding:0;margin:1rem 0}
+ol.themes li{font-family:Georgia, 'Times New Roman', serif;margin:0.25rem 0;opacity:0.95}
+.lead{font-size:1.0625rem}

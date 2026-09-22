@@ -1,0 +1,7 @@
+---
+import PageLayout from './PageLayout.astro';
+const { title, description } = Astro.props;
+---
+<PageLayout {title} {description}>
+  <article class="article-layout">{Astro.slots.default?.()}</article>
+</PageLayout>

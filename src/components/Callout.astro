@@ -1,0 +1,7 @@
+---
+const { title, children } = Astro.props;
+---
+<aside class="callout">
+  {title ? <strong class="callout-title">{title}</strong> : null}
+  <div class="callout-body">{children}</div>
+</aside>

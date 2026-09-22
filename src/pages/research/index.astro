@@ -1,0 +1,33 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+
+const pubs = await getCollection('publications');
+---
+<PageLayout title="Recherche" description="Vue d'ensemble de la recherche">
+  <div class="site-wrap">
+    <section class="read-width">
+      <h1>RECHERCHE</h1>
+      <h2>Comprendre les sécheresses dans un climat en évolution</h2>
+      <p>Ma recherche porte sur la prévisibilité et l'évolution des sécheresses en Europe, avec un accent sur la circulation atmosphérique et les weather regimes.</p>
+      <p>PhD project (title in the CV): "Drought predictability in a changing climate". The PhD investigates the link between large‑scale atmospheric circulation and precipitation deficits (droughts) in Europe, and studies the influence of climate change on this relationship.</p>
+
+      <h3>Thèmes de recherche</h3>
+      <ol class="themes">
+        <li>01 — Prévisibilité des sécheresses</li>
+        <li>02 — Weather regimes</li>
+        <li>03 — Changement climatique</li>
+      </ol>
+
+      <h3>Papiers sélectionnés</h3>
+      <div class="list">
+        {pubs.sort((a,b)=>b.data.year - a.data.year).slice(0,6).map(p=> (
+          <div class="pub-item">
+            <h4>{p.data.title}</h4>
+            <div class="meta">{p.data.authors?.join(', ')} — {p.data.year}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+</PageLayout>

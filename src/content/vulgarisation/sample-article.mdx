@@ -1,0 +1,25 @@
+---
+title: "Sample outreach article (demo)"
+date: "2026-01-01"
+summary: "This is a demonstration article showing MDX rendering with KaTeX and figures."
+tags: ["demo", "science communication"]
+---
+
+import Figure from '../../components/Figure.astro'
+import Callout from '../../components/Callout.astro'
+
+# Communicating droughts
+
+This is a demonstration MDX article. Inline math example: $P > 0$.
+
+Display equation follows:
+
+$$
+\Delta S = P - E
+$$
+
+<Callout title="Note">This is a pedagogical boxed note for readers.</Callout>
+
+<Figure src="/figures/example.png" alt="Example figure" caption="Example figure caption." />
+
+References and links to publications will be added using `PublicationLink` components.

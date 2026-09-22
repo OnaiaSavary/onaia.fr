@@ -1,0 +1,17 @@
+---
+const { item } = Astro.props;
+---
+<article class="publication-card">
+  <h3 class="pub-title">{item.title}</h3>
+  <div class="pub-meta">
+    <span>{item.authors?.join(', ')}</span>
+    <span> — {item.journal ?? 'Journal placeholder'}</span>
+    <span> ({item.year})</span>
+  </div>
+  <p class="pub-abstract">{item.abstract ?? ''}</p>
+  <div class="pub-links">
+    {item.doi ? <a href={`https://doi.org/${item.doi}`} rel="noopener">DOI</a> : null}
+    {item.url ? <a href={item.url} rel="noopener">Link</a> : null}
+    {item.pdf ? <a href={item.pdf} rel="noopener">PDF</a> : null}
+  </div>
+</article>

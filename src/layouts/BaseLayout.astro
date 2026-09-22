@@ -1,0 +1,26 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+export let title: string | undefined;
+export let description: string | undefined;
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title ? `${title} — Onaïa Savary` : 'Onaïa Savary'}</title>
+    <meta name="description" content={description ?? 'Personal academic website'} />
+    <link rel="icon" href="/favicon.ico" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/katex/katex.min.css" />
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body>
+    <slot />
+  </body>
+  </html>

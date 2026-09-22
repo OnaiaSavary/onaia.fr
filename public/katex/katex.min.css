@@ -1,0 +1,2 @@
+/* Minimal loader that forwards to CDN for KaTeX styles used by MDX rendering. */
+@import url('https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css');
