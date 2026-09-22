@@ -4,6 +4,5 @@ node_modules/
 dist/
 public/cv/*.pdf
 env.local
-package-lock.json
 npm-debug.log
 .DS_Store
