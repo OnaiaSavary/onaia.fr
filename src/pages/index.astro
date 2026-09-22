@@ -4,26 +4,44 @@ import { getCollection } from 'astro:content';
 
 const featured = await getCollection('publications');
 ---
-<PageLayout title="Accueil" description="Page d'accueil">
+<PageLayout title="Accueil" description="Doctorant en climatologie">
   <div class="site-wrap">
-    <section class="hero-hero">
-      <div>
-        <h1 class="hero-name fade-in">
-          <span class="line1">ONAÏA</span>
-          <span class="line2">SAVARY</span>
-        </h1>
-      </div>
-      <div>
-        <p class="hero-intro fade-in">Climatologue travaillant sur les sécheresses, la variabilité climatique et la circulation atmosphérique.</p>
-        <p class="hero-topics fade-in">Sécheresses · Weather regimes · Changement climatique</p>
+    <section class="home-hero" aria-label="Présentation de la recherche">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">Doctorant en climatologie</p>
+          <h1 class="hero-name">
+            <span>ONAÏA</span>
+            <span>SAVARY</span>
+          </h1>
+        </div>
+
+        <div class="hero-summary">
+          <p>Je travaille sur la prévisibilité et l'évolution des sécheresses en Europe, en étudiant notamment le rôle de la circulation atmosphérique et des Weather Regimes.</p>
+          <p class="hero-meta">Sécheresses · Circulation atmosphérique · Weather Regimes · Changement climatique</p>
+        </div>
       </div>
     </section>
 
-    <section class="read-width" style="margin-top:3rem">
-      <h2>Publications en vedette</h2>
-      <div>
+    <section class="editorial-section">
+      <div class="section-label">Recherche</div>
+      <div class="editorial-grid">
+        <article class="editorial-card">
+          <h3>Comprendre les sécheresses dans un climat en changement</h3>
+          <p>Mon travail porte sur la prévisibilité des sécheresses en Europe, les régimes de circulation atmosphérique et leur évolution dans un climat modifié.</p>
+        </article>
+        <article class="editorial-card">
+          <h3>Approche scientifique</h3>
+          <p>J'étudie l'impact des grandes structures atmosphériques sur les déficits de précipitations et leur évolution sous le changement climatique.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="editorial-section">
+      <div class="section-label">Publications</div>
+      <div class="publication-list">
         {featured.filter(p => p.data.featured).map(p => (
-          <article class="publication-card">
+          <article class="publication-item">
             <h3>{p.data.title}</h3>
             <div class="meta">{p.data.authors?.join(', ')} — {p.data.year}</div>
           </article>

@@ -12,15 +12,9 @@ export let description: string | undefined;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title ? `${title} — Onaïa Savary` : 'Onaïa Savary'}</title>
-    <meta name="description" content={description ?? 'Personal academic website'} />
+    <meta name="description" content={description ?? 'Site personnel de doctorant en climatologie'} />
+    <meta name="theme-color" content="#0d1b2a" />
     <link rel="icon" href="/favicon.ico" />
-    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/katex/katex.min.css" />
-    <link rel="stylesheet" href="/styles/global.css" />
-  </head>
-  <body>
-    <slot />
-  </body>
-  </html>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
