@@ -1,14 +1,14 @@
 :root{
   --page-padding: clamp(1.2rem, 2.3vw, 3.1rem);
   --content-width: min(96vw, 1580px);
-  --color-ink: #f4f7fb;
+  --color-ink: #ffffff;
   --color-blue-dark: #0d2340;
-  --color-blue: #1d4e89;
+  --color-blue: #ffffff;
   --color-blue-medium: #4e6f98;
   --color-blue-light: #dfeaf5;
   --color-surface: #2E3450;
   --color-surface-strong: #3a4161;
-  --color-grey: #c4c9d8;
+  --color-grey: #ffffff;
   --color-white: #ffffff;
   --color-border: rgba(255, 255, 255, 0.2);
   --font-display: 'Cormorant Garamond', Georgia, serif;
@@ -34,6 +34,30 @@ body {
 a { color: inherit; }
 img { max-width: 100%; display: block; }
 
+body,
+body a,
+body button,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body p,
+body li,
+body .site-sub,
+body .nav-main a,
+body .eyebrow,
+body .hero-intro,
+body .hero-meta,
+body .section-label,
+body .meta,
+body .article-date,
+body .site-footer,
+body .footer-links a {
+  color: #ffffff !important;
+}
+
 .site-wrap,
 .page-container,
 .site-footer {
@@ -53,7 +77,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin: 0 0 1rem;
-  color: rgba(244, 247, 251, 0.9);
+  color: #ffffff;
 }
 
 .read-width {
