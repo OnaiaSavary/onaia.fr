@@ -1,0 +1,254 @@
+/* Site-specific Spectral adaptation for Onaia Savary. */
+
+:root {
+  --site-accent: #9b4dca;
+  --site-accent-light: #c98eea;
+  --site-ink: #ffffff;
+  --site-muted: rgba(255, 255, 255, 0.78);
+  --site-surface: #2e3450;
+}
+
+body,
+body.is-preload {
+  background: var(--site-surface);
+  color: var(--site-ink);
+}
+
+body #page-wrapper {
+  background: var(--site-surface);
+}
+
+body.landing #page-wrapper,
+body.is-mobile.landing #page-wrapper {
+  background-image: linear-gradient(rgba(14, 18, 36, 0.22), rgba(14, 18, 36, 0.22)), url('/images/home-backround.jpg') !important;
+}
+
+#header {
+  background: rgba(14, 18, 36, 0.82);
+  z-index: 10001;
+}
+
+#header h1 a,
+#header nav > ul > li > a {
+  color: #fff;
+}
+
+#header h1 a {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+#menu {
+  background: #171b35;
+}
+
+#menu ul li a {
+  color: #fff;
+  border-top-color: rgba(255, 255, 255, 0.14);
+}
+
+#banner {
+  min-height: min(92vh, 58rem);
+  background-image: linear-gradient(90deg, rgba(14, 18, 36, 0.8), rgba(14, 18, 36, 0.26)), url('/images/home-backround.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+body.is-mobile.landing #banner,
+body.is-mobile.landing .wrapper.style4 {
+  background-image: linear-gradient(rgba(14, 18, 36, 0.22), rgba(14, 18, 36, 0.22)), url('/images/home-backround.jpg') !important;
+}
+
+#banner h2 {
+  font-size: clamp(3rem, 8vw, 7rem);
+  letter-spacing: 0.12em;
+}
+
+#banner p,
+#banner a,
+.wrapper p,
+.wrapper h2,
+.wrapper h3,
+.wrapper h4,
+#footer,
+#footer a,
+.site-main p,
+.site-main h1,
+.site-main h2,
+.site-main h3,
+.site-main h4,
+.site-main li,
+.site-main a {
+  color: #fff;
+}
+
+#banner .hero-kicker {
+  color: var(--site-muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+#banner .hero-intro {
+  max-width: 42rem;
+  margin-inline: auto;
+  color: var(--site-muted);
+  font-size: 1.1rem;
+}
+
+.wrapper.style1 {
+  background: #3a4161;
+}
+
+.wrapper.style2 {
+  background: #252a45;
+}
+
+.wrapper.style3 {
+  background: #303653;
+}
+
+.wrapper.style4 {
+  background: #191d38;
+}
+
+.wrapper .major p,
+.wrapper .content p,
+#footer p,
+#footer .copyright {
+  color: var(--site-muted);
+}
+
+.wrapper .major h2,
+.wrapper .content h2,
+.wrapper .features h3 {
+  color: #fff;
+}
+
+.wrapper .features li:before {
+  color: var(--site-accent-light);
+}
+
+.spotlight .image img {
+  min-height: 16rem;
+  object-fit: cover;
+}
+
+.site-main {
+  min-height: 60vh;
+}
+
+.site-main .page-container {
+  width: 100%;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 8rem 1.5rem 5rem;
+}
+
+.site-main .read-width {
+  max-width: 58rem;
+  margin: 0 auto;
+}
+
+.site-main .read-width > h1 {
+  margin-bottom: 2rem;
+  color: #fff;
+  font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-main .editorial-section,
+.site-main .article-layout {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+}
+
+.site-main .editorial-section {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  background: transparent;
+}
+
+.site-main .section-label {
+  color: var(--site-accent-light) !important;
+  letter-spacing: 0.18em;
+}
+
+.site-main .editorial-grid {
+  gap: 1.25rem;
+}
+
+.site-main .editorial-card {
+  display: block;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.site-main .editorial-card:hover,
+.site-main .editorial-card:focus-visible {
+  background: rgba(155, 77, 202, 0.2);
+}
+
+.site-main .panel-link h3 {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.site-main .meta,
+.site-main .article-date {
+  color: var(--site-muted) !important;
+}
+
+.site-main .article-header {
+  border-bottom-color: rgba(255, 255, 255, 0.16);
+}
+
+.site-main .article-header h1 {
+  color: #fff;
+  font-size: clamp(1.8rem, 4vw, 3.4rem);
+}
+
+.site-main .article-content {
+  color: #fff;
+}
+
+.site-main .article-content h2 {
+  color: var(--site-accent-light);
+  margin-top: 3rem;
+}
+
+.site-main .figure {
+  background: #fff;
+  border: 0;
+}
+
+.site-main .figure figcaption {
+  color: #171b35;
+}
+
+#footer {
+  background: #11152b;
+}
+
+#footer .icons a {
+  color: #fff;
+}
+
+@media screen and (max-width: 736px) {
+  #banner {
+    min-height: 85vh;
+  }
+
+  #banner h2 {
+    font-size: clamp(2.3rem, 15vw, 4rem);
+  }
+
+  .site-main .page-container,
+  .site-main .editorial-section,
+  .site-main .article-layout {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

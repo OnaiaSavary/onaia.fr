@@ -13,15 +13,25 @@ export let description: string | undefined;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title ? `${title} — Onaïa Savary` : 'Onaïa Savary'}</title>
     <meta name="description" content={description ?? 'Site personnel de doctorant en climatologie'} />
-    <meta name="theme-color" content="#0d1b2a" />
+    <meta name="theme-color" content="#2e3450" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/katex/katex.min.css" />
     <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="stylesheet" href="/spectral/css/main.css" />
+    <link rel="stylesheet" href="/styles/site-spectral.css" />
   </head>
-  <body>
-    <slot />
+  <body class="landing is-preload">
+    <div id="page-wrapper">
+      <slot />
+    </div>
+    <script is:inline src="/spectral/js/jquery.min.js"></script>
+    <script is:inline src="/spectral/js/jquery.scrollex.min.js"></script>
+    <script is:inline src="/spectral/js/jquery.scrolly.min.js"></script>
+    <script is:inline src="/spectral/js/browser.min.js"></script>
+    <script is:inline src="/spectral/js/breakpoints.min.js"></script>
+    <script is:inline src="/spectral/js/util.js"></script>
   </body>
 </html>

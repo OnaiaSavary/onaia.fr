@@ -5,79 +5,72 @@ import { getCollection } from 'astro:content';
 const featured = await getCollection('publications');
 ---
 <PageLayout title="Accueil" description="Doctorant en climatologie">
-  <div class="site-wrap home-page-shell">
-    <section
-      class="home-hero"
-      aria-label="Présentation de la recherche"
-      style={`--hero-background-image: url('/images/home-backround.jpg'); --hero-background-position: center center;`}
-    >
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow">Doctorant en climatologie</p>
-          <h1 class="hero-name" aria-label="Onaïa Savary">
-            <span>ONAÏA</span>
-            <span>SAVARY</span>
-          </h1>
-          <p class="hero-intro">Je travaille sur la prévisibilité et l'évolution des sécheresses en Europe, en étudiant notamment le rôle de la circulation atmosphérique.</p>
-        </div>
+  <section id="banner" aria-label="Présentation de la recherche">
+    <div class="inner">
+      <p class="hero-kicker">Doctorant en climatologie</p>
+      <h2>ONAÏA<br />SAVARY</h2>
+      <p class="hero-intro">Je travaille sur la prévisibilité et l'évolution des sécheresses en Europe, en étudiant notamment le rôle de la circulation atmosphérique.</p>
+      <ul class="actions special">
+        <li><a href="#research" class="button primary scrolly">Découvrir la recherche</a></li>
+      </ul>
+    </div>
+    <a href="#research" class="more scrolly">Explorer</a>
+  </section>
+
+  <section id="research" class="wrapper style1 special">
+    <div class="inner">
+      <header class="major">
+        <h2>Comprendre les sécheresses dans un climat en changement</h2>
+        <p>Mon travail porte sur la prévisibilité des sécheresses en Europe, les régimes de circulation atmosphérique et leur évolution dans un climat modifié.</p>
+      </header>
+      <ul class="features">
+        <li class="icon solid fa-cloud-sun"><h3>Prévisibilité</h3><p>J'étudie les conditions qui rendent les sécheresses plus ou moins prévisibles.</p></li>
+        <li class="icon solid fa-wind"><h3>Circulation atmosphérique</h3><p>Les grandes structures atmosphériques jouent un rôle central dans les déficits de précipitations.</p></li>
+        <li class="icon solid fa-temperature-high"><h3>Climat en évolution</h3><p>Ces mécanismes sont étudiés dans un contexte de changement climatique.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="topics" class="wrapper alt style2">
+    <section class="spotlight">
+      <div class="image"><img src="/images/home-backround.jpg" alt="Paysage associé à l'étude du climat" /></div>
+      <div class="content"><h2>Recherche</h2><p>J'étudie l'impact des grandes structures atmosphériques sur les déficits de précipitations et leur évolution sous le changement climatique.</p><a class="button" href="/research/">Voir la recherche</a></div>
+    </section>
+    <section class="spotlight">
+      <div class="image"><img src="/spectral/images/pic02.jpg" alt="Publication scientifique" /></div>
+      <div class="content"><h2>Publications</h2><p>Toutes les publications sont listées par ordre chronologique, avec leurs auteurs et leurs informations bibliographiques.</p><a class="button" href="/publications/">Voir les publications</a></div>
+    </section>
+    <section class="spotlight">
+      <div class="image"><img src="/spectral/images/pic03.jpg" alt="Article de vulgarisation scientifique" /></div>
+      <div class="content"><h2>Vulgarisation</h2><p>Des exercices et articles pour rendre les phénomènes physiques et climatiques accessibles.</p><a class="button" href="/vulgarisation/">Lire les articles</a></div>
+    </section>
+  </section>
+
+  <section id="access" class="wrapper style3 special">
+    <div class="inner">
+      <header class="major"><h2>Accéder aux différentes parties du site</h2><p>Retrouver le parcours, les conférences, les posters et les ressources scientifiques.</p></header>
+      <ul class="features">
+        <li class="icon solid fa-graduation-cap"><h3><a href="/cv/">Curriculum vitae</a></h3><p>Parcours académique, expériences et compétences.</p></li>
+        <li class="icon solid fa-comments"><h3><a href="/conferences/">Conférences</a></h3><p>Contributions et échanges autour des sciences du climat.</p></li>
+        <li class="icon solid fa-images"><h3><a href="/posters/">Posters</a></h3><p>Supports visuels et synthèses de projets scientifiques.</p></li>
+        <li class="icon solid fa-user"><h3><a href="/about/">À propos</a></h3><p>Présentation, formation et activités scientifiques.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="cta" class="wrapper style4">
+    <div class="inner">
+      <header><h2>Échanger autour du climat</h2><p>Pour une question scientifique, une invitation ou une collaboration, vous pouvez m'écrire directement.</p></header>
+      <ul class="actions stacked"><li><a class="button fit primary" href="mailto:onaia.savary@ens-paris-saclay.fr">Me contacter</a></li></ul>
+    </div>
+  </section>
+
+  {featured.filter(p => p.data.featured).length > 0 && (
+    <section class="wrapper style1 special home-featured">
+      <div class="inner">
+        <header class="major"><h2>Publication mise en avant</h2></header>
+        {featured.filter(p => p.data.featured).map(p => <p><strong>{p.data.title}</strong><br />{p.data.authors?.join(', ')} — {p.data.year}</p>)}
       </div>
     </section>
-
-    <section class="editorial-section home-panels" aria-label="Accès aux différentes parties du site">
-      <div class="section-label">Explorer le site</div>
-      <div class="editorial-grid">
-        <a class="editorial-card panel-link" href="/research/">
-          <h3>Recherche</h3>
-          <p>Prévisibilité des sécheresses, circulation atmosphérique et changement climatique en Europe.</p>
-        </a>
-        <a class="editorial-card panel-link" href="/publications/">
-          <h3>Publications</h3>
-          <p>Articles, travaux sélectionnés et contributions scientifiques.</p>
-        </a>
-        <a class="editorial-card panel-link" href="/conferences/">
-          <h3>Conférences</h3>
-          <p>Présentations et échanges autour des sciences du climat.</p>
-        </a>
-        <a class="editorial-card panel-link" href="/vulgarisation/">
-          <h3>Vulgarisation</h3>
-          <p>Articles pour rendre la recherche climatique plus accessible.</p>
-        </a>
-        <a class="editorial-card panel-link" href="/posters/">
-          <h3>Posters</h3>
-          <p>Supports visuels et synthèses de projets scientifiques.</p>
-        </a>
-        <a class="editorial-card panel-link" href="/cv/">
-          <h3>Curriculum vitae</h3>
-          <p>Parcours académique, expériences et compétences.</p>
-        </a>
-      </div>
-    </section>
-
-    <section class="editorial-section">
-      <div class="section-label">Recherche</div>
-      <div class="editorial-grid">
-        <article class="editorial-card">
-          <h3>Comprendre les sécheresses dans un climat en changement</h3>
-          <p>Mon travail porte sur la prévisibilité des sécheresses en Europe, les régimes de circulation atmosphérique et leur évolution dans un climat modifié.</p>
-        </article>
-        <article class="editorial-card">
-          <h3>Approche scientifique</h3>
-          <p>J'étudie l'impact des grandes structures atmosphériques sur les déficits de précipitations et leur évolution sous le changement climatique.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="editorial-section">
-      <div class="section-label">Publications</div>
-      <div class="publication-list">
-        {featured.filter(p => p.data.featured).map(p => (
-          <article class="publication-item">
-            <h3>{p.data.title}</h3>
-            <div class="meta">{p.data.authors?.join(', ')} — {p.data.year}</div>
-          </article>
-        ))}
-      </div>
-    </section>
-  </div>
-
+  )}
 </PageLayout>
