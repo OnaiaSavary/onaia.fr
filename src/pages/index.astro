@@ -21,21 +21,43 @@ const featured = await getCollection('publications');
           <p class="hero-intro">Je travaille sur la prévisibilité et l'évolution des sécheresses en Europe, en étudiant notamment le rôle de la circulation atmosphérique.</p>
         </div>
       </div>
-    </section>
-
-    <section class="editorial-section">
-      <div class="section-label">Recherche</div>
-      <div class="editorial-grid">
-        <article class="editorial-card">
-          <h3>Comprendre les sécheresses dans un climat en changement</h3>
-          <p>Mon travail porte sur la prévisibilité des sécheresses en Europe, les régimes de circulation atmosphérique et leur évolution dans un climat modifié.</p>
-        </article>
-        <article class="editorial-card">
-          <h3>Approche scientifique</h3>
-          <p>J'étudie l'impact des grandes structures atmosphériques sur les déficits de précipitations et leur évolution sous le changement climatique.</p>
+        <section class="editorial-section home-panels" id="explorer">
+          <div class="section-label">Explorer le site</div>
+          <div class="editorial-grid">
+            <a class="editorial-card panel-link" href="/research/">
+              <span class="panel-number">01</span>
+              <h2>Recherche</h2>
+              <p>Prévisibilité des sécheresses, circulation atmosphérique et changement climatique en Europe.</p>
+            </a>
+            <a class="editorial-card panel-link" href="/publications/">
+              <span class="panel-number">02</span>
+              <h2>Publications</h2>
+              <p>Articles, travaux sélectionnés et contributions scientifiques.</p>
+            </a>
+            <a class="editorial-card panel-link" href="/conferences/">
+              <span class="panel-number">03</span>
+              <h2>Conférences</h2>
+              <p>Présentations et échanges autour des sciences du climat.</p>
+            </a>
+            <a class="editorial-card panel-link" href="/vulgarisation/">
+              <span class="panel-number">04</span>
+              <h2>Vulgarisation</h2>
+              <p>Articles pour rendre la recherche climatique plus accessible.</p>
+            </a>
+            <a class="editorial-card panel-link" href="/posters/">
+              <span class="panel-number">05</span>
+              <h2>Posters</h2>
+              <p>Supports visuels et synthèses de projets scientifiques.</p>
+            </a>
+            <a class="editorial-card panel-link" href="/cv/">
+              <span class="panel-number">06</span>
+              <h2>Curriculum vitae</h2>
+              <p>Parcours académique, expériences et compétences.</p>
+            </a>
+          </div>
         </article>
       </div>
-    </section>
+        <section class="editorial-section featured-publications">
 
     <section class="editorial-section">
       <div class="section-label">Publications</div>
@@ -47,6 +69,26 @@ const featured = await getCollection('publications');
           </article>
         ))}
       </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div>
+        <div class="section-label">Contact</div>
+        <h2>Échanger autour du climat</h2>
+        <p>Pour une question scientifique, une invitation ou une collaboration, vous pouvez m'écrire directement.</p>
+      </div>
+      <a class="contact-link" href="mailto:onaia.savary@ens-paris-saclay.fr">onaia.savary@ens-paris-saclay.fr</a>
+    </section>
+
+    <section class="social-section" aria-label="Réseaux professionnels">
+      <a class="social-tile github-tile" href="https://github.com/OnaiaSavary/onaia.fr" target="_blank" rel="noreferrer">
+        <span>GitHub</span>
+        <strong>Code et projets</strong>
+      </a>
+      <a class="social-tile linkedin-tile" href="https://www.linkedin.com/in/onaia-savary/" target="_blank" rel="noreferrer">
+        <span>LinkedIn</span>
+        <strong>Parcours professionnel</strong>
+      </a>
     </section>
   </div>
 

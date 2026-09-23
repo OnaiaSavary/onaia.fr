@@ -4,7 +4,10 @@
       <a href="/" class="site-title">ONAÏA SAVARY</a>
       <div class="site-sub">Doctorant en climatologie</div>
     </div>
-    <nav class="nav-main" aria-label="Navigation principale">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span>Menu</span>
+    </button>
+    <nav id="primary-navigation" class="nav-main" aria-label="Navigation principale">
       <ul>
         <li><a href="/">Accueil</a></li>
         <li><a href="/research/">Recherche</a></li>
@@ -18,3 +21,14 @@
     </nav>
   </div>
 </header>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navigation = document.querySelector('#primary-navigation');
+
+  menuToggle?.addEventListener('click', () => {
+    const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!isOpen));
+    navigation?.classList.toggle('is-open', !isOpen);
+  });
+</script>
