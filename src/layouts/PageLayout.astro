@@ -6,6 +6,6 @@ const { title, description } = Astro.props;
 ---
 <BaseLayout {title} {description}>
   <Header />
-  <main class:list={['page-container', { 'secondary-page': title !== 'Accueil' }]}><slot /></main>
+  <main class="page-container"><slot /></main>
   <Footer />
 </BaseLayout>

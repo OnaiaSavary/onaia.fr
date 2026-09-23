@@ -61,12 +61,6 @@ p {
   margin-inline: auto;
 }
 
-li,
-.meta,
-.article-date {
-  color: rgba(244, 247, 251, 0.9);
-}
-
 .site-header {
   position: sticky;
   top: 0;
@@ -76,21 +70,14 @@ li,
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.menu-toggle {
-  display: none;
-  color: var(--color-white);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: transparent;
-  padding: 0.55rem 0.75rem;
-  font: inherit;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
 .header-inner {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  min-height: 5rem;
+}
+
 .branding {
   display: flex;
   flex-direction: column;
@@ -164,29 +151,20 @@ li,
   background: rgba(255,255,255,0.08);
 }
 
-.home-page-shell {
-  width: 100vw;
-  max-width: none;
-  margin-left: calc(50% - 50vw);
-  padding: 0;
-}
-
 .home-hero {
   position: relative;
   display: flex;
   align-items: end;
   justify-content: flex-start;
   min-height: 100svh;
-  width: 100vw;
   padding: clamp(2rem, 5vw, 4rem);
-  border-top: 1px solid rgba(0, 0, 0, 0.92);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.92);
-  background-color: var(--color-surface);
-  background-image: var(--hero-background-image);
+  border: 1px solid rgba(255,255,255,0.08);
+  background-image:
+    linear-gradient(90deg, rgba(12, 24, 38, 0.72) 0%, rgba(12, 24, 38, 0.42) 34%, rgba(12, 24, 38, 0.18) 100%),
+    var(--hero-background-image);
   background-size: cover;
   background-position: var(--hero-background-position, center center);
   background-repeat: no-repeat;
-  background-attachment: fixed;
   overflow: hidden;
 }
 
@@ -261,10 +239,24 @@ li,
 .editorial-section {
   padding-block: clamp(2.5rem, 5vw, 5.5rem);
   border-bottom: 1px solid var(--color-border);
-  background-image: url('/images/cheveux.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: var(--color-surface);
+}
+
+.panel-link {
+  display: block;
+  color: var(--color-ink);
+  text-decoration: none;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.panel-link:hover,
+.panel-link:focus-visible {
+  background: rgba(255, 255, 255, 0.68);
+  transform: translateY(-3px);
+}
+
+.panel-link p {
+  margin-bottom: 0;
 }
 
 .section-label {
@@ -325,91 +317,6 @@ li,
   letter-spacing: 0.02em;
 }
 
-.contact-section {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
-  gap: 2rem;
-  padding-block: clamp(3rem, 7vw, 7rem);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.contact-section h2 {
-  max-width: 12ch;
-  font-size: clamp(2.2rem, 5vw, 5.5rem);
-}
-
-.contact-section p {
-  max-width: 42rem;
-}
-
-.contact-link {
-  color: var(--color-white);
-  font-family: var(--font-mono);
-  font-size: clamp(0.8rem, 1.2vw, 1rem);
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 0.35rem;
-}
-
-.social-section {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  padding-block: 1.5rem 3rem;
-}
-
-.social-tile {
-  min-height: 10rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1.25rem;
-  color: var(--color-white);
-  text-decoration: none;
-  background-position: center;
-  background-size: cover;
-  border: 1px solid var(--color-border);
-  transition: transform 180ms ease, filter 180ms ease;
-}
-
-.social-tile:hover,
-.social-tile:focus-visible {
-  transform: translateY(-3px);
-  filter: brightness(1.15);
-}
-
-.github-tile { background-image: linear-gradient(rgba(10, 18, 29, 0.52), rgba(10, 18, 29, 0.72)), url('/images/home-backround.jpg'); }
-.linkedin-tile { background-image: linear-gradient(rgba(10, 18, 29, 0.52), rgba(10, 18, 29, 0.72)), url('/images/cheveux.png'); }
-
-.social-tile span {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-
-.social-tile strong {
-  font-size: 1.25rem;
-}
-
-.secondary-page {
-  position: relative;
-  isolation: isolate;
-  padding-top: clamp(12rem, 24vw, 20rem);
-}
-
-.secondary-page::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0 0 auto;
-  height: clamp(11rem, 25vw, 21rem);
-  background-image: linear-gradient(rgba(8, 12, 25, 0.72), rgba(8, 12, 25, 0.84)), url('/images/cheveux.png');
-  background-position: center;
-  background-size: cover;
-}
-
 .site-footer {
   padding: 1.3rem 0 2.5rem;
   border-top: 1px solid var(--color-border);
@@ -434,7 +341,7 @@ li,
 
 .footer-links a {
   text-decoration: none;
-  color: var(--color-white);
+  color: var(--color-ink);
   font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -507,24 +414,6 @@ li,
     display: none;
   }
 
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-main.is-open {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    padding: 1rem var(--page-padding) 1.25rem;
-    background: rgba(10, 18, 29, 0.96);
-  }
-
-  .nav-main.is-open ul {
-    display: grid;
-    gap: 1rem;
-  }
-
   .home-hero {
     min-height: 100svh;
   }
@@ -538,10 +427,6 @@ li,
   }
 
   .editorial-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-section {
     grid-template-columns: 1fr;
   }
 }
@@ -570,10 +455,6 @@ li,
 
   .hero-intro {
     font-size: 1rem;
-  }
-
-  .social-section {
-    grid-template-columns: 1fr;
   }
 }
 
