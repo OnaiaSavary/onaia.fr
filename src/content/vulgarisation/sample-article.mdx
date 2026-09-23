@@ -1,14 +1,14 @@
 ---
-title: "Modéliser un bâtiment sous sollicitation sismique"
+title: "Séismes : modéliser un bâtiment"
 date: "2026-09-23"
-summary: "Un exercice guidé sur le modèle masse-ressort-amortisseur utilisé pour étudier la réponse d'un bâtiment à un séisme."
+summary: "Un exercice guidé sur les modèles masse-ressort-amortisseur utilisés pour étudier la réponse d'un bâtiment à un séisme."
 tags: ["physique", "séisme", "vulgarisation"]
 ---
 
 import Figure from '../../components/Figure.astro'
 import Callout from '../../components/Callout.astro'
 
-# Modéliser un bâtiment sous sollicitation sismique
+# Séismes : modéliser un bâtiment
 
 Le génie parasismique cherche à limiter les dégâts causés par les séismes. Pour comprendre le comportement d'un bâtiment, on peut commencer par un modèle simple : un étage est représenté par une masse reliée au sol par un ressort et un amortisseur.
 
@@ -106,6 +106,36 @@ Ainsi :
 
 $$
 m_0 = \frac{2\eta_1^2}{k_1} - m_1 \approx 500\ \mathrm{kg}.
+$$
+
+## Vers un bâtiment à deux étages
+
+Le modèle peut être enrichi en ajoutant un second étage de masse $m_2$. Le premier étage est relié au sol par $(k_1,\eta_1)$ et les deux étages sont reliés par $(k_2,\eta_2)$.
+
+<Figure src="/images/seisme2.png" alt="Modèle masse-ressort-amortisseur d'un bâtiment à deux étages" caption="Chaque étage ajoute une masse et un degré de liberté au modèle." />
+
+Les positions des deux étages sont $x_1(t)$ et $x_2(t)$. Les équations du mouvement deviennent :
+
+$$
+m_1\ddot{x}_1 + \eta_1\dot{x}_1 + k_1x_1 + \eta_2(\dot{x}_1-\dot{x}_2) + k_2(x_1-x_2) = 0,
+$$
+
+$$
+m_2\ddot{x}_2 + \eta_2(\dot{x}_2-\dot{x}_1) + k_2(x_2-x_1) = 0.
+$$
+
+Sous forme matricielle, avec $X = (x_1,x_2)^T$ :
+
+$$
+M\ddot{X} + C\dot{X} + KX = 0,
+$$
+
+où
+
+$$
+M = \begin{bmatrix}m_1&0\\0&m_2\end{bmatrix},\quad
+C = \begin{bmatrix}\eta_1+\eta_2&-\eta_2\\-\eta_2&\eta_2\end{bmatrix},\quad
+K = \begin{bmatrix}k_1+k_2&-k_2\\-k_2&k_2\end{bmatrix}.
 $$
 
 <Callout title="À retenir">Un modèle masse-ressort-amortisseur permet de relier le mouvement du sol à celui d'un étage. Augmenter la masse peut diminuer le facteur de qualité et supprimer le pic de résonance.</Callout>

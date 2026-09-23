@@ -1,0 +1,101 @@
+---
+title: "Un glaçon dans une boisson : un oscillateur amorti"
+date: "2026-09-24"
+summary: "Un exercice de mécanique des fluides sur les oscillations d'un glaçon soumis à son poids, à la poussée d'Archimède et aux frottements."
+tags: ["physique", "mécanique", "vulgarisation"]
+---
+
+import Figure from '../../components/Figure.astro'
+import Callout from '../../components/Callout.astro'
+
+# Un glaçon dans une boisson : un oscillateur amorti
+
+Lorsqu'un glaçon est lâché dans une boisson, il s'enfonce puis remonte avant d'osciller autour de sa position d'équilibre. Ce mouvement permet d'étudier simplement l'équilibre entre poids, poussée d'Archimède et frottements visqueux.
+
+<Figure src="/images/glacon.png" alt="Glaçon partiellement immergé dans une boisson" caption="La position $z(t)$ repère le centre de gravité du glaçon par rapport au niveau du liquide." />
+
+## Énoncé
+
+On modélise le glaçon par un parallélépipède de longueur $L$ et de côté $l$. Sa masse volumique est $\rho_{\text{glace}}$ et celle de la boisson est $\rho_{\text{boisson}}$. On note $z(t)$ la position verticale de son centre de gravité.
+
+Le glaçon est soumis à son poids, à la poussée d'Archimède et à une force de frottement proportionnelle à sa vitesse :
+
+$$
+\vec{F}_{\text{frott}} = -\eta Ll\dot{z}\,\vec{e}_z.
+$$
+
+1. Déterminer les volumes immergé et émergé.
+2. Déterminer la position d'équilibre $z_{\text{eq}}$.
+3. Établir l'équation différentielle du mouvement.
+4. En posant $Z = z-z_{\text{eq}}$, mettre l'équation sous forme canonique et identifier $\omega_0$ et $Q$.
+5. Déterminer la nature du régime et la forme du mouvement.
+
+## Correction
+
+### 1. Volumes immergé et émergé
+
+Pour une position $z$ mesurée depuis le niveau du liquide :
+
+$$
+V_{\text{immergé}} = \left(\frac{l}{2}-z\right)Ll,
+\qquad
+V_{\text{émergé}} = \left(\frac{l}{2}+z\right)Ll.
+$$
+
+### 2. Position d'équilibre
+
+À l'équilibre, le poids est compensé par la poussée d'Archimède :
+
+$$
+\rho_{\text{glace}}l^2Lg
+= \rho_{\text{boisson}}\left(\frac{l}{2}-z_{\text{eq}}\right)Llg.
+$$
+
+On obtient :
+
+$$
+\boxed{z_{\text{eq}} = \left(\frac{1}{2}-\frac{\rho_{\text{glace}}}{\rho_{\text{boisson}}}\right)l}.
+$$
+
+### 3. Équation différentielle
+
+Le principe fondamental de la dynamique donne :
+
+$$
+\rho_{\text{glace}}l^2L\ddot{z}
+= -\rho_{\text{glace}}l^2Lg
+ + \rho_{\text{boisson}}Llg\left(\frac{l}{2}-z\right)
+ - \eta Ll\dot{z}.
+$$
+
+### 4. Forme canonique
+
+En posant $Z=z-z_{\text{eq}}$, on obtient :
+
+$$
+\ddot{Z} + \frac{\eta}{\rho_{\text{glace}}l}\dot{Z}
+ + \frac{\rho_{\text{boisson}}}{\rho_{\text{glace}}}\frac{g}{l}Z = 0.
+$$
+
+Par identification avec $\ddot{Z} + \frac{\omega_0}{Q}\dot{Z}+\omega_0^2Z=0$ :
+
+$$
+\boxed{\omega_0 = \sqrt{\frac{\rho_{\text{boisson}}g}{\rho_{\text{glace}}l}}},
+\qquad
+\boxed{Q = \frac{1}{\eta}\sqrt{\rho_{\text{glace}}\rho_{\text{boisson}}lg}}.
+$$
+
+### 5. Nature du mouvement
+
+Le régime dépend de $Q$ : il est apériodique si $Q<1/2$, critique si $Q=1/2$ et pseudo-périodique si $Q>1/2$. Dans ce dernier cas, le mouvement prend la forme :
+
+$$
+Z(t)=e^{-t/(2Q\omega_0^{-1})}
+\left(A\cos(\omega_Dt)+B\sin(\omega_Dt)\right),
+$$
+
+avec $\omega_D=\omega_0\sqrt{1-1/(4Q^2)}$.
+
+<Figure src="/images/glacon2.png" alt="Schéma des volumes immergé et émergé d'un glaçon" caption="La poussée d'Archimède dépend du volume immergé, donc de la position du glaçon." />
+
+<Callout title="À retenir">Le glaçon oscille parce que la poussée d'Archimède le ramène vers sa position d'équilibre, tandis que les frottements dissipent progressivement l'énergie du mouvement.</Callout>
