@@ -1,16 +1,16 @@
 :root{
   --page-padding: clamp(1.2rem, 2.3vw, 3.1rem);
   --content-width: min(96vw, 1580px);
-  --color-ink: #0d1b2a;
+  --color-ink: #f4f7fb;
   --color-blue-dark: #0d2340;
   --color-blue: #1d4e89;
   --color-blue-medium: #4e6f98;
   --color-blue-light: #dfeaf5;
-  --color-surface: #f4f7fb;
-  --color-surface-strong: #ecf1f6;
-  --color-grey: #6d7d8d;
+  --color-surface: #2E3450;
+  --color-surface-strong: #3a4161;
+  --color-grey: #c4c9d8;
   --color-white: #ffffff;
-  --color-border: rgba(13, 27, 42, 0.12);
+  --color-border: rgba(255, 255, 255, 0.2);
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Manrope', 'Segoe UI', sans-serif;
   --font-mono: 'IBM Plex Mono', 'SFMono-Regular', monospace;
@@ -23,9 +23,7 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.72) 0%, rgba(244,247,251,0.94) 100%),
-    var(--color-surface);
+  background: var(--color-surface);
   color: var(--color-ink);
   font-family: var(--font-body);
   line-height: 1.68;
@@ -55,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin: 0 0 1rem;
-  color: rgba(13, 27, 42, 0.9);
+  color: rgba(244, 247, 251, 0.9);
 }
 
 .read-width {
