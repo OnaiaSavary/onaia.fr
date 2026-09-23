@@ -33,5 +33,10 @@ export let description: string | undefined;
     <script is:inline src="/spectral/js/browser.min.js"></script>
     <script is:inline src="/spectral/js/breakpoints.min.js"></script>
     <script is:inline src="/spectral/js/util.js"></script>
+    <script is:inline>
+      window.addEventListener('load', () => {
+        window.setTimeout(() => document.body.classList.remove('is-preload'), 100);
+      });
+    </script>
   </body>
 </html>
