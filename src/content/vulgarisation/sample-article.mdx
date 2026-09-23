@@ -1,25 +1,38 @@
 ---
-title: "Sample outreach article (demo)"
+title: "Pourquoi les sécheresses deviennent-elles plus difficiles à prévoir ?"
 date: "2026-01-01"
-summary: "This is a demonstration article showing MDX rendering with KaTeX and figures."
-tags: ["demo", "science communication"]
+summary: "Un exemple d'article de vulgarisation consacré au rôle de l'atmosphère dans les sécheresses européennes."
+tags: ["climat", "sécheresse", "vulgarisation"]
 ---
 
 import Figure from '../../components/Figure.astro'
 import Callout from '../../components/Callout.astro'
 
-# Communicating droughts
+# Comprendre les sécheresses européennes
 
-This is a demonstration MDX article. Inline math example: $P > 0$.
+Une sécheresse ne dépend pas uniquement de la quantité de pluie reçue. Elle résulte d'un déséquilibre entre les précipitations et les pertes d'eau liées à l'évaporation. On peut résumer ce bilan hydrologique avec la relation $D = E - P$, où $D$ représente le déficit, $E$ l'évaporation et $P$ les précipitations.
 
-Display equation follows:
+Lorsque l'atmosphère est durablement organisée dans un même régime de circulation, les conditions météorologiques peuvent rester anormalement sèches pendant plusieurs semaines.
+
+## Un bilan simple
+
+À l'échelle d'un sol, le changement de stock d'eau peut s'écrire :
 
 $$
-\Delta S = P - E
+\Delta S = P - E - R
 $$
 
-<Callout title="Note">This is a pedagogical boxed note for readers.</Callout>
+Ici, $\Delta S$ est la variation de l'eau stockée dans le sol et $R$ représente le ruissellement. Une valeur négative de $\Delta S$ indique que le sol s'assèche.
 
-<Figure src="/figures/example.png" alt="Example figure" caption="Example figure caption." />
+## Un peu de code LaTeX
 
-References and links to publications will be added using `PublicationLink` components.
+La formule précédente est écrite dans le fichier MDX avec le code suivant :
+
+```latex
+\\Delta S = P - E - R
+```
+
+Le site transforme ensuite ce code en une équation lisible grâce à KaTeX.
+
+<Callout title="À retenir">Les sécheresses dépendent donc à la fois des précipitations, de la demande évaporative de l'atmosphère et de la circulation atmosphérique.</Callout>
+

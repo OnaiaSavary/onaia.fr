@@ -5,20 +5,20 @@ import { getCollection } from 'astro:content';
 const featured = await getCollection('publications');
 ---
 <PageLayout title="Accueil" description="Doctorant en climatologie">
-  <div class="site-wrap">
-    <section class="home-hero" aria-label="Présentation de la recherche">
+  <div class="site-wrap home-page-shell">
+    <section
+      class="home-hero"
+      aria-label="Présentation de la recherche"
+      style={`--hero-background-image: url('/images/home-background.jpg'); --hero-background-position: center center; --hero-overlay-opacity: 0.52; --hero-scroll-blur: 0px;`}
+    >
       <div class="hero-inner">
-        <div>
+        <div class="hero-copy">
           <p class="eyebrow">Doctorant en climatologie</p>
-          <h1 class="hero-name">
+          <h1 class="hero-name" aria-label="Onaïa Savary">
             <span>ONAÏA</span>
             <span>SAVARY</span>
           </h1>
-        </div>
-
-        <div class="hero-summary">
-          <p>Je travaille sur la prévisibilité et l'évolution des sécheresses en Europe, en étudiant notamment le rôle de la circulation atmosphérique et des Weather Regimes.</p>
-          <p class="hero-meta">Sécheresses · Circulation atmosphérique · Weather Regimes · Changement climatique</p>
+          <p class="hero-intro">Je travaille sur la prévisibilité et l'évolution des sécheresses en Europe, en étudiant notamment le rôle de la circulation atmosphérique.</p>
         </div>
       </div>
     </section>
@@ -49,4 +49,20 @@ const featured = await getCollection('publications');
       </div>
     </section>
   </div>
+
+  <script>
+    const hero = document.querySelector('.home-hero');
+    if (hero) {
+      const applyHeroScroll = () => {
+        const rect = hero.getBoundingClientRect();
+        const progress = Math.min(Math.max((window.innerHeight - rect.top) / (window.innerHeight + rect.height), 0), 1);
+        const blur = 0 + progress * 3.5;
+        hero.style.setProperty('--hero-scroll-blur', `${blur}px`);
+      };
+
+      const onScroll = () => window.requestAnimationFrame(applyHeroScroll);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      applyHeroScroll();
+    }
+  </script>
 </PageLayout>

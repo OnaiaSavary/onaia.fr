@@ -1,0 +1,26 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('vulgarisation');
+
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<ArticleLayout title={entry.data.title} description={entry.data.summary}>
+  <header class="article-header">
+    <p class="section-label">Vulgarisation</p>
+    <h1>{entry.data.title}</h1>
+    {entry.data.date ? <p class="article-date">{entry.data.date}</p> : null}
+  </header>
+  <div class="article-content">
+    <Content />
+  </div>
+</ArticleLayout>
