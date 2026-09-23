@@ -1,38 +1,112 @@
 ---
-title: "Pourquoi les sécheresses deviennent-elles plus difficiles à prévoir ?"
-date: "2026-01-01"
-summary: "Un exemple d'article de vulgarisation consacré au rôle de l'atmosphère dans les sécheresses européennes."
-tags: ["climat", "sécheresse", "vulgarisation"]
+title: "Modéliser un bâtiment sous sollicitation sismique"
+date: "2026-09-23"
+summary: "Un exercice guidé sur le modèle masse-ressort-amortisseur utilisé pour étudier la réponse d'un bâtiment à un séisme."
+tags: ["physique", "séisme", "vulgarisation"]
 ---
 
 import Figure from '../../components/Figure.astro'
 import Callout from '../../components/Callout.astro'
 
-# Comprendre les sécheresses européennes
+# Modéliser un bâtiment sous sollicitation sismique
 
-Une sécheresse ne dépend pas uniquement de la quantité de pluie reçue. Elle résulte d'un déséquilibre entre les précipitations et les pertes d'eau liées à l'évaporation. On peut résumer ce bilan hydrologique avec la relation $D = E - P$, où $D$ représente le déficit, $E$ l'évaporation et $P$ les précipitations.
+Le génie parasismique cherche à limiter les dégâts causés par les séismes. Pour comprendre le comportement d'un bâtiment, on peut commencer par un modèle simple : un étage est représenté par une masse reliée au sol par un ressort et un amortisseur.
 
-Lorsque l'atmosphère est durablement organisée dans un même régime de circulation, les conditions météorologiques peuvent rester anormalement sèches pendant plusieurs semaines.
+<Figure src="/images/seisme1.png" alt="Modèle masse-ressort-amortisseur d'un étage soumis à un séisme" caption="Un étage de masse $m_1$ est relié au sol par un ressort et un amortisseur." />
 
-## Un bilan simple
+## Énoncé
 
-À l'échelle d'un sol, le changement de stock d'eau peut s'écrire :
+On considère un étage de masse $m_1$, dont le déplacement horizontal par rapport au sol est noté $x_1(t)$. Le déplacement imposé par le séisme au pied du bâtiment est $X(t)$. La structure qui relie l'étage au sol est modélisée par un ressort de raideur $k_1$ et un amortisseur de coefficient $\eta_1$.
+
+On suppose que le déplacement du sol est sinusoïdal :
 
 $$
-\Delta S = P - E - R
+X(t) = X_0 \cos(\omega t).
 $$
 
-Ici, $\Delta S$ est la variation de l'eau stockée dans le sol et $R$ représente le ruissellement. Une valeur négative de $\Delta S$ indique que le sol s'assèche.
+1. Écrire l'équation différentielle vérifiée par $x_1(t)$.
+2. Mettre cette équation sous forme canonique et préciser $\omega_0$ et $Q$.
+3. Exprimer l'amplitude $X_1 = |\underline{x_1}|$ en fonction de $X_0$, $\omega_0$, $y = \omega/\omega_0$ et $Q$.
+4. Calculer la phase $\varphi = \arg(\underline{x_1})$.
+5. Étudier les limites $y \to 0$, $y \to +\infty$ et $y \to 1$.
+6. Pour $Q = 1/\sqrt{2}$, déterminer si une résonance apparaît.
+7. Avec $\eta_1 = 4.2 \times 10^4\ \mathrm{kg\,m\,s^{-1}}$, $k_1 = 3 \times 10^6\ \mathrm{kg\,s^{-2}}$ et $m_1 = 700\ \mathrm{kg}$, calculer la masse supplémentaire nécessaire pour éviter toute résonance.
 
-## Un peu de code LaTeX
+## Correction
 
-La formule précédente est écrite dans le fichier MDX avec le code suivant :
+### 1. Équation du mouvement
 
-```latex
-\\Delta S = P - E - R
-```
+L'accélération totale de la masse est $\ddot{X} + \ddot{x_1}$. Le principe fondamental de la dynamique donne :
 
-Le site transforme ensuite ce code en une équation lisible grâce à KaTeX.
+$$
+m_1(\ddot{X} + \ddot{x_1}) = -k_1 x_1 - \eta_1 \dot{x_1}.
+$$
 
-<Callout title="À retenir">Les sécheresses dépendent donc à la fois des précipitations, de la demande évaporative de l'atmosphère et de la circulation atmosphérique.</Callout>
+### 2. Forme canonique
+
+En réorganisant l'équation :
+
+$$
+\ddot{x_1} + \frac{\eta_1}{m_1}\dot{x_1} + \frac{k_1}{m_1}x_1 = -\ddot{X}.
+$$
+
+On identifie :
+
+$$
+\omega_0 = \sqrt{\frac{k_1}{m_1}}, \qquad Q = \frac{\sqrt{k_1m_1}}{\eta_1}.
+$$
+
+### 3. Amplitude de la réponse
+
+Avec $y = \omega/\omega_0$, la représentation complexe donne :
+
+$$
+\underline{x_1} = \frac{-X_0}{\omega_0^2}\frac{1}{1-y^2 + j\dfrac{y}{Q}}.
+$$
+
+Donc :
+
+$$
+\boxed{X_1 = \frac{X_0}{\omega_0^2\sqrt{(1-y^2)^2 + \dfrac{y^2}{Q^2}}}}.
+$$
+
+### 4. Phase
+
+La phase est donnée par :
+
+$$
+\varphi = -\arg\left(1-y^2 + j\frac{y}{Q}\right).
+$$
+
+### 5. Cas limites
+
+- Pour $y \to 0$, $X_1 \to X_0/\omega_0^2$ et la phase tend vers $0$.
+- Pour $y \to +\infty$, $X_1 \to 0$.
+- Pour $y \to 1$, l'amplitude vaut $X_0 Q/\omega_0^2$ : elle dépend donc du facteur de qualité.
+
+### 6. Absence de résonance
+
+Pour $Q = 1/\sqrt{2}$ :
+
+$$
+X_1 = \frac{X_0}{\omega_0^2\sqrt{1+y^4}}.
+$$
+
+Le dénominateur est minimal pour $y=0$. Il n'y a donc pas de pic de résonance à une fréquence non nulle.
+
+### 7. Masse supplémentaire
+
+Pour obtenir $Q = 1/\sqrt{2}$, il faut :
+
+$$
+\frac{\eta_1}{\sqrt{k_1(m_0+m_1)}} = \frac{1}{\sqrt{2}}.
+$$
+
+Ainsi :
+
+$$
+m_0 = \frac{2\eta_1^2}{k_1} - m_1 \approx 500\ \mathrm{kg}.
+$$
+
+<Callout title="À retenir">Un modèle masse-ressort-amortisseur permet de relier le mouvement du sol à celui d'un étage. Augmenter la masse peut diminuer le facteur de qualité et supprimer le pic de résonance.</Callout>
 

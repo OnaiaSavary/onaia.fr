@@ -406,8 +406,14 @@ p {
 }
 
 .article-header h1 {
-  max-width: 18ch;
-  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  max-width: 30ch;
+  font-size: clamp(1.7rem, 3vw, 3rem);
+  line-height: 1.05;
+}
+
+.posts h3 {
+  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+  line-height: 1.15;
 }
 
 .article-date {
