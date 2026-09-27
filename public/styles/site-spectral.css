@@ -37,7 +37,7 @@ body.is-menu-visible #page-wrapper:before {
 
 #header h1 a,
 #header nav > ul > li > a {
-  color: #2e3842;
+  color: #2e3842 !important;
 }
 
 #menu ul li a {
@@ -544,4 +544,14 @@ body.is-menu-visible #page-wrapper:before {
     height: 68svh;
     min-height: 24rem;
   }
+}
+#header nav > ul > li > a,
+#header nav > ul > li > a,
+#header .nav-main a {
+  color: #2e3842 !important;
+}
+
+#header nav > ul > li > a::after,
+#header .nav-main a::after {
+  background: #2e3842;
 }
