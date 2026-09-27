@@ -1,8 +1,8 @@
 :root {
   --hero-background-position: center 38%;
-  --template-background: #2e3842;
-  --template-accent: #21b2a6;
-  --template-coral: #ed4933;
+  --template-background: var(--palette-1);
+  --template-accent: var(--palette-2);
+  --template-coral: var(--palette-7);
   --template-muted: rgba(255, 255, 255, 0.72);
 }
 
@@ -15,7 +15,7 @@ body #page-wrapper {
 #header,
 #header.alt {
   z-index: 10001;
-  background: rgba(46, 56, 66, 0.92);
+  background: rgba(49, 54, 149, 0.92);
 }
 
 /* Dim only the page behind the menu, never the menu panel itself. */
@@ -24,7 +24,7 @@ body.is-menu-visible #page-wrapper {
 }
 
 #page-wrapper:before {
-  background: rgba(8, 14, 20, 0.6);
+  background: rgba(15, 18, 60, 0.6);
 }
 
 body.is-menu-visible #page-wrapper:before {
@@ -50,7 +50,7 @@ body.is-menu-visible #page-wrapper:before {
 }
 
 #menu {
-  background: #21b2a6;
+  background: var(--palette-2);
 }
 
 .content-page-hero {
@@ -59,7 +59,7 @@ body.is-menu-visible #page-wrapper:before {
   align-items: center;
   justify-content: center;
   padding: 7rem clamp(1.25rem, 5vw, 4rem) 4rem;
-  background-image: linear-gradient(rgba(20, 29, 37, 0.7), rgba(20, 29, 37, 0.58)), var(--page-hero-image);
+  background-image: linear-gradient(rgba(49, 54, 149, 0.72), rgba(49, 54, 149, 0.58)), var(--page-hero-image);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -105,15 +105,18 @@ body.is-menu-visible #page-wrapper:before {
 .site-main .content-page-body,
 .site-main .content-page-body p,
 .site-main .content-page-body li,
+.site-main .content-page-body blockquote,
+.site-main .content-page-body time {
+  color: #4e4852 !important;
+}
+
 .site-main .content-page-body h1,
 .site-main .content-page-body h2,
 .site-main .content-page-body h3,
 .site-main .content-page-body h4,
 .site-main .content-page-body h5,
-.site-main .content-page-body h6,
-.site-main .content-page-body blockquote,
-.site-main .content-page-body time {
-  color: #4e4852 !important;
+.site-main .content-page-body h6 {
+  color: var(--palette-1) !important;
 }
 
 .site-main .content-page-body h1,
@@ -132,15 +135,15 @@ body.is-menu-visible #page-wrapper:before {
 }
 
 .site-main .content-page-body a {
-  color: #2e3842 !important;
-  -webkit-text-fill-color: #2e3842 !important;
-  border-bottom-color: rgba(33, 178, 166, 0.75);
+  color: var(--palette-1) !important;
+  -webkit-text-fill-color: var(--palette-1) !important;
+  border-bottom-color: rgba(89, 141, 192, 0.75);
 }
 
 .site-main .content-page-body a:hover,
 .site-main .content-page-body a:focus-visible {
-  color: #168f86 !important;
-  -webkit-text-fill-color: #168f86 !important;
+  color: var(--palette-8) !important;
+  -webkit-text-fill-color: var(--palette-8) !important;
 }
 
 .site-main .content-page-body .media-disclosure {
@@ -153,14 +156,14 @@ body.is-menu-visible #page-wrapper:before {
 
 .site-main .content-page-body .media-disclosure > summary {
   width: fit-content;
-  color: #2e3842 !important;
+  color: var(--palette-1) !important;
   cursor: pointer;
   font-weight: 600;
 }
 
 .site-main .content-page-body .media-disclosure > summary:hover,
 .site-main .content-page-body .media-disclosure > summary:focus-visible {
-  color: #168f86 !important;
+  color: var(--palette-8) !important;
 }
 
 .site-main .content-page-body .editorial-section {
@@ -184,7 +187,7 @@ body.is-menu-visible #page-wrapper:before {
 .outreach-contents {
   margin: 0 0 3rem;
   padding: 1.5rem 0;
-  border-top: 2px solid #21b2a6;
+  border-top: 2px solid var(--palette-2);
   border-bottom: 1px solid #dfdfdf;
 }
 
@@ -213,7 +216,7 @@ body.is-menu-visible #page-wrapper:before {
 
 .site-main .content-page-body .outreach-year > h2 {
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #21b2a6;
+  border-bottom: 2px solid var(--palette-2);
 }
 
 .site-main .content-page-body .outreach-entry h3 {
@@ -261,6 +264,15 @@ body.is-menu-visible #page-wrapper:before {
   object-fit: contain;
 }
 
+.site-main .content-page-body .article-content table th {
+  color: var(--palette-1) !important;
+}
+
+.site-main .content-page-body .article-content table thead {
+  background: var(--palette-4);
+  border-color: var(--palette-3) !important;
+}
+
 .site-main .content-page-body .article-content math[display="block"],
 .site-main .content-page-body .article-content .katex-display {
   max-width: 100%;
@@ -306,7 +318,7 @@ body.is-menu-visible #page-wrapper:before {
   height: auto;
   min-height: min(88svh, 56rem);
   padding-top: 6rem;
-  background-image: linear-gradient(rgba(20, 29, 37, 0.64), rgba(20, 29, 37, 0.44)), url('/images/cheveux.png');
+  background-image: linear-gradient(rgba(49, 54, 149, 0.64), rgba(49, 54, 149, 0.44)), url('/images/cheveux.png');
   background-position: var(--hero-background-position, center);
   background-size: cover;
   background-repeat: no-repeat;
@@ -375,19 +387,19 @@ body.is-menu-visible #page-wrapper:before {
 }
 
 .site-main a:not(.button):not(.icon) {
-  border-bottom-color: rgba(33, 178, 166, 0.65);
+  border-bottom-color: rgba(89, 141, 192, 0.65);
 }
 
 .site-main a:not(.button):not(.icon):hover,
 .site-main a:not(.button):not(.icon):focus-visible {
-  color: #00ffcc;
+  color: var(--palette-5);
 }
 
 .video-embed {
   width: 100%;
   aspect-ratio: 16 / 9;
   margin: 1.5rem 0;
-  background: #1d242a;
+  background: var(--palette-1);
 }
 
 .video-embed iframe {
@@ -490,8 +502,54 @@ body.is-menu-visible #page-wrapper:before {
   gap: 0.75rem 2rem;
 }
 
+/* Test palette: homepage color bands and primary button accent */
+.wrapper.style2 {
+  background-color: var(--palette-1) !important;
+}
+
+.wrapper.style1 {
+  background-color: var(--palette-2) !important;
+  color: var(--palette-3) !important;
+}.wrapper.style1 strong,
+.wrapper.style1 b,
+.wrapper.style1 h2,
+.wrapper.style1 h3,
+.wrapper.style1 h4,
+.wrapper.style1 h5,
+.wrapper.style1 h6 {
+  color: #ffffff !important;
+}
+
+.wrapper.style3 {
+  background-color: var(--palette-7) !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+.wrapper.style3 strong,
+.wrapper.style3 b {
+  color: #ffffff !important;
+}
+
+.button.primary,
+input[type="submit"].primary,
+input[type="button"].primary {
+  background-color: var(--palette-7) !important;
+}
+
+.button.primary:hover,
+input[type="submit"].primary:hover,
+input[type="button"].primary:hover {
+  background-color: var(--palette-6) !important;
+}
+
+.button.primary:active,
+input[type="submit"].primary:active,
+input[type="button"].primary:active {
+  background-color: var(--palette-8) !important;
+}
+
 #footer {
-  background: #1d242a;
+  background: var(--palette-1);
 }
 
 @media screen and (max-width: 736px) {
