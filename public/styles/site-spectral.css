@@ -41,6 +41,14 @@ body.is-menu-visible #page-wrapper:before {
   color: #fff;
 }
 
+.site-logo {
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
 #menu {
   background: #21b2a6;
 }
