@@ -11,7 +11,11 @@ import ContentPage from '../../components/ContentPage.astro';
     <h2 id="outreach-contents-title">Contents</h2>
     <ul>
       <li><a href="#outreach-2026">2026</a>
-        <ul><li><a href="#cycling-for-climate-2026">Cycling for Climate 2026</a></li></ul>
+        <ul>
+          <li><a href="#cycling-for-climate-2026">Cycling for Climate 2026</a></li>
+          <li><a href="#glacon-ricard">Un glaçon dans un pastis — rédigé le 27 septembre 2026</a></li>
+          <li><a href="#seismic-building">Modélisation d'un bâtiment sous séisme — rédigé le 27 septembre 2026</a></li>
+        </ul>
       </li>
       <li><a href="#outreach-2025">2025</a>
         <ul>
@@ -23,8 +27,6 @@ import ContentPage from '../../components/ContentPage.astro';
       <li><a href="#outreach-undated">Date not specified</a>
         <ul>
           <li><a href="#mt180-regional-final">MT180 — Regional Final</a></li>
-          <li><a href="#glacon-ricard">Un glaçon dans un pastis</a></li>
-          <li><a href="#seismic-building">Modélisation d'un bâtiment sous séisme</a></li>
         </ul>
       </li>
     </ul>
@@ -35,6 +37,15 @@ import ContentPage from '../../components/ContentPage.astro';
     <article id="cycling-for-climate-2026" class="outreach-entry">
       <h3>Cycling for Climate 2026</h3>
     </article>
+    <section id="scientific-outreach-articles" class="outreach-articles">
+      <h2>Scientific outreach articles</h2>
+      <article id="glacon-ricard" class="outreach-entry">
+        <h3><a href="/vulgarisation/glacon-ricard/">Un glaçon dans un pastis — rédigé le 27 septembre 2026</a></h3>
+      </article>
+      <article id="seismic-building" class="outreach-entry">
+        <h3><a href="/vulgarisation/modelisation-sismique-batiments/">Modélisation d'un bâtiment sous séisme — rédigé le 27 septembre 2026</a></h3>
+      </article>
+    </section>
   </section>
 
   <section id="outreach-2025" class="outreach-year">
@@ -48,10 +59,14 @@ import ContentPage from '../../components/ContentPage.astro';
       <h3>Pint of Science 2025</h3>
       <p><time datetime="2025-05-21">21 May 2025</time></p>
       <p>Du Porto à Saint-Malo was held at The Roof, Halles de la Cartoucherie in Toulouse. The event invited two climatology PhD students to discuss climate change, its consequences, the attribution of extreme events and possible adaptation.</p>
-      <p><a href="https://pintofscience.fr/event/du-porto-a-saint-malo/" target="_blank" rel="noreferrer">Official event page</a> · <a href="/documents/POS_pdf.pdf" download>Download presentation (PDF)</a></p>
-      <object class="pdf-preview" data="/documents/POS_pdf.pdf#view=FitH" type="application/pdf" aria-label="Pint of Science 2025 presentation preview">
-        <p>PDF preview unavailable. <a href="/documents/POS_pdf.pdf">Open the presentation PDF</a>.</p>
-      </object>
+      <p><a href="https://pintofscience.fr/event/du-porto-a-saint-malo/" target="_blank" rel="noreferrer">Official event page</a></p>
+      <details class="media-disclosure">
+        <summary>View presentation (PDF)</summary>
+        <p><a href="/documents/POS_pdf.pdf" download>Download presentation (PDF)</a></p>
+        <object class="pdf-preview" data="/documents/POS_pdf.pdf#view=FitH" type="application/pdf" aria-label="Pint of Science 2025 presentation preview">
+          <p>PDF preview unavailable. <a href="/documents/POS_pdf.pdf">Open the presentation PDF</a>.</p>
+        </object>
+      </details>
     </article>
     <article id="cycling-for-climate-2025" class="outreach-entry">
       <h3>Cycling for Climate 2025</h3>
@@ -63,19 +78,10 @@ import ContentPage from '../../components/ContentPage.astro';
   <section id="outreach-undated" class="outreach-year">
     <h2>Date not specified</h2>
     <article id="mt180-regional-final" class="outreach-entry">
-      <h3>MT180 — Regional Final</h3>
-      <div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/wmosXiuSDso?start=3" title="MT180 Regional Final presentation" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      <details class="media-disclosure">
+        <summary>MT180 — Regional Final</summary>
+        <div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/wmosXiuSDso?start=3" title="MT180 Regional Final presentation" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      </details>
     </article>
-    <section id="scientific-outreach-articles" class="outreach-articles">
-      <h2>Scientific outreach articles</h2>
-      <article id="glacon-ricard" class="outreach-entry">
-        <h3><a href="/vulgarisation/glacon-ricard/">Un glaçon dans un pastis</a></h3>
-        <p>Date not specified in the source document.</p>
-      </article>
-      <article id="seismic-building" class="outreach-entry">
-        <h3><a href="/vulgarisation/modelisation-sismique-batiments/">Modélisation d'un bâtiment sous séisme</a></h3>
-        <p>Date not specified in the source document.</p>
-      </article>
-    </section>
   </section>
 </ContentPage>

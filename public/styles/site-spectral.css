@@ -18,6 +18,23 @@ body #page-wrapper {
   background: rgba(46, 56, 66, 0.92);
 }
 
+/* Dim only the page behind the menu, never the menu panel itself. */
+body.is-menu-visible #page-wrapper {
+  opacity: 1;
+}
+
+#page-wrapper:before {
+  background: rgba(8, 14, 20, 0.6);
+}
+
+body.is-menu-visible #page-wrapper:before {
+  z-index: 9999;
+}
+
+#menu {
+  z-index: 10050;
+}
+
 #header h1 a,
 #header nav > ul > li > a,
 #menu ul li a {
@@ -106,14 +123,36 @@ body #page-wrapper {
   font-size: clamp(1.08rem, 1.6vw, 1.3rem);
 }
 
-.site-main .content-page-body a:not(.button):not(.icon) {
-  color: #2e3842;
+.site-main .content-page-body a {
+  color: #2e3842 !important;
+  -webkit-text-fill-color: #2e3842 !important;
   border-bottom-color: rgba(33, 178, 166, 0.75);
 }
 
-.site-main .content-page-body a:not(.button):not(.icon):hover,
-.site-main .content-page-body a:not(.button):not(.icon):focus-visible {
-  color: #168f86;
+.site-main .content-page-body a:hover,
+.site-main .content-page-body a:focus-visible {
+  color: #168f86 !important;
+  -webkit-text-fill-color: #168f86 !important;
+}
+
+.site-main .content-page-body .media-disclosure {
+  margin: 1rem 0;
+}
+
+.site-main .content-page-body .media-disclosure:not([open]) > :not(summary) {
+  display: none !important;
+}
+
+.site-main .content-page-body .media-disclosure > summary {
+  width: fit-content;
+  color: #2e3842 !important;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.site-main .content-page-body .media-disclosure > summary:hover,
+.site-main .content-page-body .media-disclosure > summary:focus-visible {
+  color: #168f86 !important;
 }
 
 .site-main .content-page-body .editorial-section {
@@ -217,12 +256,41 @@ body #page-wrapper {
 .site-main .content-page-body .article-content math[display="block"],
 .site-main .content-page-body .article-content .katex-display {
   max-width: 100%;
+  margin: 1.25rem 0;
+  padding: 0;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 0.25rem 0;
+  background: transparent !important;
+  border: 0;
+  color: inherit !important;
 }
 
 .site-main .content-page-body .article-content .katex-display > .katex {
+  white-space: normal;
+}
+
+.site-main .content-page-body .article-content .katex,
+.site-main .content-page-body .article-content .katex * {
+  color: inherit !important;
+}
+
+.site-main .content-page-body .article-content pre:has(> code.language-math) {
+  margin: 1.25rem 0;
+  padding: 0;
+  overflow-x: auto;
+  background: transparent !important;
+  border: 0;
+  box-shadow: none;
+  color: inherit !important;
+}
+
+.site-main .content-page-body .article-content pre > code.language-math {
+  display: block;
+  padding: 0;
+  overflow: visible;
+  background: transparent !important;
+  border: 0;
+  color: inherit !important;
   white-space: normal;
 }
 
