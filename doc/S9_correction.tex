@@ -1,0 +1,588 @@
+\documentclass[a4paper,10pt,notitlepage,oneside]{article}
+\usepackage[utf8]{inputenc} % pour les accents
+\usepackage[greek,english,french]{babel}
+
+
+
+%%%%%%%%%%%%%%%%%%------ packages --------%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{ntheorem}
+\usepackage{gensymb}
+\usepackage{babel}
+\usepackage{dsfont}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{fancyhdr}             
+\usepackage{float}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{array}
+\usepackage{graphicx}
+%%%%%%%%%%%%%%-----NEW COMMAND-------%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\dis}{\displaystyle}
+\newcommand{\ve}{ \overrightarrow}
+\mathchardef\times="2202
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\usepackage[cyr]{fourier}
+\pagestyle{plain}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%FONCTION
+\newenvironment{norm}{%
+\left\Vert
+}{%
+\right\Vert
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AtBeginDocument{
+   \renewcommand\tablename{\textsc{Tableau}}
+   \renewcommand\figurename{\textsc{Figure}}
+}
+\usepackage{graphicx}
+\usepackage{tabularx} 
+\usepackage{multirow}
+\usepackage{color}
+\definecolor{ENSblue}{RGB}{0,119,139}
+\usepackage[backref=true,colorlinks=true,linkcolor=ENSblue,urlcolor=ENSblue]{hyperref}
+
+\usepackage{lipsum}
+\usepackage{amsmath}
+\usepackage{fancybox}  
+\usepackage{listings}
+\usepackage[squaren,Gray]{SIunits}
+\usepackage{verbatim}
+\setcounter{tocdepth}{2}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{microtype}
+\usepackage{tcolorbox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-----------------Header and footer-------------------------
+
+%---EN-TETE-ET-PIED-DE-PAGE----------------------------------------------------
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\setlength{\columnseprule}{0.4pt}% the line between colomn paper
+
+\fancyhead{} % clear all header fields
+\fancyhead[LO,CE]{\textbf{\color{BlueViolet}Colles}}
+\fancyfoot{} % clear all footer fields
+\fancyhead{} % clear all header fields
+\fancyhead[LO,CE]{\color{BlueViolet} \textbf{\color{BlueViolet}Colles}}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{\color{BlueViolet} \textbf{\color{BlueViolet}Semaine 8}}
+\fancyfoot[LO,CE]{\color{BlueViolet} \textbf{\color{BlueViolet}Physique - Chimie}}
+
+\pagestyle{fancy}
+
+%\lhead{fhgfgd}
+\cfoot{\thepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\setlength{\columnseprule}{0.4pt}% the line between colomn paper
+% Appliquer la couleur à la ligne de tête et de pied de page
+\renewcommand{\headrule}{\color{BlueViolet}\rule{\linewidth}{0.4pt}}  % Ligne de tête en violet
+\renewcommand{\footrule}{\color{BlueViolet}\rule{\linewidth}{0.4pt}}  % Ligne de pied de page en violet
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------- exercices style -----------
+\theoremstyle{plain}
+\theorembodyfont{\normalfont}
+\theoremseparator{~--}
+\newtheorem{partie}{\color{BlueViolet} Partie}
+
+\renewcommand{\familydefault}{lmss}
+
+\begin{document}
+
+
+
+
+
+\begin{center}
+    {\color{BlueViolet} \Large \textbf{\color{BlueViolet}Sujet \no 1 - Correction}}
+\end{center}
+
+\paragraph{\color{BlueViolet} Exercice 1 : Pouvoir de réchauffement global du méthane}
+
+\begin{enumerate}
+    \item Écrire la loi de vitesse. Identifier une constante cinétique apparente.\\
+    La réaction est de premier ordre par rapport à chaque réactif ($CH_4$ et $HO^.$), donc la loi de vitesse s'écrit :
+    \[
+    v = k_0 [CH_4] [HO^.].
+    \]
+    En supposant que la concentration des radicaux hydroxyles \([HO^.]\) reste constante, on peut définir une constante cinétique apparente \(k\) telle que :
+    \[
+    k = k_0 [HO^.],
+    \]
+    ce qui permet de simplifier la loi de vitesse :
+    \[
+    v = k [CH_4].
+    \]
+    \begin{equation*}
+        \boxed{v = k [CH_4] \quad \text{avec} \quad k = k_0 [HO^.]}
+    \end{equation*}
+
+    \item Déterminer la masse restante \(m_{CH_4}(t)\) au bout d’une durée \(t\).\\
+    On a, dans un volume donné,
+    \begin{equation*}
+        v = -\dfrac{d\left[ CH_4 \right]}{dt} = k\left[ CH_4 \right]
+    \end{equation*}
+    soit
+    \begin{equation*}
+        \dfrac{d\left[ CH_4 \right]}{dt} + k\left[ CH_4 \right] = 0
+    \end{equation*}
+    En rappelant la définition de la concentration, $\left[ CH_4 \right](t) = \dfrac{m_{CH_4}(t)}{M_{CH_4}V}$, puis en injectant dans l'équation différentielle, on obtient après simplification :
+    \[
+    \dfrac{dm_{CH_4}}{dt} = -k m_{CH_4}.
+    \]
+    En séparant les variables et intégrant entre \(t = 0\) et \(t\), on obtient :
+    \[
+    \ln \left( \dfrac{m_{CH_4}(t)}{m_0} \right) = -kt.
+    \]
+    \begin{equation*}
+        \boxed{m_{CH_4}(t) = m_0 e^{-kt}}
+    \end{equation*}
+
+    \item En déduire la constante cinétique \(k_0\).\\
+    Le temps de demi-vie \(t_{1/2}\) est défini par :
+    \[
+    m_{CH_4}(t_{1/2}) = \dfrac{m_0}{2}.
+    \]
+    En utilisant la solution obtenue précédemment, on a :
+    \[
+    \dfrac{1}{2} = e^{-k t_{1/2}} \quad \text{soit} \quad k = \dfrac{\ln 2}{t_{1/2}}.
+    \]
+    Substituons \(t_{1/2} = 8.2 \, \text{ans}\) :
+    \[
+    k = \dfrac{\ln 2}{8.2} = 0.0845 \, \text{an}^{-1}.
+    \]
+    La constante cinétique \(k_0\) est alors calculée à partir de \(k = k_0 [HO^.]\). Sachant que \([HO^.] = 10^{12} \, \text{radicaux/m}^3 = 1.66 \cdot 10^{-12} \, \text{mol/m}^3\), on obtient :
+    \begin{equation*}
+        \boxed{k_0 = \dfrac{k}{[HO^.]} = \dfrac{0.0845}{1.66 \cdot 10^{-12}} \approx 5.09 \cdot 10^{10} \, \text{m}^3 \cdot \text{mol}^{-1} \cdot \text{an}^{-1}}
+    \end{equation*}
+    \item On obtient :
+    \begin{equation*}
+        I_{CH_4}(\tau) = \displaystyle{\int_0^\tau}e^{-kt}dt = \left[-\dfrac{1}{k}e^{-kt}\right]_0^\tau \quad \text{soit} \quad \boxed{I_{CH_4}(\tau) = \dfrac{1}{k}\left(1-e^{-kt}\right)}
+    \end{equation*}
+    \item Le méthane se décompose plus vite que le $CO_2$, son effet est donc plus important sur des durées courtes que sur des durées longues, d’où l’allure décroissante. Dire qu’une tonne de méthane équivaut à $25$ tonnes de $CO_2$ est abusif : ce n’est vrai qu’à un horizon d’environ un siècle. Si on se place à un horizon plus proche, par exemple 20 ans, une tonne de méthane a le même effet sur le réchauffement à cette échéance que 80 tonnes de $CO_2$.  
+\end{enumerate}
+
+
+\\
+
+\paragraph{\color{BlueViolet} Exercice 2 : Décomposition de l'éthanal}
+
+\begin{enumerate}
+    \item Nommer les espèces et écrire l'équation de réaction.\\
+    
+    Les espèces présentes sont :
+    \begin{itemize}
+        \item \textbf{\color{BlueViolet}Réactif :} l'éthanal $\text{CH}_3\text{CHO}$,
+        \item \textbf{\color{BlueViolet}Produits :} le méthane $\text{CH}_4$ et le monoxyde de carbone $\text{CO}$.
+    \end{itemize}
+    L'équation de la réaction s'écrit :
+    \begin{equation*}
+        \boxed{\text{CH}_3\text{CHO}(g) \longrightarrow \text{CH}_4(g) + \text{CO}(g)}
+    \end{equation*}
+    
+    \item Construire le tableau d'avancement à l'instant $t$ en fonction de l'avancement $\xi(t)$.\\
+    
+    Le tableau d'avancement s'écrit :
+    \[
+    \begin{array}{c|c|c|c}
+        \text{État} & \text{CH}_3\text{CHO} & \text{CH}_4 & \text{CO} \\
+        \hline
+        t = 0 & n_0 & 0 & 0 \\
+        t & n_0 - \xi & \xi & \xi \\
+    \end{array}
+    \]
+    
+    \item Montrer que l'on peut suivre l'avancement par la mesure d'une seule grandeur physique.\\
+    La quantité totale de gaz dans le milieu réactionnel est donnée par :
+    \[
+        n_{\text{gaz}} = n_{\text{CH}_3\text{CHO}} + n_{\text{CH}_4} + n_{\text{CO}} = n_0 + \xi
+    \]
+    La quantité totale varie donc avec l'avancement de la réaction. En appliquant la loi des gaz parfaits, la pression totale vaut :
+    \[
+        p = n_{\text{gaz}} \dfrac{RT}{V} = \left( n_0 + \xi \right) \dfrac{RT}{V} = p_0 + \dfrac{RT}{V} \xi
+    \]
+    Ainsi, la mesure de la pression $p$ permet de déterminer l'avancement $\xi$.
+
+    \item On constate expérimentalement que la fonction 
+    \[
+    F(t) = \dfrac{- (p(t) - p_0)}{p(t) - 2p_0}
+    \]
+    est proportionnelle à $t$. Montrer qu'une réaction d'ordre 2 est compatible avec ces résultats.\\
+    
+    La vitesse d'une réaction d'ordre 2 est donnée par :
+    \[
+        v = -\dfrac{d[\text{CH}_3\text{CHO}]}{dt} = k[\text{CH}_3\text{CHO}]^2
+    \]
+    En séparant les variables et en intégrant :
+    \[
+        \displaystyle{\int_{n_0/V}^{(n_0 - \xi)/V}} \dfrac{d[\text{CH}_3\text{CHO}]}{[\text{CH}_3\text{CHO}]^2} = -k \displaystyle{\int_{0}^{t}} dt
+    \]
+    Après intégration :
+    \[
+        -\dfrac{1}{n_0 - \xi} + \dfrac{1}{n_0} = -kt
+    \]
+    Avec $n_0 = \dfrac{p_0 V}{RT}$ et $\xi = \dfrac{V}{RT}(p - p_0)$, on obtient :
+    \[
+        \boxed{F(t) = \dfrac{- (p - p_0)}{p - 2p_0} = -\dfrac{n_0 k t}{V}}
+    \]
+    Cette relation montre que la fonction $F(t)$ est bien proportionnelle au temps $t$, confirmant que l'ordre 2 est compatible.
+
+    \item Calculer le temps de demi-réaction.\\
+    
+    Au temps de demi-réaction $t_{1/2}$, il reste la moitié de la quantité initiale de $\text{CH}_3\text{CHO}$. Ainsi :
+    \[
+        n_{\text{gaz}}(t_{1/2}) = n_0 + \dfrac{n_0}{2} = \dfrac{3}{2} n_0 \implies p(t_{1/2}) = \dfrac{3}{2} p_0
+    \]
+    En substituant dans la relation précédemment établie, le temps de demi-réaction est donné par :
+    \[
+        \boxed{t_{1/2} = \dfrac{V}{n_0 k}}
+    \]
+\end{enumerate}
+
+
+\newpage
+\begin{center}
+    {\color{BlueViolet} \Large \textbf{\color{BlueViolet}Sujet 2 - Correction}}
+\end{center}
+
+
+\paragraph{\color{BlueViolet} Exercice 1 : Estimation de l'âge de la Terre par la désintégration de l'uranium}
+
+\begin{enumerate}
+    \item Écrire la loi d'évolution du nombre d’atomes de \(^{238}U\) en fonction du temps.\\
+    La loi de désintégration radioactive est donnée par :
+    \[
+    \dfrac{dN}{dt} = -\lambda N.
+    \]
+    En séparant les variables et en intégrant entre \(t = 0\) (où \(N = N_0\)) et un temps \(t\), on obtient :
+    \begin{equation*}
+        \boxed{N(t) = N_0 e^{-\lambda t}}
+    \end{equation*}
+
+    \item Exprimer le nombre d’atomes désintégrés de \(^{238}U\) au cours du temps.\\
+    Le nombre d'atomes désintégrés au temps \(t\) est donné par :
+    \[
+    N_{\text{désintégrés}} = N_0 - N(t).
+    \]
+    En utilisant la relation \(N(t) = N_0 e^{-\lambda t}\), :
+    \begin{equation*}
+        \boxed{N_{\text{désintégrés}} =N_0 - N_0 e^{-\lambda t} = N_0 (1 - e^{-\lambda t})}
+    \end{equation*}
+
+    \item Relation entre \(N_{U}\), \(N_{Pb}\) et \(t\).\\
+    Tous les atomes de \(^{206}Pb\) proviennent de la désintégration de \(^{238}U\), donc :
+    \[
+    N_{Pb} = N_0 - N_{U},
+    \]
+    où \(N_0\) est le nombre initial d'atomes de \(^{238}U\). En utilisant \(N_{U} = N_0 e^{-\lambda t}\), on a :
+    \[
+    N_{Pb} = N_0 (1 - e^{-\lambda t}).
+    \]
+    En remplaçant \(N_0\) par \(N_{U} / e^{-\lambda t}\), on obtient :
+    \[
+    e^{\lambda t} = 1 + \dfrac{N_{Pb}}{N_{U}}.
+    \]
+    En prenant le logarithme :
+    \[
+    t = \dfrac{1}{\lambda} \ln \left( 1 + \dfrac{N_{Pb}}{N_{U}} \right).
+    \]
+    \begin{equation*}
+        \boxed{t = \dfrac{1}{\lambda} \ln \left( 1 + \dfrac{N_{Pb}}{N_{U}} \right)}
+    \end{equation*}
+
+    \item Calcul de l’âge de l’échantillon.\\
+    La constante radioactive \(\lambda\) est liée à la période de demi-vie \(t_{1/2}\) par :
+    \[
+    \lambda = \dfrac{\ln 2}{t_{1/2}}.
+    \]
+    En remplaçant \(t_{1/2} = 4.5 \cdot 10^9 \, \text{ans}\), on obtient :
+    \[
+    \lambda = \dfrac{\ln 2}{4.5 \cdot 10^9} = 1.54 \cdot 10^{-10} \, \text{an}^{-1}.
+    \]
+    Substituons dans l’expression de \(t\) :
+    \[
+    t = \dfrac{1}{1.54 \cdot 10^{-10}} \ln \left( 1 + \dfrac{6 \cdot 10^{12}}{2 \cdot 10^{12}} \right).
+    \]
+    Le rapport \(\dfrac{N_{Pb}}{N_{U}} = \dfrac{6}{2} = 3\), donc :
+    \[
+    t = \dfrac{1}{1.54 \cdot 10^{-10}} \ln(4).
+    \]
+    Puisque \(\ln(4) = 2 \ln(2)\), on a :
+    \[
+    t = \dfrac{1}{1.54 \cdot 10^{-10}} \cdot 2 \cdot 0.693 = 9.0 \cdot 10^9 \, \text{ans}.
+    \]
+    \begin{equation*}
+        \boxed{t = 9.0 \cdot 10^9 \, \text{ans}}
+    \end{equation*}
+
+    Ainsi, l’âge de l’échantillon est d’environ 9 milliards d’années.
+\end{enumerate}
+
+
+
+\paragraph{\color{BlueViolet} Exercice 2 : Modélisation d'un bâtiment sous séisme}
+
+\begin{enumerate}
+    \item En appliquant le PFD le long de l'axe de déplacement, montrer que l'équation différentielle du système peut se mettre sous la forme
+    \begin{equation*}
+        \dfrac{d^2x_1}{dt^2}+2\xi\omega_0\dfrac{dx_1}{dt}+\omega_0^2x_1(t) = 0
+    \end{equation*}
+    et identifier $\omega_0$ la pulsation propre et $\xi$ le taux d'amortissement.\\
+    
+    On peut directement écrire 
+    \begin{equation*}
+        m_1\dfrac{d^2x_1}{dt^2}+\eta_1\dfrac{dx_1}{dt}+k_1x_1(t) = 0
+    \end{equation*}
+    Par identification,
+    \begin{equation*}
+        \boxed{\xi = \dfrac{\eta_1}{2\sqrt{k_1m_1}}}\quad 
+        \boxed{\omega_0 = \sqrt{\dfrac{k_1}{m_1}}}
+    \end{equation*}
+    
+    \item Quelle est l'expression littérale du coefficient d'amortissement $\eta_{\text{cr}}$ au-delà duquel il n'y aura pas d'oscillation ? (régime apériodique, ou régime sur-critique).\\
+
+    Ce coefficient est celui qui vérifie $\xi>1$, donc $\boxed{\eta_{cr}=2\sqrt{k_1m_1}}$
+    
+    \item En règle générale, les bâtiments réagissent en régime pseudo-périodique. Quelle est la forme de la solution dans ce cas-là? On prendra $x_1(t=0)=0$ et $\dfrac{dx_1}{dt}(t=0) = 0$. On notera également $\omega_D = \omega_0\sqrt{1-\xi^2}$ la pulsation propre du système amorti.\\
+    
+    Dans ce cas on aura
+    \begin{equation*}
+        \boxed{x_1(t) = e^{-\xi\omega_0}\left(A\cos\left(\omega_D.t\right)+B\sin\left(\omega_D.t\right)\right)}
+    \end{equation*}
+    
+    \item On s'intéresse maintenant à la modélisation de deux étages. Le deuxième étage voit sa position sur l'axe transversal $x_2(t)$, et il est lié à l'étage précédent par une structure qui se comporte comme un ressort de rigidité $k_2$, de longueur à vide nulle, et d'amortissement $\eta_2$.
+    Quelle est l'équation différentielle qui régit la position du premier étage?\\
+    La seule différence avec la partie précédente concerne l'effort supplémentaire qui s'exerce sur la masse $m_1$ liée au déplacement différentiel entre $m_1$ et $m_2$.
+    \begin{equation*}
+        \boxed{
+         m_1\dfrac{d^2x_1}{dt^2}+\eta_1\dfrac{dx_1}{dt}+k_1 x_1(t) +\textcolor{red}{k_2\left(x_1-x_2\right)} = 0
+        }
+    \end{equation*}
+    \item Quelle est l'équation différentielle qui régit la position du deuxième étage?\\
+    Les seules forces qui s'exercent sur la masse $m_2$ sont le poids, l'amortissement, et le rappel du ressort qui lie $m_1$ à $m_2$.
+    \begin{equation*}
+        \boxed{
+         m_2\dfrac{d^2x_2}{dt^2}+\eta_2\dfrac{dx_2}{dt}+ k_2\left(x_2-x_1\right) = 0
+        }
+    \end{equation*}
+    \item Exprimer l'équation matricielle à résoudre.\\
+    On aura ici le système
+    \begin{equation*}
+        \boxed{
+        M .\ddot X + C .\dot X+K.\dot X = 0
+        }
+    \end{equation*}
+    où $0$ est ici la matrice nulle.
+\end{enumerate}
+
+
+\newpage
+
+
+\begin{center}
+    {\color{BlueViolet} \Large \textbf{\color{BlueViolet}Sujet \no 3 - Correction}}
+\end{center}
+
+\paragraph{\color{BlueViolet} Exercice 1 : Transport du méthane}
+
+\begin{enumerate}
+    \item Exprimer la quantité de matière totale de gaz $n_{\text{gaz},f}$ dans le mélange en fonction de $n$ et $\xi_f$.\\
+    D'après le bilan de matière dans l'état final :
+    \[
+    n_{\text{gaz},f} = n_{CH_4,f} + n_{\ce{H2},f} = (n - \xi_f) + 2 \xi_f = n + \xi_f.
+    \]
+    \begin{equation*}
+        \boxed{n_{\text{gaz},f} = n + \xi_f}
+    \end{equation*}
+
+    \item Montrer que les pressions partielles en méthane et en dihydrogène sont données par : 
+    \[
+    p_{CH_4} = \dfrac{1 - \alpha}{1 + \alpha} P \quad \text{et} \quad p_{\ce{H2}} = \dfrac{2\alpha}{1 + \alpha} P
+    \]
+    avec $\alpha = \dfrac{\xi_f}{n}$.\\
+    Les pressions partielles sont données par :
+    \[
+    p_{CH_4} = \dfrac{n_{CH_4,f}}{n_{\text{gaz},f}} P = \dfrac{n - \xi_f}{n + \xi_f} P = \dfrac{1 - \alpha}{1 + \alpha} P,
+    \]
+    \[
+    p_{\ce{H2}} = \dfrac{n_{\ce{H2},f}}{n_{\text{gaz},f}} P = \dfrac{2 \xi_f}{n + \xi_f} P = \dfrac{2\alpha}{1 + \alpha} P.
+    \]
+    \begin{equation*}
+        \boxed{p_{CH_4} = \dfrac{1 - \alpha}{1 + \alpha} P \quad \text{et} \quad p_{\ce{H2}} = \dfrac{2\alpha}{1 + \alpha} P}
+    \end{equation*}
+
+    \item Déterminer la valeur de $\alpha$. Commenter le résultat.\\
+    La constante d'équilibre est donnée par :
+    \[
+    K^\circ = \dfrac{(p_{\ce{H2}})^2}{p_{CH_4} p^\circ},
+    \]
+    ce qui donne en remplaçant $p_{CH_4}$ et $p_{\ce{H2}}$ :
+    \[
+    K^\circ = \dfrac{\left(\dfrac{2\alpha}{1+\alpha} P\right)^2}{\dfrac{1-\alpha}{1+\alpha} P \cdot p^\circ} = \dfrac{4\alpha^2 P}{p^\circ(1-\alpha)}.
+    \]
+    Pour $K^\circ \ll 1$, on suppose $\alpha \ll 1$ et on approxime $(1-\alpha) \approx 1$. On obtient alors :
+    \[
+    \alpha = \sqrt{\dfrac{K^\circ p^\circ}{4P}}.
+    \]
+    En remplaçant les valeurs numériques :
+    \[
+    \alpha = \sqrt{\dfrac{4 \cdot 10^{-9} \cdot 1 \, \text{bar}}{4 \cdot 70 \, \text{bar}}} = 2 \cdot 10^{-6}.
+    \]
+    \begin{equation*}
+        \boxed{\alpha = 2 \cdot 10^{-6}}
+    \end{equation*}
+    Ce résultat indique que la dissociation du méthane est très faible, ce qui est souhaitable pour limiter les pertes de méthane dans le gazoduc.
+
+    \item Déterminer la masse de carbone solide qui se dépose chaque fois qu’une tonne de méthane transite dans le gazoduc.\\
+    D'après le bilan de matière, $n_{\ce{C}} = \xi_f = \alpha n$. La quantité de matière initiale de méthane est donnée par :
+    \[
+    n = \dfrac{m_{CH_4}}{M_{CH_4}} = \dfrac{10^6 \, \text{g}}{16 \, \text{g} \cdot \text{mol}^{-1}} = 6.25 \cdot 10^4 \, \text{mol}.
+    \]
+    La masse de carbone solide déposée est alors :
+    \[
+    m_{\ce{C}} = n_{\ce{C}} M_{\ce{C}} = \alpha n \cdot M_{\ce{C}} = 2 \cdot 10^{-6} \cdot 6.25 \cdot 10^4 \cdot 12 = 1.5 \, \text{g}.
+    \]
+    \begin{equation*}
+        \boxed{m_{\ce{C}} = 1.5 \, \text{g}}
+    \end{equation*}
+\end{enumerate}
+
+
+
+\paragraph{\color{BlueViolet} Exercice 2 : Un glaçon dans un pastis}
+\begin{enumerate}
+    \item Faire un schéma légendé de la situation\\
+        
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\linewidth]{S9/glaçon2.png}
+    \end{figure}
+
+    \item Calculer, pour une position $z$, le volume immergé et le volume émergé du glaçon.\\
+    Le volume immergé vaut
+    \begin{equation*}
+        \boxed{
+        V_{\text{immergé}} = \left(\dfrac{l}{2}-z(t)\right)Ll
+        }
+    \end{equation*}
+    Et le volume émergé vaut
+    \begin{equation*}
+        \boxed{
+        V_{\text{émergé}} = \left(\dfrac{l}{2}+z(t)\right)Ll
+        }
+    \end{equation*}
+    
+    \item L'équilibre est atteint lorsque le poids équilibre la poussée d'Archimède. Donner l'expression littérale puis la valeur numérique de la position d'équilibre $z_{eq}$.\\
+    Le poids s'exprime, quelle que soit la position, 
+    \begin{equation*}
+        \overrightarrow{P} = -\rho_{\text{glace}}V.\overrightarrow{e_z} =  -\rho_{\text{glace}}l^2Lg.\overrightarrow{e_z}
+    \end{equation*}
+    La poussée d'Archimède dépend de la position du glaçon, elle s'exprime :
+    
+    \begin{equation*}
+        \overrightarrow{\Pi} = \rho_{\text{anis}}V_{\text{immergé}}g.\overrightarrow{e_z} = \rho_{\text{anis}} \left(\dfrac{l}{2}-z(t)\right)Llg.\overrightarrow{e_z}
+    \end{equation*}
+    Lors de l'équilibre,
+    \begin{equation*}
+        \overrightarrow{P} + \overrightarrow{\Pi} = \overrightarrow{0}
+    \end{equation*}
+    donc
+    \begin{equation*}
+    \begin{split}
+        &\rho_{\text{glace}}l^2Lg = \rho_{\text{anis}} \left(\dfrac{l}{2}-z_{eq}\right)Llg\\
+        \implies& \boxed{z_{eq} = \left(\dfrac{1}{2}-\dfrac{\rho_{\text{glace}}}{\rho_{\text{anis}}}\right)l}
+    \end{split}
+    \end{equation*}
+    \item En négligeant les frottements de l'air et la poussée d'Archimède dans l'air, établir l'équation différentielle vérifiée par la position du glaçon.\\
+
+    Le PFD donne 
+    \begin{equation*}
+        \rho_{\text{glace}}l^2L\dfrac{d^2z}{dt^2} = - \rho_{\text{glace}}l^2Lg+\rho_{\text{anis}}Llg\left(\dfrac{l}{2}-z\right)-\eta Ll\dfrac{dz}{dt}
+    \end{equation*}
+    Ce qui, après manipulation, donne
+    \begin{equation*}
+    \boxed{
+       \dfrac{d^2z}{dt^2} +\dfrac{\eta}{ \rho_{\text{glace}}l}\dfrac{dz}{dt}+\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\dfrac{g}{l}z= g\left(\dfrac{1}{2}\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}-1\right)
+       }
+    \end{equation*}
+    
+    
+    \item Vérifier que l'on retrouve bien l'expression de la position d'équilibre.\\
+
+    A l'équilibre
+    \begin{equation*}
+       \dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\dfrac{g}{l}z_{eq}= g\left(\dfrac{1}{2}\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}-1\right)
+    \end{equation*}
+    soit 
+    \begin{equation*}
+        \boxed{
+        z_{eq} = \left(\dfrac{1}{2}-\dfrac{\rho_{\text{glace}}}{\rho_{\text{anis}}}\right)l
+        }
+    \end{equation*}
+    \item Réécrire l'équation différentielle en exprimant le second membre en fonction de $z_{eq}$.\\
+
+    
+    \begin{equation*}
+    \boxed{
+       \dfrac{d^2z}{dt^2} +\dfrac{\eta}{ \rho_{\text{glace}}l}\dfrac{dz}{dt}+\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\dfrac{g}{l}z= \dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\dfrac{g}{l}z_{eq}
+       }
+    \end{equation*}
+    
+    \item En posant $Z = z-z_{eq}$ Mettre cette équation sous la forme canonique.\\
+
+    On peut remarquer que $\dfrac{dZ}{dt} = \dfrac{dz}{dt}-\dfrac{dz_{eq}}{dt} = \dfrac{dz}{dt}$ (de même pour $\dfrac{d^2Z}{dt^2}$). Donc l'équation différentielle devient :
+    
+    \begin{equation*}
+    \begin{split}
+       & \dfrac{d^2Z}{dt^2} +\dfrac{\eta}{ \rho_{\text{glace}}l}\dfrac{dZ}{dt}+\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\dfrac{g}{l}\left(z-z_{eq}\right) = 0\\
+        \implies&\boxed{ \dfrac{d^2Z}{dt^2} +\dfrac{\eta}{ \rho_{\text{glace}}l}\dfrac{dZ}{dt}+\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\dfrac{g}{l}Z = 0 }
+    \end{split}
+    \end{equation*}
+    Par identification,
+    \begin{equation*}
+        \boxed{Q = \dfrac{1}{\eta}\sqrt{ \rho_{\text{glace}} \rho_{\text{anis}}lg}} \quad \text{et} \quad \boxed{\omega_0 = \sqrt{\dfrac{ \rho_{\text{anis}}g}{ \rho_{\text{glace}}l}}}
+    \end{equation*}
+    \item Le régime est-il apériodique, critique ou pseudo-périodique ? On utilisera les valeurs numériques données dans l'énoncé.
+    Avec les valeurs numériques, on obtient $Q = $. On est donc en régime pseudo périodique.
+     \item Quelle est l'équation du mouvement du glaçon ?
+     L'équation du glaçon est de la forme 
+     \begin{equation*}
+     \boxed{
+         Z(t) = e^{\frac{-t}{\tau}}\left(A\cos\left(w_P.t\right)+B\sin\left(w_P.t\right)\right) \quad A,B \in \R
+         }
+     \end{equation*}
+     avec 
+     \begin{equation*}
+         w_P = \sqrt{1-\dfrac{1}{4Q^2}}
+     \end{equation*}
+
+
+\end{document}
+
+
+
+
+

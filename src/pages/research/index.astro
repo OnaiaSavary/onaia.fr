@@ -4,22 +4,22 @@ import { getCollection } from 'astro:content';
 
 const pubs = await getCollection('publications');
 ---
-<PageLayout title="Recherche" description="Vue d'ensemble de la recherche">
+<PageLayout title="Research" description="Research on European drought predictability, weather regimes and climate change.">
   <div class="site-wrap">
     <section class="read-width">
-      <h1>RECHERCHE</h1>
-      <h2>Comprendre les sécheresses dans un climat en évolution</h2>
-      <p>Ma recherche porte sur la prévisibilité et l'évolution des sécheresses en Europe, avec un accent sur la circulation atmosphérique et les weather regimes.</p>
+      <h1>Research</h1>
+      <h2>Understanding droughts in a changing climate</h2>
+      <p>My research focuses on the predictability and evolution of droughts in Europe, with an emphasis on atmospheric circulation and weather regimes.</p>
       <p>PhD project (title in the CV): "Drought predictability in a changing climate". The PhD investigates the link between large‑scale atmospheric circulation and precipitation deficits (droughts) in Europe, and studies the influence of climate change on this relationship.</p>
 
-      <h3>Thèmes de recherche</h3>
+      <h3>Research themes</h3>
       <ol class="themes">
-        <li>01 — Prévisibilité des sécheresses</li>
+        <li>01 — Drought predictability</li>
         <li>02 — Weather regimes</li>
-        <li>03 — Changement climatique</li>
+        <li>03 — Climate change</li>
       </ol>
 
-      <h3>Papiers sélectionnés</h3>
+      <h3>Selected publications</h3>
       <div class="list">
         {pubs.sort((a,b)=>b.data.year - a.data.year).slice(0,6).map(p=> (
           <div class="pub-item">

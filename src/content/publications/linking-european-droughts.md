@@ -5,15 +5,13 @@ authors:
   - "Constantin Ardilouze"
   - "Julien Cattiaux"
 year: 2026
-journal: "TBD (placeholder)"
-doi: "TBD"
-url: ""
-pdf: ""
-abstract: "Abstract placeholder. Replace with the real abstract when available."
+journal: "Weather and Climate Dynamics, 7, 223–245"
+doi: "10.5194/wcd-7-223-2026"
+url: "https://doi.org/10.5194/wcd-7-223-2026"
+pdf: "https://wcd.copernicus.org/articles/7/223/2026/wcd-7-223-2026.pdf"
+published: "28 January 2026"
 topics:
   - "Droughts"
   - "Weather regimes"
 featured: true
 ---
-
-This entry is a placeholder record for the known title and authors. Journal, DOI and links are intentionally left as placeholders until you provide the exact metadata.

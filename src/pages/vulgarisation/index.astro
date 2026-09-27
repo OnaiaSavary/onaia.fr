@@ -1,22 +1,42 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-import { getCollection } from 'astro:content';
-
-const posts = await getCollection('vulgarisation');
 ---
-<PageLayout title="Vulgarisation">
+<PageLayout title="Outreach" description="Science communication through podcasts, public talks and educational resources.">
   <div class="site-wrap">
     <section class="read-width">
-      <h1>Vulgarisation</h1>
-      <p>Articles de communication scientifique.</p>
-      <div class="posts">
-        {posts.sort((a,b)=> (b.data.date ?? '').localeCompare(a.data.date ?? '')).map(p => (
-          <article class="post">
-            <h3><a href={`/vulgarisation/${p.slug}/`}>{p.data.title}</a></h3>
-            <p class="summary">{p.data.summary}</p>
-          </article>
-        ))}
+      <h1>Outreach</h1>
+      <div class="editorial-list">
+        <article class="editorial-item">
+          <h2>Playlist de chercheur: Chaud devant</h2>
+          <p>8 December 2025</p>
+          <p><a href="https://exploreur.univ-toulouse.fr/climat-chaud-devant" target="_blank" rel="noreferrer">Listen to the podcast</a></p>
+        </article>
+        <article class="editorial-item">
+          <h2>MT180 — Regional Final</h2>
+          <div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/wmosXiuSDso?start=3" title="MT180 Regional Final presentation" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        </article>
+        <article class="editorial-item">
+          <h2>Pint of Science 2025</h2>
+          <p>Du Porto à Saint-Malo was held on 21 May 2025 at The Roof, Halles de la Cartoucherie in Toulouse. The event invited two climatology PhD students to discuss climate change, its consequences, attribution of extreme events and possible adaptation.</p>
+          <p><a href="https://pintofscience.fr/event/du-porto-a-saint-malo/" target="_blank" rel="noreferrer">Official event page</a> · <a href="/documents/POS_pdf.pdf" download>Download presentation (PDF)</a></p>
+          <object class="pdf-preview" data="/documents/POS_pdf.pdf#view=FitH" type="application/pdf" aria-label="Pint of Science 2025 presentation preview">
+            <p>PDF preview unavailable. <a href="/documents/POS_pdf.pdf">Open the presentation PDF</a>.</p>
+          </object>
+        </article>
+        <article class="editorial-item">
+          <h2>Cycling for Climate 2025</h2>
+          <p><a href="https://cyclopourleclimat.fr/inscription-cyclo-pour-le-climat-toulouse/" target="_blank" rel="noreferrer">Event information</a> · <a href="/documents/SAVARY_8mn_C4C.pdf" download>Download presentation (PDF)</a></p>
+        </article>
+        <article class="editorial-item">
+          <h2>Cycling for Climate 2026</h2>
+        </article>
       </div>
+      <h2 class="article-list-title">Articles</h2>
+      <p>Original teaching documents, converted from LaTeX without editorial rewriting. The source documents are in French.</p>
+      <ul>
+        <li><a href="/vulgarisation/s9/">S9 — Original document</a></li>
+        <li><a href="/vulgarisation/s9-correction/">S9 — Correction</a></li>
+      </ul>
     </section>
   </div>
 </PageLayout>

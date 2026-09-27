@@ -8,6 +8,7 @@ const publicationSchema = z.object({
   year: z.number().int(),
   journal: z.string().optional(),
   doi: z.string().optional(),
+  published: z.string().optional(),
   url: z.string().optional(),
   pdf: z.string().optional(),
   abstract: z.string().optional(),

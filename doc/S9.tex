@@ -1,0 +1,375 @@
+\documentclass[a4paper,10pt,notitlepage,oneside]{article}
+\usepackage[utf8]{inputenc} % pour les accents
+\usepackage[greek,english,french]{babel}
+
+
+
+%%%%%%%%%%%%%%%%%%------ packages --------%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{ntheorem}
+\usepackage{gensymb}
+\usepackage{babel}
+\usepackage{dsfont}
+\usepackage{multicol}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{fancyhdr}             
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{array}
+\usepackage{graphicx}
+%%%%%%%%%%%%%%-----NEW COMMAND-------%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\dis}{\displaystyle}
+\newcommand{\ve}{ \overrightarrow}
+\mathchardef\times="2202
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+
+\newcommand{\HRule}{\color{BlueViolet}\rule{\linewidth}{0.5mm}}
+
+\usepackage[cyr]{fourier}
+\pagestyle{plain}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%FONCTION
+\newenvironment{norm}{%
+\left\Vert
+}{%
+\right\Vert
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AtBeginDocument{
+   \renewcommand\tablename{\textsc{Tableau}}
+   \renewcommand\figurename{\textsc{Figure}}
+}
+\usepackage{graphicx}
+\usepackage{tabularx} 
+\usepackage{multirow}
+\usepackage{color}
+\definecolor{ENSblue}{RGB}{0,119,139}
+\usepackage[backref=true,colorlinks=true,linkcolor=ENSblue,urlcolor=ENSblue]{hyperref}
+
+\usepackage{lipsum}
+\usepackage{amsmath}
+\usepackage{fancybox}  
+\usepackage{listings}
+\usepackage[squaren,Gray]{SIunits}
+\usepackage{verbatim}
+\setcounter{tocdepth}{2}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{microtype}
+\usepackage{tcolorbox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-----------------Header and footer-------------------------
+
+%---EN-TETE-ET-PIED-DE-PAGE----------------------------------------------------
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\setlength{\columnseprule}{0.4pt}% the line between colomn paper
+
+\fancyhead{} % clear all header fields
+\fancyhead[LO,CE]{\color{BlueViolet} \textbf{\color{BlueViolet}Colles}}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{\color{BlueViolet} \textbf{\color{BlueViolet}Semaine 8}}
+\fancyfoot[LO,CE]{\color{BlueViolet} \textbf{\color{BlueViolet}Physique - Chimie}}
+
+\pagestyle{fancy}
+
+%\lhead{fhgfgd}
+\cfoot{\thepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+% Appliquer la couleur à la ligne de tête et de pied de page
+\renewcommand{\headrule}{\color{BlueViolet}\rule{\linewidth}{0.4pt}}  % Ligne de tête en violet
+\renewcommand{\footrule}{\color{BlueViolet}\rule{\linewidth}{0.4pt}}  % Ligne de pied de page en violet
+
+\setlength{\columnseprule}{0.4pt}% the line between colomn paper
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------- exercices style -----------
+\theoremstyle{plain}
+\theorembodyfont{\normalfont}
+\theoremseparator{~--}
+\newtheorem{partie}{\color{BlueViolet} Partie}
+
+\renewcommand{\familydefault}{lmss}
+
+
+\begin{document}
+
+
+
+\begin{center}
+    {\color{BlueViolet} \Large \textbf{\color{BlueViolet}Sujet \no 1}}
+\end{center}
+\setcounter{partie}{0}
+\begin{partie} \textbf{\color{BlueViolet} Question(s) de cours} 
+
+\begin{enumerate}
+    \item Méthode de dégénérescence de l’ordre ou d’isolement d’Ostwald
+\end{enumerate}
+\end{partie}
+
+\paragraph{\color{BlueViolet} Exercice 1 : Pouvoir de réchauffement global du méthane}
+
+Outre le $CO_2$, plusieurs gaz à effet de serre (GES) contribuent notablement au changement climatique. Comparer ces GES entre eux n’est pas immédiat : outre leur capacité à retenir le rayonnement, il faut également tenir compte de leur durée de vie dans l’atmosphère. En effet, un GES très puissant mais qui se dégrade très rapidement peut avoir moins d’influence sur le réchauffement à long terme qu’un GES moins puissant mais à longue durée de vie.
+
+Le pouvoir de réchauffement global (PRG), étudié dans cet exercice, est un indicateur simple permettant cette comparaison. Le PRG d’un GES $ X $ à un horizon temporel $ \tau $ est défini par :
+\[
+PRG(X, \tau) = \frac{A_X \displaystyle{\int_{0}^{\tau}} m_X(t) \, dt}{A_{{CO_2}}\displaystyle{\int_{0}^{\tau}} m_{{CO_2}}(t) \, dt} = \dfrac{A_X\langle m_X\rangle_\tau}{A_{CO_2} \langle m_{CO_2} \rangle_\tau}
+\]
+où $ A_X $ et $A_{CO_2}$  sont les efficacités radiatives du GES et du $CO_2$, et $m_X(t)$ et $m_{{CO_2}}(t)$ la masse restante au bout d’une durée $ t $ suite à l’émission d’une même masse $ m_0 $ à l’instant $ t = 0 $.
+
+Cet exercice vise à estimer le PRG du méthane $CH_4$, bien plus puissant que le $CO_2$ ($ A_{CH_4} / A_{CO_2} = 113 $), mais présent en moins grande quantité dans l’atmosphère et qui s’y dégrade plus vite. Il s'agit du second GES par ordre d'importance : environ $30\%$ du réchauffement actuel lui est imputable. A ce titre, plus de cent pays ont pris l'engagement lors de la COP26 organisée à Glasgow en 2021 de réduire de $30\%$ lerus émissions de méthane d'ici 2030.
+Le méthane se décompose dans l’atmosphère selon un processus complexe, dont la première étape consiste en
+une oxydation par un radical hydroxyle $HO^.$ d’équation bilan
+\begin{equation*}
+    CH_4+HO^.\rightarrow H_2O+CH_3 \rightarrow
+\end{equation*}
+La réaction suit une cinétique du premier ordre par rapport à chaque réactif, avec une constante cinétique $k_0$. En première approche, le renouvellement des radicaux hydroxyle dans l’atmosphère peut être supposé suffisamment rapide pour que leur concentration demeure constante, d’environ $ 10^{12} $ radicaux par $\text{m}^3$.
+
+\paragraph{\color{BlueViolet} Questions :}
+On prendra $M_{CH_4} = 16$~g.mol$^{-1}$ et $M_{C} = 12$~g.mol$^{-1}$.
+\begin{enumerate}
+    \item Écrire la loi de vitesse. Identifier une constante cinétique apparente.
+    \item Une source de méthane émet à l’instant $ t = 0 $ une masse $ m_0 $. Déterminer la masse restante $ m_{CH_4}(t) $ au bout d’une durée $ t $.
+    \item Dans les conditions atmosphériques usuelles, il faut 8,2 ans pour que la moitié du méthane émis disparaisse. En déduire la constante cinétique $ k_0 $ de la réaction (en $\text{m}^3 \cdot \text{mol}^{-1} \cdot \text{an}^{-1}$).
+    \item Calculer analytiquement l’intégrale $I_{CH_4}(\tau)$ liée au méthane dans la définition du PRG.\\
+    
+\noindent Le cas du CO2 est plus compliqué à traiter à la main, car plusieurs processus physico-chimiques entrent en compétition.\\
+
+\item On obtient la figure suivante après résolution numérique. Justifier qualitativement l’allure décroissante de la courbe. On lit parfois qu’une tonne de méthane équivaut à $25$ tonnes de $CO_2$ : qu’en pensez-vous ?
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{S8/PRG.png}
+\end{figure}
+
+\\
+
+\paragraph{\color{BlueViolet} Exercice 2 : Décomposition de l'éthanal}
+
+
+
+On place $n_0$ moles d'éthanal $CH_3CHO$ seul dans une enceinte fermée, indéformable, de volume $V$ à la température $T$. À l'instant initial, la pression dans l'enceinte est $p_0$. Il se décompose en $CH_4$ et $CO$. Tous les composés sont gazeux.
+
+\paragraph{\color{BlueViolet} Questions :}
+
+\begin{enumerate}
+    \item Nommer les espèces et écrire l'équation de réaction.
+    \item Construire le tableau d'avancement à l'instant $t$ en fonction de l'avancement $\xi(t)$.
+    \item Montrer que l'on peut suivre l'avancement par la mesure d'une seule grandeur physique.
+    \item On constate expérimentalement que la fonction 
+    \[
+    F(t) = \frac{- (p(t) - p_0)}{p(t) - 2p_0}
+    \]
+    est proportionnelle à $t$. Montrer qu'une réaction d'ordre 2 est compatible avec ces résultats.
+    \item Calculer le temps de demi-réaction.
+\end{enumerate}
+
+\newpage
+
+
+
+
+
+\begin{center}
+    {\color{BlueViolet} \Large \textbf{\color{BlueViolet}Sujet \no 2}}
+\end{center}
+\setcounter{partie}{0}
+\begin{partie} \textbf{\color{BlueViolet} Question(s) de cours}
+\begin{enumerate}
+    \item Établissez avec toute la rigueur nécessaire l’équation différentielle qui caractérise un oscillateur harmonique mécanique horizontal à une dimension : masse $m$, ressort de raideur $k$ et de longueur à vide $l_0$. Donnez les expressions de la période et de la fréquence du mouvement. Déterminez l’équation horaire du mouvement si l’oscillateur est étiré d‘une longueur a par rapport à sa position d’équilibre puis lâché à $t = 0$ sans vitesse initiale
+\end{enumerate}
+\end{partie}
+
+
+
+\begin{partie} \textbf{\color{BlueViolet} Exercices}
+
+
+\paragraph{\color{BlueViolet} Exercice 1 : Estimation de l'âge de la Terre par la désintégration de l'uranium}
+
+L’uranium 238 ($^{238}U$) est un isotope radioactif présent naturellement dans les minéraux de la croûte terrestre. Cet isotope se désintègre progressivement en plomb 206 ($^{206}Pb$) par une série de désintégrations successives. On suppose que tout le plomb présent dans l’échantillon analysé provient exclusivement de cette désintégration.
+
+La désintégration radioactive suit une loi du premier ordre, donnée par :
+\[
+\frac{dN}{dt} = -\lambda N,
+\]
+où $N(t)$ est le nombre d’atomes de $^{238}U$ restant au temps $t$ et $\lambda$ la constante radioactive. La période de demi-vie de $^{238}U$ est de $t_{1/2} = 4.5 \cdot 10^9 \, \text{ans}$.
+
+Un échantillon minéral contient actuellement $N_{U}$ atomes de $^{238}U$ et $N_{Pb}$ atomes de $^{206}Pb$.
+
+\paragraph{\color{BlueViolet} Questions :}
+\begin{enumerate}
+    \item Écrire la loi d'évolution du nombre d’atomes de $^{238}U$ en fonction du temps.
+    \item Exprimer le nombre d’atomes désintégrés de $^{238}U$ au cours du temps.
+    \item En supposant que tous les atomes de $^{206}Pb$ proviennent de la désintégration de $^{238}U$, établir une relation entre $N_{U}$, $N_{Pb}$ et $t$, l’âge de l’échantillon.
+    \item Calculer l’âge de l’échantillon en utilisant les données suivantes :
+    \begin{itemize}
+        \item $N_{U} = 2 \cdot 10^{12}$ atomes ;
+        \item $N_{Pb} = 6 \cdot 10^{12}$ atomes ;
+        \item $t_{1/2} = 4.5 \cdot 10^9 \, \text{ans}$.
+    \end{itemize}
+\end{enumerate}
+
+
+
+\\
+
+
+
+\paragraph{\color{BlueViolet} Exercice 2 : Modélisation d'un bâtiment sous séisme}
+
+Le génie parasismique est la branche du génie civil qui vise à modéliser le risque sismique et mettre en place des mesures permettant d'éviter (ou limiter) les dégats causés aux personnes et aux bâtiments par les séismes. Une approche utilisée par cette discipline pour modéliser un bâtiment soumis à un séisme est le "modèle brochette". Chaque étage d'un bâtiment étant considéré lié aux autres par un ressort et un amortisseur, on peut modéliser son déplacement latéral en utilisant une modélisation masse-ressort amortisseur : 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{S9/seisme1.png}
+\end{figure}
+On souhaite ici étudier le mouvement d'un étage sous charge sismique. On prendra dans un premier temps un seul étage, dont le déplacement latéral est noté $x_1(t)$ le long de l'axe horizontal $\overrightarrow{e_x}$, de masse $m_1$, et lié au sol par une structure qui se compose comme un ressort de rigidité $k_1$ et de longueur à vide nulle, en parrallèle avec un amortisseur de coefficient d'amortissement $\eta_1$. On rappelle que la force exercée par un amortisseur est proportionelle à la vitesse de déplacement et vaut $\overrightarrow{F_{\text{amort,1}}} = -\eta_1\dfrac{dx_1}{dt} \overrightarrow{e_x}$.
+
+
+\paragraph{\color{BlueViolet} Questions :}
+
+\begin{enumerate}
+    \item En appliquant le PFD le long de l'axe de déplacement, montrer que l'équation différentielle du système peut se mettre sous la forme
+    \begin{equation*}
+        \dfrac{d^2x_1}{dt^2}+2\xi\omega_0\dfrac{dx_1}{dt}+\omega_0^2x_1(t) = 0
+    \end{equation*}
+    et identifier $\omega_0$ la pulsation propre et $\xi$ le taux d'amortissement.
+    \item Quelle est l'expression littérale du coefficient d'amortissement $\eta_{\text{cr}}$ au-delà duquel il n'y aura pas d'oscillation ? (régime apériodique, ou régime sur-critique).
+    \item En règle générale, les bâtiments réagissent en régime pseudo-périodique. Quelle est la forme de la solution dans ce cas-là? On prendra $x_1(t=0)=0$ et $\dfrac{dx_1}{dt}(t=0) = 0$. On notera également $\omega_D = \omega_0\sqrt{1-\xi^2}$ la pulsation propre du système amorti.
+    \item On s'intéresse maintenant à la modélisation de deux étages. Le deuxième étage voit sa position sur l'axe transversal $x_2(t)$, et il est lié à l'étage précédent par une structure qui se comporte comme un ressort de rigidité $k_2$, de longueur à vide nulle, et d'amortissement $\eta_2$ (voir schéma).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{S9/seisme2.png}
+    \end{figure}
+    Quelle est l'équation différentielle qui régit la position du premier étage?
+    \item Quelle est l'équation différentielle qui régit la position du deuxième étage?
+    \item En posant les matrices
+    \begin{equation*}
+        M = 
+        \begin{bmatrix}
+        m_1 & 0\\
+        0 & m_2
+        \end{bmatrix}
+        \quad 
+        C = 
+        \begin{bmatrix}
+        \eta_1 & 0\\
+        0 & \eta_2
+        \end{bmatrix}
+        \quad 
+        K = 
+        \begin{bmatrix}
+        k_1+k_2 & -k_2\\
+        -k_2 & k_2
+        \end{bmatrix}
+        \quad 
+        X = 
+        \begin{bmatrix}
+        x_1 \\
+        x_2 
+        \end{bmatrix}
+        \quad 
+    \end{equation*}
+    exprimer l'équation matricielle à résoudre.
+\end{enumerate}
+
+\\
+
+\end{partie}
+
+
+
+\newpage
+
+
+
+\begin{center}
+    {\color{BlueViolet} \Large \textbf{\color{BlueViolet}Sujet \no 3}}
+\end{center}
+\setcounter{partie}{0}
+\begin{partie} \textbf{\color{BlueViolet} Question(s) de cours}
+\begin{enumerate}
+    \item Définissez la pression partielle d’un gaz et donnez ses différentes expressions possibles. Énoncez la loi de Dalton.
+\end{enumerate}
+\end{partie}
+
+
+\begin{partie} \textbf{\color{BlueViolet} Exercices}
+\paragraph{\color{BlueViolet} Exercice 1 : Transport du méthane}
+Le méthane $CH_4(g)$ est acheminé sur plusieurs milliers de kilomètres via des gazoducs sous pression constante $P = 70$ bar et à température ambiante. Lors de cet acheminement, une partie du méthane se dissocie en carbone et dihydrogène selon la réaction :
+
+\begin{equation*}
+CH_4(g) \rightarrow C(s) + 2 H_2(g)
+\end{equation*}
+
+La constante d’équilibre de la réaction vaut $K^\circ = 4 \cdot 10^{-9}$ à température ambiante.
+
+On considère une quantité de matière $n$ de méthane pur introduite dans un gazoduc le long duquel la pression est constamment maintenue égale à $P$. On suppose le gazoduc suffisamment long pour qu’à sa sortie le système ait cessé d’évoluer chimiquement et ait pu atteindre un état d’équilibre. On note $\xi_f$ l’avancement de la transformation dans l’état final.
+
+\paragraph{\color{BlueViolet} Questions :}
+\begin{enumerate}
+    \item Exprimer la quantité de matière totale de gaz $n_{\text{gaz},f}$ dans le mélange en fonction de $n$ et $\xi_f$.
+    \item On note $\alpha = \frac{\xi_f}{n}$ le taux de dissociation du méthane. Montrer que les pressions partielles en méthane et en dihydrogène sont données par :
+    \[
+    p_{\ce{CH_4}} = \frac{1 - \alpha}{1 + \alpha} P \quad \text{et} \quad p_{\ce{H_2}} = \frac{2\alpha}{1 + \alpha} P
+    \]
+    \item Déterminer la valeur de $\alpha$. Commenter le résultat.
+    \item Déterminer la masse de carbone solide qui se dépose chaque fois qu’une tonne de méthane transite dans le gazoduc.
+\end{enumerate}
+
+\paragraph{\color{BlueViolet} Exercice 2 : Un glaçon dans un pastis}
+On s'intéresse au cas d'un glaçon mis dans un verre de boisson anisée quelconque, en été. On souhaite connaître l'équation du mouvement de ce glaçon dans l'eau. On note $z$ la position du centre de gravité (noté $G$) du glaçon par rapport au niveau d'eau. Le glaçon sera considéré comme parallélépipédique, de grande dimension $L$ et de petite dimension $l$ (voir schéma).  Le glaçon est lâché depuis une hauteur $h$ au dessus du niveau de l'eau. On prendra $\rho_{\text{anis}}\approx\rho_{\text{eau}} = 1000$~kg.m$^{-3}$ et  $\rho_{\text{glace}} = 917$~kg.m$^{-3}$, ainsi que $l = 1$~cm.\\
+
+\begin{minipage}{0.7\textwidth}
+Les forces qui s'appliquent sur le glaçon sont :
+\begin{enumerate}
+    \item Le poids, dirigé vers le bas : $\overrightarrow{P} = -\rho_{glace}Ll^2g\overrightarrow{e_z}$ où $\rho_{glace}$ est la masse volumique de l'eau.
+    \item La poussée d'Archimède, dirigée vers le haut : $\overrightarrow{\Pi} = \rho_{eau}Vg \overrightarrow{e_z}$ où $\rho_{eau}$ est la masse volumique de l'eau et $V$ est le volume de boisson déplacé (il varie donc au cours du temps).
+    \item La force de frottement, considérée proportionnelle et opposée à la vitesse, et proportionnelle à la surface par rapport à laquelle le mouvement est perpendiculaire : $\overrightarrow{F_{fr}} = -\eta .L.l.\dfrac{dz}{dt}$ où $\eta$ est la viscosité dynamique de la fameuse boisson anisée $\eta = 10^{-3}$~Pa.s (ou N.s.m$^{-2}$).
+\end{enumerate}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\includegraphics[width=\linewidth]{S9/glaçon.png}
+\end{minipage}
+
+\paragraph{\color{BlueViolet} Questions :}
+\begin{enumerate}
+    \item Faire un schéma légendé de la situation
+    \item Calculer, pour une position $z$, le volume immergé et le volume émergé du glaçon.
+    \item L'équilibre est atteint lorsque le poids équilibre la poussée d'Archimède. Donner l'expression littérale puis la valeur numérique de la position d'équilibre $z_{eq}$, en prenant $L = 1$~cm.
+    \item En négligeant les frottements de l'air et la poussée d'Archimède dans l'air, établir l'équation différentielle vérifiée par la position du glaçon.
+    \item Vérifier que l'on retrouve bien l'expression de la position d'équilibre.
+    \item Réécrire l'équation différentielle en exprimant le second membre en fonction de $z_{eq}$
+    \item En posant $Z = z-z_{eq}$ Mettre cette équation sous la forme canonique :
+    \begin{equation*}
+        \dfrac{d^2Z}{dt^2}+\dfrac{\omega_0}{Q}\dfrac{dZ}{dt}+\omega_0^2 Z = 0
+    \end{equation*}
+    et identifier $\omega_0$ et $Q$.
+    \item Le régime est-il apériodique, critique ou pseudo-périodique ? On utilisera les valeurs numériques données dans l'énoncé.
+     \item Quelle est l'équation du mouvement du glaçon ?
+\end{enumerate}
+
+
+
+
+\end{partie}
+
+\end{document}
