@@ -1,7 +1,7 @@
 :root {
   --hero-background-position: center 38%;
   --template-background: #2e3842;
-  --template-accent: #21b2a6;
+  --template-accent: #A3D2E5;
   --template-coral: #ed4933;
   --template-muted: rgba(255, 255, 255, 0.72);
 }
@@ -50,7 +50,7 @@ body.is-menu-visible #page-wrapper:before {
 }
 
 #menu {
-  background: #21b2a6;
+  background: #A3D2E5;
 }
 
 .content-page-hero {
@@ -134,7 +134,7 @@ body.is-menu-visible #page-wrapper:before {
 .site-main .content-page-body a {
   color: #2e3842 !important;
   -webkit-text-fill-color: #2e3842 !important;
-  border-bottom-color: rgba(33, 178, 166, 0.75);
+  border-bottom-color: rgba(163, 210, 229, 0.75);
 }
 
 .site-main .content-page-body a:hover,
@@ -184,7 +184,7 @@ body.is-menu-visible #page-wrapper:before {
 .outreach-contents {
   margin: 0 0 3rem;
   padding: 1.5rem 0;
-  border-top: 2px solid #21b2a6;
+  border-top: 2px solid #A3D2E5;
   border-bottom: 1px solid #dfdfdf;
 }
 
@@ -213,7 +213,7 @@ body.is-menu-visible #page-wrapper:before {
 
 .site-main .content-page-body .outreach-year > h2 {
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #21b2a6;
+  border-bottom: 2px solid #A3D2E5;
 }
 
 .site-main .content-page-body .outreach-entry h3 {
@@ -375,7 +375,7 @@ body.is-menu-visible #page-wrapper:before {
 }
 
 .site-main a:not(.button):not(.icon) {
-  border-bottom-color: rgba(33, 178, 166, 0.65);
+  border-bottom-color: rgba(163, 210, 229, 0.65);
 }
 
 .site-main a:not(.button):not(.icon):hover,
