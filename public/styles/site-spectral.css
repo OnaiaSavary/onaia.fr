@@ -36,9 +36,12 @@ body.is-menu-visible #page-wrapper:before {
 }
 
 #header h1 a,
-#header nav > ul > li > a,
-#menu ul li a {
+#header nav > ul > li > a {
   color: #fff;
+}
+
+#menu ul li a {
+  color: #2e3842;
 }
 
 .site-logo {
@@ -51,6 +54,26 @@ body.is-menu-visible #page-wrapper:before {
 
 #menu {
   background: #A3D2E5;
+}
+
+.wrapper.style1 {
+  background-color: #A3D2E5;
+}
+
+.wrapper.style1 p,
+.wrapper.style1 li,
+.wrapper.style1 h2,
+.wrapper.style1 h3,
+.wrapper.style1 h4,
+.wrapper.style1 h5,
+.wrapper.style1 h6,
+.wrapper.style1 strong,
+.wrapper.style1 b {
+  color: #2e3842 !important;
+}
+
+.wrapper.style1 .features li:before {
+  color: #2e3842 !important;
 }
 
 .content-page-hero {
