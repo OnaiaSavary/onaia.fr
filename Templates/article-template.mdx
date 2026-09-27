@@ -1,0 +1,147 @@
+---
+title: "Titre de l'article — remplace-moi"
+date: "2026-01-01"
+tags: ["physique", "vulgarisation"]
+summary: "Une phrase de résumé (optionnelle, utilisée uniquement si tu l'affiches quelque part)."
+---
+
+import Figure from '../../components/Figure.astro'
+
+<!--
+  CE FICHIER EST UN MODÈLE, PAS UN ARTICLE PUBLIÉ.
+  Duplique-le dans src/content/vulgarisation/ et renomme-le
+  (voir Templates/README.md pour la procédure complète).
+
+  Frontmatter (champs définis par vulgarisationSchema dans src/content/config.ts) :
+    - title   (obligatoire) : titre affiché en haut de l'article.
+    - date    (optionnel)   : chaîne "YYYY-MM-DD", affichée si tu la mets dans le layout.
+    - tags    (optionnel)   : liste de mots-clés.
+    - summary (optionnel)   : résumé court.
+    - cover   (optionnel)   : chemin d'une image de couverture, ex. "/images/mon-image.png".
+-->
+
+## Titre de section (H2)
+
+Ceci est un paragraphe normal. Le contenu est écrit en Markdown standard, exactement
+comme dans les articles déjà publiés (`glacon-ricard.mdx`, `modelisation-sismique-batiments.mdx`).
+
+Voici du texte **en gras**, du texte *en italique*, et un [lien vers une page externe](https://www.astro.build/).
+
+### Sous-titre (H3)
+
+Les sections numérotées des articles existants utilisent des `###` (H3) pour chaque question/étape,
+par exemple `### 1. Faire un schéma légendé de la situation`.
+
+Liste à puces :
+
+- Premier point
+- Deuxième point
+- Troisième point
+
+Liste numérotée :
+
+1. Première étape
+2. Deuxième étape
+3. Troisième étape
+
+## Images
+
+### Image simple depuis `public/images/`
+
+Toute image placée dans `public/images/` est servie à la racine `/images/`. Exemple avec un
+fichier qui serait à `public/images/mon-image.png` :
+
+```mdx
+<Figure src="/images/mon-image.png" alt="Description courte et utile de l'image" />
+```
+
+### Image avec légende
+
+Le composant `Figure` (déjà utilisé par les articles existants) affiche une légende si la
+prop `caption` est fournie :
+
+```mdx
+<Figure
+  src="/images/mon-image.png"
+  alt="Description courte et utile de l'image"
+  caption="Légende affichée sous l'image, source : mon-image.png"
+/>
+```
+
+### Image avec largeur contrôlée
+
+Le composant `Figure` ne propose pas de prop de largeur : les images sont automatiquement
+limitées en hauteur et centrées (voir `.figure img` dans `src/styles/global.css`). Pour une
+largeur précise, utilise une balise `<img>` HTML directe (autorisée dans un fichier `.mdx`)
+avec un `style` inline :
+
+```mdx
+<img src="/images/mon-image.png" alt="Description de l'image" style="max-width: 320px; display: block; margin-inline: auto;" />
+```
+
+## GIF
+
+Un GIF s'insère exactement comme une image, via le composant `Figure` ou une balise `<img>`.
+Place le fichier `.gif` dans `public/images/` (ou un sous-dossier dédié si tu préfères, par
+exemple `public/images/gifs/`), puis référence-le avec son chemin réel :
+
+```mdx
+<Figure src="/images/mon-animation.gif" alt="Description de l'animation" caption="Légende optionnelle" />
+```
+
+Remplace `/images/mon-animation.gif` par le chemin réel de ton fichier.
+
+## Tableaux
+
+Un tableau Markdown standard fonctionne tel quel :
+
+| Grandeur | Symbole | Valeur | Unité |
+| --- | --- | --- | --- |
+| Masse volumique de l'eau | $\rho_{eau}$ | 1000 | kg.m$^{-3}$ |
+| Masse volumique de la glace | $\rho_{glace}$ | 917 | kg.m$^{-3}$ |
+| Viscosité dynamique | $\eta$ | $10^{-3}$ | Pa.s |
+
+## Vidéos
+
+Le site n'a pas de composant dédié pour les vidéos dans les articles MDX : les pages existantes
+(par exemple `src/pages/vulgarisation/index.astro` et `src/pages/conferences/index.astro`)
+intègrent directement une vidéo YouTube avec le motif HTML suivant, réutilisable tel quel
+dans un `.mdx` :
+
+```mdx
+<div class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/VIDEO_ID"
+    title="Titre descriptif de la vidéo"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+</div>
+```
+
+Remplace `VIDEO_ID` par l'identifiant de la vidéo YouTube (la partie après `/embed/` dans une
+URL `youtube-nocookie.com/embed/...`, ou après `v=` dans une URL YouTube classique).
+
+## Équations LaTeX
+
+Le projet utilise **KaTeX** via `remark-math` + `rehype-katex` (configurés dans
+`astro.config.mjs`), pas MathJax. La feuille de style KaTeX est chargée globalement dans
+`src/layouts/BaseLayout.astro`. La syntaxe suivante est donc directement prise en charge :
+
+Équation inline : $E = mc^2$.
+
+Équation centrée :
+
+$$
+F = ma
+$$
+
+Équation plus complexe (fraction, indice, exposant), au même format que dans les articles existants :
+
+$$
+\dfrac{d^2Z}{dt^2} + \dfrac{\omega_0}{Q}\dfrac{dZ}{dt} + \omega_0^2 Z = 0
+$$
+
+avec $\omega_0$ la pulsation propre et $Q$ le facteur de qualité.

@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1180" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5b6b79" />
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="1180" fill="#f4f6f8" />
+
+  <text x="800" y="38" text-anchor="middle" font-size="26" font-weight="700" fill="#0d1b2a">onaia.fr — architecture du site (Astro)</text>
+  <text x="800" y="62" text-anchor="middle" font-size="13" fill="#5b6b79">Schéma personnel — n'est pas publié sur le site</text>
+
+  <!-- ============ ROOT SHELL ============ -->
+  <rect x="560" y="82" width="480" height="56" rx="10" fill="#2e3842" stroke="#0d1b2a" stroke-width="1.5" />
+  <text x="800" y="106" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">BaseLayout.astro</text>
+  <text x="800" y="126" text-anchor="middle" font-size="12" fill="#cfd8e0">Header.astro + Footer.astro · katex.min.css · global.css</text>
+
+  <!-- Layout chain (component band, left) -->
+  <rect x="30" y="82" width="230" height="140" rx="10" fill="#e6f4ea" stroke="#2f9e57" stroke-width="1.5" />
+  <text x="145" y="102" text-anchor="middle" font-size="13" font-weight="700" fill="#1f6b39">Layouts (composants)</text>
+  <text x="145" y="124" text-anchor="middle" font-size="11" fill="#1f6b39">PageLayout.astro</text>
+  <text x="145" y="142" text-anchor="middle" font-size="11" fill="#1f6b39">→ ContentPage.astro</text>
+  <text x="145" y="160" text-anchor="middle" font-size="11" fill="#1f6b39">→ ArticleLayout.astro</text>
+  <text x="145" y="182" text-anchor="middle" font-size="10.5" fill="#3a7a52">(utilisés par toutes les pages</text>
+  <text x="145" y="196" text-anchor="middle" font-size="10.5" fill="#3a7a52">et par les articles MDX)</text>
+  <line x1="260" y1="150" x2="558" y2="110" stroke="#2f9e57" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow)" />
+
+  <!-- Reusable components band (right) -->
+  <rect x="1340" y="82" width="230" height="140" rx="10" fill="#e6f4ea" stroke="#2f9e57" stroke-width="1.5" />
+  <text x="1455" y="102" text-anchor="middle" font-size="13" font-weight="700" fill="#1f6b39">Composants partagés</text>
+  <text x="1455" y="122" text-anchor="middle" font-size="11" fill="#1f6b39">Figure · Citation · Callout</text>
+  <text x="1455" y="140" text-anchor="middle" font-size="11" fill="#1f6b39">PublicationCard · PublicationLink</text>
+  <text x="1455" y="158" text-anchor="middle" font-size="11" fill="#1f6b39">ResearchLink · Navigation</text>
+  <text x="1455" y="180" text-anchor="middle" font-size="10.5" fill="#3a7a52">(insérés dans les pages et</text>
+  <text x="1455" y="194" text-anchor="middle" font-size="10.5" fill="#3a7a52">dans les articles .mdx)</text>
+  <line x1="1340" y1="150" x2="1042" y2="110" stroke="#2f9e57" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow)" />
+
+  <!-- ============ MAIN PAGES ROW ============ -->
+  <!-- connectors from root -->
+  <g stroke="#5b6b79" stroke-width="1.5">
+    <line x1="700" y1="138" x2="166" y2="262" marker-end="url(#arrow)" />
+    <line x1="740" y1="138" x2="420" y2="262" marker-end="url(#arrow)" />
+    <line x1="780" y1="138" x2="673" y2="262" marker-end="url(#arrow)" />
+    <line x1="800" y1="138" x2="926" y2="262" marker-end="url(#arrow)" />
+    <line x1="820" y1="138" x2="1180" y2="262" marker-end="url(#arrow)" />
+    <line x1="860" y1="138" x2="1433" y2="262" marker-end="url(#arrow)" />
+  </g>
+
+  <!-- Home -->
+  <rect x="66" y="262" width="200" height="70" rx="10" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5" />
+  <text x="166" y="288" text-anchor="middle" font-size="13" font-weight="700" fill="#1d3a8a">Home</text>
+  <text x="166" y="304" text-anchor="middle" font-size="10.5" fill="#1d3a8a">src/pages/index.astro</text>
+  <text x="166" y="318" text-anchor="middle" font-size="10" fill="#3555a0">banner + liens vers</text>
+  <text x="166" y="330" text-anchor="middle" font-size="10" fill="#3555a0">Research / Outreach / CV</text>
+
+  <!-- Research -->
+  <rect x="320" y="262" width="200" height="70" rx="10" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5" />
+  <text x="420" y="288" text-anchor="middle" font-size="13" font-weight="700" fill="#1d3a8a">Research</text>
+  <text x="420" y="304" text-anchor="middle" font-size="10.5" fill="#1d3a8a">src/pages/research/index.astro</text>
+  <text x="420" y="320" text-anchor="middle" font-size="10" fill="#3555a0">liste les projets et publications</text>
+
+  <!-- Conferences -->
+  <rect x="573" y="262" width="200" height="70" rx="10" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5" />
+  <text x="673" y="288" text-anchor="middle" font-size="13" font-weight="700" fill="#1d3a8a">Conferences</text>
+  <text x="673" y="304" text-anchor="middle" font-size="10.5" fill="#1d3a8a">src/pages/conferences/index.astro</text>
+  <text x="673" y="320" text-anchor="middle" font-size="10" fill="#3555a0">contenu écrit en dur + vidéos</text>
+
+  <!-- Posters -->
+  <rect x="826" y="262" width="200" height="70" rx="10" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5" />
+  <text x="926" y="288" text-anchor="middle" font-size="13" font-weight="700" fill="#1d3a8a">Posters</text>
+  <text x="926" y="304" text-anchor="middle" font-size="10.5" fill="#1d3a8a">src/pages/posters/index.astro</text>
+  <text x="926" y="320" text-anchor="middle" font-size="10" fill="#3555a0">contenu écrit en dur + PDF</text>
+
+  <!-- Outreach -->
+  <rect x="1080" y="262" width="200" height="70" rx="10" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5" />
+  <text x="1180" y="288" text-anchor="middle" font-size="13" font-weight="700" fill="#1d3a8a">Outreach</text>
+  <text x="1180" y="304" text-anchor="middle" font-size="10.5" fill="#1d3a8a">src/pages/vulgarisation/index.astro</text>
+  <text x="1180" y="320" text-anchor="middle" font-size="10" fill="#3555a0">liste écrite à la main + liens</text>
+
+  <!-- CV -->
+  <rect x="1333" y="262" width="200" height="70" rx="10" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5" />
+  <text x="1433" y="288" text-anchor="middle" font-size="13" font-weight="700" fill="#1d3a8a">CV</text>
+  <text x="1433" y="304" text-anchor="middle" font-size="10.5" fill="#1d3a8a">src/pages/cv.astro</text>
+  <text x="1433" y="320" text-anchor="middle" font-size="10" fill="#3555a0">sections + PDF intégré</text>
+
+  <!-- ============ SUB-LEVEL: RESEARCH -> PUBLICATIONS ============ -->
+  <line x1="420" y1="332" x2="420" y2="392" stroke="#5b6b79" stroke-width="1.5" marker-end="url(#arrow)" />
+  <rect x="320" y="392" width="200" height="56" rx="8" fill="#e6f4ea" stroke="#2f9e57" stroke-width="1.5" />
+  <text x="420" y="414" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1f6b39">PublicationCard.astro</text>
+  <text x="420" y="430" text-anchor="middle" font-size="10" fill="#1f6b39">ResearchLink.astro</text>
+
+  <line x1="420" y1="448" x2="420" y2="500" stroke="#5b6b79" stroke-width="1.5" marker-end="url(#arrow)" />
+  <rect x="300" y="500" width="240" height="56" rx="8" fill="#fdeccb" stroke="#c98a12" stroke-width="1.5" />
+  <text x="420" y="522" text-anchor="middle" font-size="11.5" font-weight="700" fill="#8a5a08">src/content/publications/</text>
+  <text x="420" y="538" text-anchor="middle" font-size="10" fill="#8a5a08">linking-european-droughts.md</text>
+
+  <!-- ============ SUB-LEVEL: CONFERENCES -> YOUTUBE ============ -->
+  <line x1="673" y1="332" x2="673" y2="392" stroke="#5b6b79" stroke-width="1.5" marker-end="url(#arrow)" />
+  <rect x="573" y="392" width="200" height="56" rx="8" fill="#eef1f4" stroke="#8a97a3" stroke-width="1.5" />
+  <text x="673" y="414" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5763">video-embed + iframe</text>
+  <text x="673" y="430" text-anchor="middle" font-size="10" fill="#4a5763">YouTube (youtube-nocookie.com)</text>
+
+  <!-- ============ SUB-LEVEL: POSTERS -> PDFs ============ -->
+  <line x1="926" y1="332" x2="926" y2="392" stroke="#5b6b79" stroke-width="1.5" marker-end="url(#arrow)" />
+  <rect x="826" y="392" width="200" height="56" rx="8" fill="#f1eef7" stroke="#7a52a3" stroke-width="1.5" />
+  <text x="926" y="414" text-anchor="middle" font-size="11" font-weight="700" fill="#4d2f6b">public/posters/*.pdf</text>
+  <text x="926" y="430" text-anchor="middle" font-size="10" fill="#4d2f6b">objet .pdf-preview + téléchargement</text>
+
+  <!-- ============ SUB-LEVEL: OUTREACH -> DYNAMIC ROUTE -> MDX ============ -->
+  <line x1="1180" y1="332" x2="1180" y2="392" stroke="#5b6b79" stroke-width="1.5" marker-end="url(#arrow)" />
+  <rect x="1055" y="392" width="250" height="56" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5" />
+  <text x="1180" y="411" text-anchor="middle" font-size="11" font-weight="700" fill="#1d3a8a">vulgarisation/[...slug].astro</text>
+  <text x="1180" y="427" text-anchor="middle" font-size="10" fill="#1d3a8a">route dynamique (une page / article)</text>
+  <text x="1180" y="441" text-anchor="middle" font-size="9.5" fill="#3555a0">rendue avec ArticleLayout</text>
+
+  <line x1="1180" y1="448" x2="1180" y2="500" stroke="#5b6b79" stroke-width="1.5" marker-end="url(#arrow)" />
+  <rect x="1030" y="500" width="300" height="70" rx="8" fill="#fdeccb" stroke="#c98a12" stroke-width="1.5" />
+  <text x="1180" y="520" text-anchor="middle" font-size="11.5" font-weight="700" fill="#8a5a08">src/content/vulgarisation/*.mdx</text>
+  <text x="1180" y="536" text-anchor="middle" font-size="10" fill="#8a5a08">glacon-ricard.mdx</text>
+  <text x="1180" y="550" text-anchor="middle" font-size="10" fill="#8a5a08">modelisation-sismique-batiments.mdx</text>
+  <text x="1180" y="564" text-anchor="middle" font-size="9.5" fill="#8a5a08">(alimentées par doc/S9.tex + S9_correction.tex)</text>
+
+  <!-- ============ SUB-LEVEL: CV -> PDF ============ -->
+  <line x1="1433" y1="332" x2="1433" y2="392" stroke="#5b6b79" stroke-width="1.5" marker-end="url(#arrow)" />
+  <rect x="1333" y="392" width="200" height="56" rx="8" fill="#f1eef7" stroke="#7a52a3" stroke-width="1.5" />
+  <text x="1433" y="414" text-anchor="middle" font-size="11" font-weight="700" fill="#4d2f6b">public/cv/CV_SAVARY.pdf</text>
+  <text x="1433" y="430" text-anchor="middle" font-size="10" fill="#4d2f6b">objet .pdf-preview + boutons</text>
+
+  <!-- ============ STATIC RESOURCES BAND ============ -->
+  <rect x="60" y="620" width="1480" height="86" rx="10" fill="#eef1f4" stroke="#8a97a3" stroke-width="1.5" />
+  <text x="80" y="644" font-size="13" font-weight="700" fill="#4a5763">Ressources statiques (public/)</text>
+  <text x="80" y="666" font-size="11" fill="#4a5763">images/ · cv/ · posters/ · documents/ · spectral/ (thème CSS/JS) · styles/ (global.css, site-spectral.css) · katex/ (katex.min.css) · latex/ (exports HTML S9/S9_correction)</text>
+  <text x="80" y="686" font-size="10.5" fill="#6b7a87">Servi directement à la racine du site, ex. public/images/mon-image.png → /images/mon-image.png</text>
+
+  <!-- ============ CONTENT COLLECTIONS SCHEMA BAND ============ -->
+  <rect x="60" y="726" width="1480" height="70" rx="10" fill="#fdeccb" stroke="#c98a12" stroke-width="1.5" />
+  <text x="80" y="750" font-size="13" font-weight="700" fill="#8a5a08">Contenu structuré (src/content/) — validé par src/content/config.ts (schémas Zod)</text>
+  <text x="80" y="770" font-size="11" fill="#8a5a08">Collections déclarées : publications · conferences · posters · researchProjects · vulgarisation</text>
+  <text x="80" y="786" font-size="10.5" fill="#a06e12">Seules "publications" et "vulgarisation" ont des fichiers réels pour le moment.</text>
+
+  <!-- ============ TEMPLATES (personal, not public) ============ -->
+  <rect x="60" y="836" width="700" height="150" rx="10" fill="#fbe4e6" stroke="#b3283a" stroke-width="2" stroke-dasharray="6 4" />
+  <text x="410" y="862" text-anchor="middle" font-size="14" font-weight="700" fill="#8c1626">Templates/ — documentation personnelle</text>
+  <text x="80" y="884" font-size="11" fill="#8c1626">Hors de src/ et de public/ : jamais lu par Astro, aucune route générée.</text>
+  <text x="80" y="904" font-size="11" fill="#8c1626">• article-template.mdx — modèle à copier dans src/content/vulgarisation/</text>
+  <text x="80" y="922" font-size="11" fill="#8c1626">• README.md — guide de publication pas à pas</text>
+  <text x="80" y="940" font-size="11" fill="#8c1626">• site-structure.svg — ce schéma</text>
+  <text x="80" y="962" font-size="10" fill="#a94456">Reste versionné dans Git (visible sur GitHub) mais n'apparaît jamais sur onaia.fr.</text>
+
+  <!-- ============ DEPLOYMENT NOTE ============ -->
+  <rect x="800" y="836" width="740" height="150" rx="10" fill="#e6f4ea" stroke="#2f9e57" stroke-width="1.5" />
+  <text x="1170" y="862" text-anchor="middle" font-size="14" font-weight="700" fill="#1f6b39">Build &amp; déploiement</text>
+  <text x="820" y="886" font-size="11" fill="#1f6b39">astro.config.mjs — intégration MDX + remark-math / rehype-katex (KaTeX, pas MathJax)</text>
+  <text x="820" y="906" font-size="11" fill="#1f6b39">npm run dev → aperçu local · npm run build → dist/ (site statique)</text>
+  <text x="820" y="926" font-size="11" fill="#1f6b39">.github/workflows/ci.yml → vérifie le build sur chaque push/PR</text>
+  <text x="820" y="946" font-size="11" fill="#1f6b39">.github/workflows/deploy.yml → build + déploiement FTP de dist/ vers OVH</text>
+  <text x="820" y="966" font-size="10" fill="#3a7a52">déclenché automatiquement à chaque push sur la branche main</text>
+
+  <!-- ============ LEGEND ============ -->
+  <rect x="60" y="1010" width="1480" height="150" rx="10" fill="#ffffff" stroke="#c7cfd6" stroke-width="1.5" />
+  <text x="80" y="1034" font-size="14" font-weight="700" fill="#0d1b2a">Légende</text>
+
+  <rect x="80" y="1048" width="22" height="22" rx="5" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5" />
+  <text x="112" y="1064" font-size="12" fill="#0d1b2a">Contenu public (pages Astro / routes)</text>
+
+  <rect x="80" y="1080" width="22" height="22" rx="5" fill="#e6f4ea" stroke="#2f9e57" stroke-width="1.5" />
+  <text x="112" y="1096" font-size="12" fill="#0d1b2a">Composants / layouts réutilisables</text>
+
+  <rect x="500" y="1048" width="22" height="22" rx="5" fill="#fdeccb" stroke="#c98a12" stroke-width="1.5" />
+  <text x="532" y="1064" font-size="12" fill="#0d1b2a">Données / contenu structuré (Markdown, MDX)</text>
+
+  <rect x="500" y="1080" width="22" height="22" rx="5" fill="#f1eef7" stroke="#7a52a3" stroke-width="1.5" />
+  <text x="532" y="1096" font-size="12" fill="#0d1b2a">Ressources statiques (public/, PDF, images)</text>
+
+  <rect x="1000" y="1048" width="22" height="22" rx="5" fill="#eef1f4" stroke="#8a97a3" stroke-width="1.5" />
+  <text x="1032" y="1064" font-size="12" fill="#0d1b2a">Intégrations externes (vidéos YouTube)</text>
+
+  <rect x="1000" y="1080" width="22" height="22" rx="5" fill="#fbe4e6" stroke="#b3283a" stroke-width="2" stroke-dasharray="4 3" />
+  <text x="1032" y="1096" font-size="12" fill="#0d1b2a">Documentation personnelle (Templates/, hors site)</text>
+
+  <text x="80" y="1132" font-size="10.5" fill="#5b6b79">Généré le 27 septembre 2026 à partir de l'inspection réelle du dépôt (src/, public/, .github/workflows/).</text>
+</svg>
