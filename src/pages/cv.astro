@@ -3,7 +3,6 @@ import ContentPage from '../components/ContentPage.astro';
 ---
 <ContentPage title="Curriculum Vitae" description="Academic curriculum vitae of Onaïa Savary." image="/spectral/images/banner.jpg" intro="Education, research and professional experience.">
     <section class="cv">
-      <p class="download"><a class="button primary" href="/cv/CV_SAVARY.pdf" download>Download CV (PDF)</a></p>
       <header class="cv-heading">
         <h2>M. Onaïa Savary</h2>
         <p>Ph.D student in climatology</p>
@@ -13,6 +12,16 @@ import ContentPage from '../components/ContentPage.astro';
         <p><a href="mailto:onaia.savary@ens-paris-saclay.fr">onaia.savary@ens-paris-saclay.fr</a></p>
         <p><a href="https://www.linkedin.com/in/onaia-savary/" target="_blank" rel="noreferrer">LinkedIn Profile</a></p>
       </header>
+
+      <div class="cv-pdf">
+        <p class="download">
+          <a class="button primary" href="/cv/CV_SAVARY.pdf" target="_blank" rel="noreferrer">Open CV (PDF)</a>
+          <a class="button" href="/cv/CV_SAVARY.pdf" download>Download CV (PDF)</a>
+        </p>
+        <object class="pdf-preview" data="/cv/CV_SAVARY.pdf#view=FitH" type="application/pdf" aria-label="Onaïa Savary curriculum vitae preview">
+          <p>PDF preview unavailable. <a href="/cv/CV_SAVARY.pdf">Open the CV PDF</a>.</p>
+        </object>
+      </div>
 
       <h2>EDUCATIONAL BACKGROUND</h2>
       <ul class="cv-list">
