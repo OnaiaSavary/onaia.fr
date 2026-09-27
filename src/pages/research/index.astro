@@ -1,33 +1,54 @@
 ---
-import PageLayout from '../../layouts/PageLayout.astro';
+import ContentPage from '../../components/ContentPage.astro';
 import { getCollection } from 'astro:content';
 
 const pubs = await getCollection('publications');
+const researchProjects = [
+  {
+    id: 'drought-predictability',
+    title: 'Drought predictability in a changing climate',
+    description: 'This PhD aims to study the link between large-scale atmospheric circulation and precipitation deficits (droughts) in Europe. The influence of climate change on this relationship is also studied.'
+  }
+];
 ---
-<PageLayout title="Research" description="Research on European drought predictability, weather regimes and climate change.">
-  <div class="site-wrap">
-    <section class="read-width">
-      <h1>Research</h1>
-      <h2>Understanding droughts in a changing climate</h2>
-      <p>My research focuses on the predictability and evolution of droughts in Europe, with an emphasis on atmospheric circulation and weather regimes.</p>
-      <p>PhD project (title in the CV): "Drought predictability in a changing climate". The PhD investigates the link between large‑scale atmospheric circulation and precipitation deficits (droughts) in Europe, and studies the influence of climate change on this relationship.</p>
+<ContentPage
+  title="Research"
+  description="Research interests, project and scientific publications by Onaïa Savary."
+  image="/images/mt180.png"
+  intro="European drought predictability, atmospheric circulation and climate change."
+>
+  <section id="research-interests" class="editorial-section">
+    <h2>Research interests</h2>
+    <p>My research focuses on the predictability and evolution of droughts in Europe, with an emphasis on atmospheric circulation and weather regimes.</p>
+    <ul>
+      <li>Drought predictability</li>
+      <li>Atmospheric circulation and weather regimes</li>
+      <li>Climate change and European droughts</li>
+    </ul>
+  </section>
 
-      <h3>Research themes</h3>
-      <ol class="themes">
-        <li>01 — Drought predictability</li>
-        <li>02 — Weather regimes</li>
-        <li>03 — Climate change</li>
-      </ol>
+  <section id="research-projects" class="editorial-section">
+    <h2>Research projects</h2>
+    {researchProjects.map((project) => (
+      <article id={project.id} class="research-project">
+        <h3>{project.title}</h3>
+        <p>{project.description}</p>
+      </article>
+    ))}
+  </section>
 
-      <h3>Selected publications</h3>
-      <div class="list">
-        {pubs.sort((a,b)=>b.data.year - a.data.year).slice(0,6).map(p=> (
-          <div class="pub-item">
-            <h4>{p.data.title}</h4>
-            <div class="meta">{p.data.authors?.join(', ')} — {p.data.year}</div>
-          </div>
-        ))}
-      </div>
-    </section>
-  </div>
-</PageLayout>
+  <section id="publications" class="editorial-section">
+    <h2>Publications</h2>
+    <div class="research-publications">
+      {pubs.sort((a, b) => b.data.year - a.data.year).map((publication) => (
+        <article id={publication.slug} class="research-publication">
+          <h3><a href={publication.data.url ?? `https://doi.org/${publication.data.doi}`} target="_blank" rel="noreferrer">{publication.data.title}</a></h3>
+          <p>{publication.data.authors.join(', ')} — <em>{publication.data.journal}</em> ({publication.data.year})</p>
+          {publication.data.published && <p>Published: {publication.data.published}</p>}
+          {publication.data.doi && <p>DOI: <a href={`https://doi.org/${publication.data.doi}`} target="_blank" rel="noreferrer">{publication.data.doi}</a></p>}
+          {publication.data.pdf && <p><a href={publication.data.pdf} target="_blank" rel="noreferrer">Read the article (PDF)</a></p>}
+        </article>
+      ))}
+    </div>
+  </section>
+</ContentPage>

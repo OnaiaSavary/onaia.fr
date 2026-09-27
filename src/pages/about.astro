@@ -1,10 +1,7 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
+import ContentPage from '../components/ContentPage.astro';
 ---
-<PageLayout title="About" description="Academic background and research interests of Onaïa Savary.">
-	<div class="site-wrap">
-		<section class="read-width">
-			<h1>About</h1>
+<ContentPage title="About" description="Academic background and research interests of Onaïa Savary." image="/spectral/images/banner.jpg" intro="Academic background and research interests.">
 			<p class="lead">Onaïa Savary is a PhD student in climatology (PhD started October 2024) at the Centre National de Recherche en Météorologie (CNRM / Météo‑France). Her PhD investigates links between large‑scale atmospheric circulation and precipitation deficits (droughts) in Europe, and the influence of climate change on this relationship.</p>
 
 			<h2>Academic background</h2>
@@ -26,6 +23,4 @@ import PageLayout from '../layouts/PageLayout.astro';
 				<li><a href="https://github.com/OnaiaSavary/" target="_blank" rel="noreferrer">GitHub</a></li>
 				<li><a href="https://scholar.google.com/citations?hl=fr&amp;user=RQmy2ZkAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a></li>
 			</ul>
-		</section>
-	</div>
-</PageLayout>
+</ContentPage>

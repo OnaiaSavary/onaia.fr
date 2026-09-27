@@ -28,6 +28,204 @@ body #page-wrapper {
   background: #21b2a6;
 }
 
+.content-page-hero {
+  display: flex;
+  min-height: clamp(22rem, 48svh, 34rem);
+  align-items: center;
+  justify-content: center;
+  padding: 7rem clamp(1.25rem, 5vw, 4rem) 4rem;
+  background-image: linear-gradient(rgba(20, 29, 37, 0.7), rgba(20, 29, 37, 0.58)), var(--page-hero-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+.content-page-hero .inner {
+  width: min(100%, 64rem);
+  margin-inline: auto;
+}
+
+.content-page-hero h1 {
+  margin: 0 0 1rem;
+  color: #fff !important;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.content-page-hero p {
+  max-width: 62ch;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  letter-spacing: 0.06em;
+  text-transform: none;
+}
+
+.content-page-body.wrapper.style5 {
+  width: 100%;
+  min-height: 50vh;
+  padding: clamp(2.5rem, 6vw, 5rem) 1.5rem;
+  background: #fff;
+  color: #4e4852;
+}
+
+.content-page-body.wrapper.style5 > .inner {
+  width: min(100%, 72rem);
+  margin-inline: auto;
+}
+
+.site-main .content-page-body,
+.site-main .content-page-body p,
+.site-main .content-page-body li,
+.site-main .content-page-body h1,
+.site-main .content-page-body h2,
+.site-main .content-page-body h3,
+.site-main .content-page-body h4,
+.site-main .content-page-body h5,
+.site-main .content-page-body h6,
+.site-main .content-page-body blockquote,
+.site-main .content-page-body time {
+  color: #4e4852 !important;
+}
+
+.site-main .content-page-body h1,
+.site-main .content-page-body h2,
+.site-main .content-page-body h3,
+.site-main .content-page-body h4 {
+  line-height: 1.3;
+}
+
+.site-main .content-page-body h2 {
+  font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+}
+
+.site-main .content-page-body h3 {
+  font-size: clamp(1.08rem, 1.6vw, 1.3rem);
+}
+
+.site-main .content-page-body a:not(.button):not(.icon) {
+  color: #2e3842;
+  border-bottom-color: rgba(33, 178, 166, 0.75);
+}
+
+.site-main .content-page-body a:not(.button):not(.icon):hover,
+.site-main .content-page-body a:not(.button):not(.icon):focus-visible {
+  color: #168f86;
+}
+
+.site-main .content-page-body .editorial-section {
+  margin: 0;
+  padding: 2rem 0;
+  border-bottom: 1px solid #dfdfdf;
+  background: transparent;
+}
+
+.site-main .content-page-body .editorial-section:first-child {
+  padding-top: 0;
+}
+
+.research-project,
+.research-publication,
+.outreach-entry {
+  padding: 1.5rem 0;
+  border-top: 1px solid #dfdfdf;
+}
+
+.outreach-contents {
+  margin: 0 0 3rem;
+  padding: 1.5rem 0;
+  border-top: 2px solid #21b2a6;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.outreach-contents h2 {
+  margin-bottom: 1rem;
+}
+
+.outreach-contents > ul {
+  columns: 2;
+  column-gap: 3rem;
+  padding-left: 1.25rem;
+}
+
+.outreach-contents li {
+  break-inside: avoid;
+  margin-bottom: 0.45rem;
+}
+
+.outreach-contents ul ul {
+  padding-left: 1.25rem;
+}
+
+.site-main .content-page-body .outreach-year {
+  margin: 0 0 2rem;
+}
+
+.site-main .content-page-body .outreach-year > h2 {
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #21b2a6;
+}
+
+.site-main .content-page-body .outreach-entry h3 {
+  margin-bottom: 0.65rem;
+}
+
+.article-content {
+  width: min(100%, 74ch);
+  margin-inline: auto;
+  font-size: 1rem;
+  line-height: 1.8;
+  overflow-wrap: break-word;
+}
+
+.site-main .content-page-body .article-content h2 {
+  margin: 2.5rem 0 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #dfdfdf;
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  letter-spacing: 0.1em;
+}
+
+.site-main .content-page-body .article-content h3 {
+  margin-top: 2rem;
+  font-size: 1.12rem;
+}
+
+.site-main .content-page-body .article-content p,
+.site-main .content-page-body .article-content li {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.site-main .content-page-body .article-content .figure {
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid #dfdfdf;
+}
+
+.site-main .content-page-body .article-content .figure img {
+  max-height: min(34rem, 70vh);
+  width: auto;
+  margin-inline: auto;
+  object-fit: contain;
+}
+
+.site-main .content-page-body .article-content math[display="block"],
+.site-main .content-page-body .article-content .katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}
+
+.site-main .content-page-body .article-content .katex-display > .katex {
+  white-space: normal;
+}
+
 #banner {
   height: auto;
   min-height: min(88svh, 56rem);

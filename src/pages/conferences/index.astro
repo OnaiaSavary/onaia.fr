@@ -1,10 +1,7 @@
 ---
-import PageLayout from '../../layouts/PageLayout.astro';
+import ContentPage from '../../components/ContentPage.astro';
 ---
-<PageLayout title="Conferences" description="Conference presentations on European droughts and atmospheric circulation.">
-  <div class="site-wrap">
-    <section class="read-width">
-      <h1>Conferences</h1>
+<ContentPage title="Conferences" description="Conference presentations on European droughts and atmospheric circulation." image="/spectral/images/banner.jpg" intro="Conference presentations and research contributions.">
       <div class="editorial-list">
         <article class="editorial-item">
           <h2>MareNostrum Conference 2026</h2>
@@ -30,6 +27,4 @@ import PageLayout from '../../layouts/PageLayout.astro';
           <p><a href="/posters/">View the associated poster</a></p>
         </article>
       </div>
-    </section>
-  </div>
-</PageLayout>
+</ContentPage>

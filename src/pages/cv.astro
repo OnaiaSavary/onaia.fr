@@ -1,10 +1,8 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
+import ContentPage from '../components/ContentPage.astro';
 ---
-<PageLayout title="Curriculum Vitae" description="Academic curriculum vitae of Onaïa Savary.">
-  <div class="site-wrap">
-    <section class="read-width cv">
-      <h1>Curriculum Vitae</h1>
+<ContentPage title="Curriculum Vitae" description="Academic curriculum vitae of Onaïa Savary." image="/spectral/images/banner.jpg" intro="Education, research and professional experience.">
+    <section class="cv">
       <p class="download"><a class="button primary" href="/cv/CV_SAVARY.pdf" download>Download CV (PDF)</a></p>
       <header class="cv-heading">
         <h2>M. Onaïa Savary</h2>
@@ -52,5 +50,4 @@ import PageLayout from '../layouts/PageLayout.astro';
       <h2>SOFTWARES</h2>
       <ul class="software-list"><li>Matlab</li><li>Python V.3</li><li>Revit</li><li>Autocad</li><li>Robot</li><li>SolidWorks</li><li>Word</li><li>Powerpoint</li><li>Excel</li><li>LaTex</li><li>Audacity</li><li>Arduino</li></ul>
     </section>
-  </div>
-</PageLayout>
+</ContentPage>

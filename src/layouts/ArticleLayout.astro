@@ -1,7 +1,7 @@
 ---
-import PageLayout from './PageLayout.astro';
+import ContentPage from '../components/ContentPage.astro';
 const { title, description } = Astro.props;
 ---
-<PageLayout {title} {description}>
-  <article class="article-layout"><slot /></article>
-</PageLayout>
+<ContentPage {title} description={description ?? 'Scientific outreach article based on its original source document.'} image="/images/home-backround.jpg">
+  <article class="article-content"><slot /></article>
+</ContentPage>

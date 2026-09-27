@@ -1,0 +1,96 @@
+---
+title: "Modélisation d'un bâtiment sous séisme"
+tags: ["physique", "séisme", "vulgarisation"]
+---
+
+import Figure from '../../components/Figure.astro'
+
+## Énoncé
+
+Le génie parasismique est la branche du génie civil qui vise à modéliser le risque sismique et mettre en place des mesures permettant d'éviter (ou limiter) les dégats causés aux personnes et aux bâtiments par les séismes. Une approche utilisée par cette discipline pour modéliser un bâtiment soumis à un séisme est le "modèle brochette". Chaque étage d'un bâtiment étant considéré lié aux autres par un ressort et un amortisseur, on peut modéliser son déplacement latéral en utilisant une modélisation masse-ressort amortisseur :
+
+<Figure src="/latex/S9/seisme1.png" alt="Schéma du modèle brochette à un étage, source S9.tex" />
+
+On souhaite ici étudier le mouvement d'un étage sous charge sismique. On prendra dans un premier temps un seul étage, dont le déplacement latéral est noté $x_1(t)$ le long de l'axe horizontal $\overrightarrow{e_x}$, de masse $m_1$, et lié au sol par une structure qui se compose comme un ressort de rigidité $k_1$ et de longueur à vide nulle, en parrallèle avec un amortisseur de coefficient d'amortissement $\eta_1$. On rappelle que la force exercée par un amortisseur est proportionelle à la vitesse de déplacement et vaut $\overrightarrow{F_{\text{amort,1}}} = -\eta_1\dfrac{dx_1}{dt} \overrightarrow{e_x}$.
+
+### Questions :
+
+1. En appliquant le PFD le long de l'axe de déplacement, montrer que l'équation différentielle du système peut se mettre sous la forme
+
+   $$
+   \dfrac{d^2x_1}{dt^2}+2\xi\omega_0\dfrac{dx_1}{dt}+\omega_0^2x_1(t) = 0
+   $$
+
+   et identifier $\omega_0$ la pulsation propre et $\xi$ le taux d'amortissement.
+2. Quelle est l'expression littérale du coefficient d'amortissement $\eta_{\text{cr}}$ au-delà duquel il n'y aura pas d'oscillation ? (régime apériodique, ou régime sur-critique).
+3. En règle générale, les bâtiments réagissent en régime pseudo-périodique. Quelle est la forme de la solution dans ce cas-là? On prendra $x_1(t=0)=0$ et $\dfrac{dx_1}{dt}(t=0) = 0$. On notera également $\omega_D = \omega_0\sqrt{1-\xi^2}$ la pulsation propre du système amorti.
+4. On s'intéresse maintenant à la modélisation de deux étages. Le deuxième étage voit sa position sur l'axe transversal $x_2(t)$, et il est lié à l'étage précédent par une structure qui se comporte comme un ressort de rigidité $k_2$, de longueur à vide nulle, et d'amortissement $\eta_2$ (voir schéma).
+
+   <Figure src="/latex/S9/seisme2.png" alt="Schéma du modèle brochette à deux étages, source S9.tex" />
+
+   Quelle est l'équation différentielle qui régit la position du premier étage?
+5. Quelle est l'équation différentielle qui régit la position du deuxième étage?
+6. En posant les matrices
+
+   $$
+   M = \begin{bmatrix}m_1 & 0\\0 & m_2\end{bmatrix}
+   \quad C = \begin{bmatrix}\eta_1 & 0\\0 & \eta_2\end{bmatrix}
+   \quad K = \begin{bmatrix}k_1+k_2 & -k_2\\-k_2 & k_2\end{bmatrix}
+   \quad X = \begin{bmatrix}x_1\\x_2\end{bmatrix}
+   $$
+
+   exprimer l'équation matricielle à résoudre.
+
+## Correction
+
+### 1. En appliquant le PFD le long de l'axe de déplacement
+
+On peut directement écrire
+
+$$
+m_1\dfrac{d^2x_1}{dt^2}+\eta_1\dfrac{dx_1}{dt}+k_1x_1(t) = 0
+$$
+
+Par identification,
+
+$$
+\boxed{\xi = \dfrac{\eta_1}{2\sqrt{k_1m_1}}}\quad \boxed{\omega_0 = \sqrt{\dfrac{k_1}{m_1}}}
+$$
+
+### 2. Expression littérale du coefficient d'amortissement $\eta_{\text{cr}}$
+
+Ce coefficient est celui qui vérifie $\xi>1$, donc $\boxed{\eta_{cr}=2\sqrt{k_1m_1}}$
+
+### 3. Forme de la solution en régime pseudo-périodique
+
+Dans ce cas on aura
+
+$$
+\boxed{x_1(t) = e^{-\xi\omega_0}\left(A\cos\left(\omega_D.t\right)+B\sin\left(\omega_D.t\right)\right)}
+$$
+
+### 4. Équation différentielle qui régit la position du premier étage
+
+La seule différence avec la partie précédente concerne l'effort supplémentaire qui s'exerce sur la masse $m_1$ liée au déplacement différentiel entre $m_1$ et $m_2$.
+
+$$
+\boxed{m_1\dfrac{d^2x_1}{dt^2}+\eta_1\dfrac{dx_1}{dt}+k_1 x_1(t) + k_2\left(x_1-x_2\right) = 0}
+$$
+
+### 5. Équation différentielle qui régit la position du deuxième étage
+
+Les seules forces qui s'exercent sur la masse $m_2$ sont le poids, l'amortissement, et le rappel du ressort qui lie $m_1$ à $m_2$.
+
+$$
+\boxed{m_2\dfrac{d^2x_2}{dt^2}+\eta_2\dfrac{dx_2}{dt}+ k_2\left(x_2-x_1\right) = 0}
+$$
+
+### 6. Exprimer l'équation matricielle à résoudre
+
+On aura ici le système
+
+$$
+\boxed{M .\ddot X + C .\dot X+K.\dot X = 0}
+$$
+
+où $0$ est ici la matrice nulle.

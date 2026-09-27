@@ -1,20 +1,15 @@
 ---
+import { getCollection, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 
 export async function getStaticPaths() {
-  return [
-    { params: { slug: 's9' }, props: { title: 'S9 — Original document', document: '/latex/S9.html' } },
-    { params: { slug: 's9-correction' }, props: { title: 'S9 — Correction', document: '/latex/S9_correction.html' } }
-  ];
+  const entries = await getCollection('vulgarisation');
+  return entries.map((entry) => ({ params: { slug: entry.slug }, props: { entry } }));
 }
 
-const { title, document } = Astro.props;
+const { entry } = Astro.props;
+const { Content } = await render(entry);
 ---
-<ArticleLayout title={title} description="Original French teaching document converted from its LaTeX source.">
-  <header class="article-header">
-    <p class="section-label">Outreach · Source document</p>
-    <h1>{title}</h1>
-    <p class="article-date">Converted from the original LaTeX source.</p>
-  </header>
-  <iframe class="latex-document" src={document} title={title} loading="lazy"></iframe>
+<ArticleLayout title={entry.data.title} description={entry.data.summary}>
+  <Content />
 </ArticleLayout>

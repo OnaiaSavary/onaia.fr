@@ -1,0 +1,27 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  image: string;
+  intro?: string;
+}
+
+const { title, description, image, intro } = Astro.props;
+---
+<PageLayout {title} {description}>
+  <div class="content-page">
+    <header class="content-page-hero" style={`--page-hero-image: url('${image}')`}>
+      <div class="inner">
+        <h1>{title}</h1>
+        {intro && <p>{intro}</p>}
+      </div>
+    </header>
+    <section class="wrapper style5 content-page-body">
+      <div class="inner">
+        <slot />
+      </div>
+    </section>
+  </div>
+</PageLayout>

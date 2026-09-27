@@ -1,42 +1,81 @@
 ---
-import PageLayout from '../../layouts/PageLayout.astro';
+import ContentPage from '../../components/ContentPage.astro';
 ---
-<PageLayout title="Outreach" description="Science communication through podcasts, public talks and educational resources.">
-  <div class="site-wrap">
-    <section class="read-width">
-      <h1>Outreach</h1>
-      <div class="editorial-list">
-        <article class="editorial-item">
-          <h2>Playlist de chercheur: Chaud devant</h2>
-          <p>8 December 2025</p>
-          <p><a href="https://exploreur.univ-toulouse.fr/climat-chaud-devant" target="_blank" rel="noreferrer">Listen to the podcast</a></p>
-        </article>
-        <article class="editorial-item">
-          <h2>MT180 — Regional Final</h2>
-          <div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/wmosXiuSDso?start=3" title="MT180 Regional Final presentation" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-        </article>
-        <article class="editorial-item">
-          <h2>Pint of Science 2025</h2>
-          <p>Du Porto à Saint-Malo was held on 21 May 2025 at The Roof, Halles de la Cartoucherie in Toulouse. The event invited two climatology PhD students to discuss climate change, its consequences, attribution of extreme events and possible adaptation.</p>
-          <p><a href="https://pintofscience.fr/event/du-porto-a-saint-malo/" target="_blank" rel="noreferrer">Official event page</a> · <a href="/documents/POS_pdf.pdf" download>Download presentation (PDF)</a></p>
-          <object class="pdf-preview" data="/documents/POS_pdf.pdf#view=FitH" type="application/pdf" aria-label="Pint of Science 2025 presentation preview">
-            <p>PDF preview unavailable. <a href="/documents/POS_pdf.pdf">Open the presentation PDF</a>.</p>
-          </object>
-        </article>
-        <article class="editorial-item">
-          <h2>Cycling for Climate 2025</h2>
-          <p><a href="https://cyclopourleclimat.fr/inscription-cyclo-pour-le-climat-toulouse/" target="_blank" rel="noreferrer">Event information</a> · <a href="/documents/SAVARY_8mn_C4C.pdf" download>Download presentation (PDF)</a></p>
-        </article>
-        <article class="editorial-item">
-          <h2>Cycling for Climate 2026</h2>
-        </article>
-      </div>
-      <h2 class="article-list-title">Articles</h2>
-      <p>Original teaching documents, converted from LaTeX without editorial rewriting. The source documents are in French.</p>
-      <ul>
-        <li><a href="/vulgarisation/s9/">S9 — Original document</a></li>
-        <li><a href="/vulgarisation/s9-correction/">S9 — Correction</a></li>
-      </ul>
+<ContentPage
+  title="Outreach"
+  description="Scientific outreach through podcasts, public talks and source-based educational articles."
+  image="/images/home-backround.jpg"
+  intro="Podcasts, public talks and scientific articles."
+>
+  <nav class="outreach-contents" aria-labelledby="outreach-contents-title">
+    <h2 id="outreach-contents-title">Contents</h2>
+    <ul>
+      <li><a href="#outreach-2026">2026</a>
+        <ul><li><a href="#cycling-for-climate-2026">Cycling for Climate 2026</a></li></ul>
+      </li>
+      <li><a href="#outreach-2025">2025</a>
+        <ul>
+          <li><a href="#playlist-chaud-devant">Playlist de chercheur: Chaud devant</a></li>
+          <li><a href="#pint-of-science-2025">Pint of Science 2025</a></li>
+          <li><a href="#cycling-for-climate-2025">Cycling for Climate 2025</a></li>
+        </ul>
+      </li>
+      <li><a href="#outreach-undated">Date not specified</a>
+        <ul>
+          <li><a href="#mt180-regional-final">MT180 — Regional Final</a></li>
+          <li><a href="#glacon-ricard">Un glaçon dans un pastis</a></li>
+          <li><a href="#seismic-building">Modélisation d'un bâtiment sous séisme</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <section id="outreach-2026" class="outreach-year">
+    <h2>2026</h2>
+    <article id="cycling-for-climate-2026" class="outreach-entry">
+      <h3>Cycling for Climate 2026</h3>
+    </article>
+  </section>
+
+  <section id="outreach-2025" class="outreach-year">
+    <h2>2025</h2>
+    <article id="playlist-chaud-devant" class="outreach-entry">
+      <h3>Playlist de chercheur: Chaud devant</h3>
+      <p><time datetime="2025-12-08">8 December 2025</time></p>
+      <p><a href="https://exploreur.univ-toulouse.fr/climat-chaud-devant" target="_blank" rel="noreferrer">Listen to the podcast</a></p>
+    </article>
+    <article id="pint-of-science-2025" class="outreach-entry">
+      <h3>Pint of Science 2025</h3>
+      <p><time datetime="2025-05-21">21 May 2025</time></p>
+      <p>Du Porto à Saint-Malo was held at The Roof, Halles de la Cartoucherie in Toulouse. The event invited two climatology PhD students to discuss climate change, its consequences, the attribution of extreme events and possible adaptation.</p>
+      <p><a href="https://pintofscience.fr/event/du-porto-a-saint-malo/" target="_blank" rel="noreferrer">Official event page</a> · <a href="/documents/POS_pdf.pdf" download>Download presentation (PDF)</a></p>
+      <object class="pdf-preview" data="/documents/POS_pdf.pdf#view=FitH" type="application/pdf" aria-label="Pint of Science 2025 presentation preview">
+        <p>PDF preview unavailable. <a href="/documents/POS_pdf.pdf">Open the presentation PDF</a>.</p>
+      </object>
+    </article>
+    <article id="cycling-for-climate-2025" class="outreach-entry">
+      <h3>Cycling for Climate 2025</h3>
+      <p>2025; exact date not specified.</p>
+      <p><a href="https://cyclopourleclimat.fr/inscription-cyclo-pour-le-climat-toulouse/" target="_blank" rel="noreferrer">Event information</a> · <a href="/documents/SAVARY_8mn_C4C.pdf" download>Download presentation (PDF)</a></p>
+    </article>
+  </section>
+
+  <section id="outreach-undated" class="outreach-year">
+    <h2>Date not specified</h2>
+    <article id="mt180-regional-final" class="outreach-entry">
+      <h3>MT180 — Regional Final</h3>
+      <div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/wmosXiuSDso?start=3" title="MT180 Regional Final presentation" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+    </article>
+    <section id="scientific-outreach-articles" class="outreach-articles">
+      <h2>Scientific outreach articles</h2>
+      <article id="glacon-ricard" class="outreach-entry">
+        <h3><a href="/vulgarisation/glacon-ricard/">Un glaçon dans un pastis</a></h3>
+        <p>Date not specified in the source document.</p>
+      </article>
+      <article id="seismic-building" class="outreach-entry">
+        <h3><a href="/vulgarisation/modelisation-sismique-batiments/">Modélisation d'un bâtiment sous séisme</a></h3>
+        <p>Date not specified in the source document.</p>
+      </article>
     </section>
-  </div>
-</PageLayout>
+  </section>
+</ContentPage>
