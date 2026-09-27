@@ -14,37 +14,32 @@ import ContentPage from '../components/ContentPage.astro';
       </header>
 
       <div class="cv-pdf">
-        <p class="download">
-          <a class="button primary" href="/cv/CV_SAVARY.pdf" target="_blank" rel="noreferrer">Open CV (PDF)</a>
-          <a class="button" href="/cv/CV_SAVARY.pdf" download>Download CV (PDF)</a>
-        </p>
-        <object class="pdf-preview" data="/cv/CV_SAVARY.pdf#view=FitH" type="application/pdf" aria-label="Onaïa Savary curriculum vitae preview">
-          <p>PDF preview unavailable. <a href="/cv/CV_SAVARY.pdf">Open the CV PDF</a>.</p>
-        </object>
+        <details class="media-disclosure">
+          <summary>View CV (PDF)</summary>
+          <p class="download"><a href="/cv/CV_SAVARY.pdf" download>Download CV (PDF)</a></p>
+          <object class="pdf-preview" data="/cv/CV_SAVARY.pdf#view=FitH" type="application/pdf" aria-label="Onaïa Savary curriculum vitae preview">
+            <p>PDF preview unavailable. <a href="/cv/CV_SAVARY.pdf">Open the CV PDF</a>.</p>
+          </object>
+        </details>
       </div>
 
       <h2>EDUCATIONAL BACKGROUND</h2>
       <ul class="cv-list">
         <li><h3>PhD - Climatology</h3><p><strong>Centre Nationale de Recherche en Météorologie (CNRM/Météo-France)</strong></p><p>This PhD aims to study the link between large-scale atmospheric circulation and precipitation deficits (droughts) in Europe. The influence of climate change on this relationship is also studied. Full title : Drought predictability in a changing climate</p><time>October 2024 – Today</time></li>
+        <li><h3>Master 2 - Fluid mechanics</h3><p><strong>Ecole Polytechnique &amp; Sorbonne University</strong></p><p>Obtained a Master's degree in fluid mechanics. Courses followed : Hydrodynamic instabilities, Advanced experimental methods, Numerical methods for fluid mechanics, Geophysical and astrophysical fluid dynamics, Multiscale hydrodynamic phenomena, Turbulence dynamics, Aerodynamics, Interfaces</p><time>September 2023 – July 2024</time></li>
         <li><h3>Master 2 - Civil Engineering, Post-baccalaureat teacher training</h3><p>Ecole Normale Supérieure – Paris Saclay</p><p>Obtained a Master's degree majored in civil engineering while preparating for the Agregation (competitive French exam). Continuation of high level scientific courses in the field of civil engineering, numerical analysis, material sciences and fluid mechanics. Areas of study: Numerical analysis, Fluid mechanics, Material science, Physics of heat transfer in materials, Fundamental Acoustics.<br />Ranked second in France in the competitive examination for the agrégation of engineering sciences, construction engineering section.</p><time>September 2021 – July 2023</time></li>
         <li><h3>Classe Préparatoire aux grandes écoles</h3><p>Lycée Déodat de Séverac, Toulouse</p><p>Competitive national entrance exam to the grandes ecoles. Obtained a bachelor's degree in engineering sciences</p><time>September 2017 – July 2020</time></li>
-        <li><h3>Baccalauréat Scientifique</h3><p>Lycée Louis Rascol, Albi</p><p>Three years of training in engineering with a specialization in mathematics, to obtain a British A-level equivalent</p><time>September 2015 – July 2017</time></li>
-        <li><h3>Brevet d'initiation à l'aéronautique</h3><p>Lycée Bellevue, Albi</p><p>One year of training in major areas of aeronautics</p><time>September 2015 – July 2016</time></li>
       </ul>
 
       <h2>WORK EXPERIENCE</h2>
       <ul class="cv-list">
         <li><h3>Master 2 internship with a duration of 6 months</h3><p>Performed at Centre Nationale de Recherche en Météorologie (CNRM/MétéoFrance) under the direction of Constantin Ardilouze and Hervé Douville. Subject : Droughts predictability in Europe.</p><time>February 2024 - August 2024</time></li>
         <li><h3>Master 1 internship with a duration of 3 months</h3><p>Performed at École Polytechnique Fédérale de Lausanne under the direction of Cécile Oliver-Leblond and Katrin Bayer. Subject : Design and preparation of a new experimental test setup for direct shear test of stone-mortar interface.</p><time>March 2022 - June 2022</time></li>
-        <li><h3>Crewmate on tourism hot-air balloon</h3><p>Was in charge of assembling the hot air balloon, and assisting the pilot during flight</p><time>Summer 2017 - Summer 2018 - Summer 2019</time></li>
-        <li><h3>Private teacher in sciences</h3><p>Gave private lessons in math, engineering sciences and physics to other students.</p><time>2015 - 2018</time></li>
-        <li><h3>Speaker for the presentation of scientific courses for the Lycée Louis Rascol</h3><p>Went to other secondary schools in the Tarn to explain scientific courses to other students in order to help them to find their way.</p><time>2017 - 2018</time></li>
       </ul>
 
       <h2>PROJECT EXPERIENCE</h2>
       <ul class="cv-list">
         <li><h3>Première Expérience Immersive de Recherche (first immersive research experiment)</h3><p>6 months research work under the collaboration of Fabrice Gatuingt and Guillaume Hervé Secourgeon. Topic: Development of a structural damping model - Application to a BA model under impact.</p><time>2021-2022</time></li>
-        <li><h3>Move your bridge</h3><p>Team work of one hundred hours to create a model of an eco-responsible mobile bridge. Creation of specifications, modeling, realization and testing under load of a wooden model.</p><time>2020-2021</time></li>
       </ul>
 
       <h2>ASSOCIATIVE</h2>
