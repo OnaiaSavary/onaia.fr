@@ -37,7 +37,7 @@ body.is-menu-visible #page-wrapper:before {
 
 #header h1 a,
 #header nav > ul > li > a {
-  color: #fff;
+  color: #2e3842;
 }
 
 #menu ul li a {
