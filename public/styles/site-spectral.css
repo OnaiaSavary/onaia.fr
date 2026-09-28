@@ -244,7 +244,7 @@ body.is-menu-visible #page-wrapper:before {
 }
 
 .article-content {
-  width: min(100%, 74ch);
+  width: min(100%, 130ch);
   margin-inline: auto;
   font-size: 1rem;
   line-height: 1.8;
