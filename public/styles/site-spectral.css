@@ -545,17 +545,3 @@ body.is-menu-visible #page-wrapper:before {
     min-height: 24rem;
   }
 }
-.site-header .nav-main > ul > li > a {
-  color: #2e3842 !important;
-  -webkit-text-fill-color: #2e3842 !important;
-}
-
-.site-header .nav-main > ul > li > a:hover,
-.site-header .nav-main > ul > li > a:focus-visible {
-  color: #2e3842 !important;
-  -webkit-text-fill-color: #2e3842 !important;
-}
-
-.site-header .nav-main > ul > li > a::after {
-  background-color: #2e3842 !important;
-}
