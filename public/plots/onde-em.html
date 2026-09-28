@@ -203,6 +203,22 @@
   Plotly.newPlot('plot', initial.traces, layout, {
     displayModeBar: false,
     responsive: true
+  }).then(function () {
+    // Filet de sécurité : force un recalcul explicite de la taille du
+    // graphique quand le conteneur change de largeur (ex: iframe passée
+    // de 100% à 50% via CSS). Le "responsive: true" de Plotly ne suffit
+    // pas toujours à détecter ce cas selon les navigateurs.
+    const plotEl = document.getElementById('plot');
+    if (window.ResizeObserver) {
+      const ro = new ResizeObserver(function () {
+        Plotly.Plots.resize(plotEl);
+      });
+      ro.observe(plotEl);
+    } else {
+      window.addEventListener('resize', function () {
+        Plotly.Plots.resize(plotEl);
+      });
+    }
   });
 
   function updateLabels(lambdaNm, E0) {
