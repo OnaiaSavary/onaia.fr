@@ -1322,7 +1322,7 @@
 		@include padding(6em, 0);
 
 		> .inner {
-			width: 60em;
+			width: 120em;
 			margin: 0 auto;
 
 			@include breakpoint('<=large') {
