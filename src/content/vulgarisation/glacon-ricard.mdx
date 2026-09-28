@@ -8,13 +8,13 @@ import Figure from '../../components/Figure.astro'
 
 ## Énoncé
 
-On s'intéresse au cas d'un glaçon mis dans un verre de boisson anisée quelconque, en été. On souhaite connaître l'équation du mouvement de ce glaçon dans l'eau. On note $z$ la position du centre de gravité (noté $G$) du glaçon par rapport au niveau d'eau. Le glaçon sera considéré comme parallélépipédique, de grande dimension $L$ et de petite dimension $l$ (voir schéma). Le glaçon est lâché depuis une hauteur $h$ au dessus du niveau de l'eau. On prendra $\rho_{\text{anis}}\approx\rho_{\text{eau}} = 1000$~kg.m$^{-3}$ et $\rho_{\text{glace}} = 917$~kg.m$^{-3}$, ainsi que $l = 1$~cm.
+On s'intéresse au cas d'un glaçon mis dans un verre de boisson anisée quelconque, en été. On souhaite connaître l'équation du mouvement de ce glaçon dans l'eau. On note $z$ la position du centre de gravité (noté $G$) du glaçon par rapport au niveau d'eau. Le glaçon sera considéré comme parallélépipédique, de grande dimension $L$ et de petite dimension $l$ (voir schéma). Le glaçon est lâché depuis une hauteur $h$ au dessus du niveau de l'eau. On prendra $\rho_{\text{anis}}\approx\rho_{\text{eau}} = 1000$ kg.m$^{-3}$ et $\rho_{\text{glace}} = 917$ kg.m$^{-3}$, ainsi que $l = 1$ cm.
 
 Les forces qui s'appliquent sur le glaçon sont :
 
-1. Le poids, dirigé vers le bas : $\overrightarrow{P} = -\rho_{glace}Ll^2g\overrightarrow{e_z}$ où $\rho_{glace}$ est la masse volumique de l'eau.
+1. Le poids, dirigé vers le bas : $\overrightarrow{P} = -\rho_{glace}Ll^2g\overrightarrow{e_z}$ où $\rho_{glace}$ est la masse volumique de la glace.
 2. La poussée d'Archimède, dirigée vers le haut : $\overrightarrow{\Pi} = \rho_{eau}Vg \overrightarrow{e_z}$ où $\rho_{eau}$ est la masse volumique de l'eau et $V$ est le volume de boisson déplacé (il varie donc au cours du temps).
-3. La force de frottement, considérée proportionnelle et opposée à la vitesse, et proportionnelle à la surface par rapport à laquelle le mouvement est perpendiculaire : $\overrightarrow{F_{fr}} = -\eta .L.l.\dfrac{dz}{dt}$ où $\eta$ est la viscosité dynamique de la fameuse boisson anisée $\eta = 10^{-3}$~Pa.s (ou N.s.m$^{-2}$).
+3. La force de frottement, considérée proportionnelle et opposée à la vitesse, et proportionnelle à la surface par rapport à laquelle le mouvement est perpendiculaire : $\overrightarrow{F_{fr}} = -\eta .L.l.\dfrac{dz}{dt}$ où $\eta$ est la viscosité dynamique de la fameuse boisson anisée $\eta = 10^{-3}$ Pa.s (ou N.s.m$^{-2}$).
 
 <Figure src="/latex/S9/glaçon.png" alt="Schéma du glaçon dans le liquide, source S9.tex" />
 
@@ -22,7 +22,7 @@ Les forces qui s'appliquent sur le glaçon sont :
 
 1. Faire un schéma légendé de la situation
 2. Calculer, pour une position $z$, le volume immergé et le volume émergé du glaçon.
-3. L'équilibre est atteint lorsque le poids équilibre la poussée d'Archimède. Donner l'expression littérale puis la valeur numérique de la position d'équilibre $z_{eq}$, en prenant $L = 1$~cm.
+3. L'équilibre est atteint lorsque le poids équilibre la poussée d'Archimède. Donner l'expression littérale puis la valeur numérique de la position d'équilibre $z_{eq}$.
 4. En négligeant les frottements de l'air et la poussée d'Archimède dans l'air, établir l'équation différentielle vérifiée par la position du glaçon.
 5. Vérifier que l'on retrouve bien l'expression de la position d'équilibre.
 6. Réécrire l'équation différentielle en exprimant le second membre en fonction de $z_{eq}$
@@ -48,33 +48,35 @@ et identifier $\omega_0$ et $Q$.
 Le volume immergé vaut
 
 $$
-\begin{aligned}
-V_{\text{immergé}} &= \left(\dfrac{l}{2}-z(t)\right)\\
-&\quad\times Ll
-\end{aligned}
+\boxed{V_{\text{immergé}} = \left(\dfrac{l}{2}-z(t)\right)Ll}
 $$
 
 Et le volume émergé vaut
 
 $$
-\begin{aligned}
-V_{\text{émergé}} &= \left(\dfrac{l}{2}+z(t)\right)\\
-&\quad\times Ll
-\end{aligned}
+\boxed{V_{\text{émergé}} = \left(\dfrac{l}{2}+z(t)\right)Ll}
 $$
+
+On vérifie bien que
+
+$$
+V_{\text{immergé}}+V_{\text{émergé}}=Ll^2,
+$$
+
+qui correspond au volume total du glaçon.
 
 ### 3. L'équilibre est atteint lorsque le poids équilibre la poussée d'Archimède.
 
 Le poids s'exprime, quelle que soit la position,
 
 $$
-\overrightarrow{P} = -\rho_{\text{glace}}V.\overrightarrow{e_z} = -\rho_{\text{glace}}l^2Lg.\overrightarrow{e_z}
+\overrightarrow{P} = -\rho_{\text{glace}}Ll^2g\,\overrightarrow{e_z}.
 $$
 
 La poussée d'Archimède dépend de la position du glaçon, elle s'exprime :
 
 $$
-\overrightarrow{\Pi} = \rho_{\text{anis}}V_{\text{immergé}}g.\overrightarrow{e_z} = \rho_{\text{anis}} \left(\dfrac{l}{2}-z(t)\right)Llg.\overrightarrow{e_z}
+\overrightarrow{\Pi} = \rho_{\text{anis}}V_{\text{immergé}}g\,\overrightarrow{e_z} = \rho_{\text{anis}} \left(\dfrac{l}{2}-z(t)\right)Llg\,\overrightarrow{e_z}.
 $$
 
 Lors de l'équilibre,
@@ -86,118 +88,230 @@ $$
 donc
 
 $$
-\begin{aligned}
-&\rho_{\text{glace}}l^2Lg = \rho_{\text{anis}}\\
-&\quad\left(\dfrac{l}{2}-z_{eq}\right)Llg\\
-&\implies z_{eq} = \dfrac{1}{2}l\\
-&\quad-\dfrac{\rho_{\text{glace}}}{\rho_{\text{anis}}}l
-\end{aligned}
+\rho_{\text{glace}}l^2Lg = \rho_{\text{anis}} \left(\dfrac{l}{2}-z_{eq}\right)Llg
 $$
 
+soit
+
 $$
-\boxed{z_{eq} = \dfrac{1}{2}l-\dfrac{\rho_{\text{glace}}}{\rho_{\text{anis}}}l}
+\boxed{z_{eq} = \left(\dfrac{1}{2}-\dfrac{\rho_{\text{glace}}}{\rho_{\text{anis}}}\right)l}
 $$
+
+Avec $\rho_{\text{anis}}\approx 1000$ kg.m$^{-3}$, $\rho_{\text{glace}}=917$ kg.m$^{-3}$ et $l=1$ cm,
+
+$$
+z_{eq} =\left(\dfrac{1}{2}-\dfrac{917}{1000}\right)\times 10^{-2} =-4.17\times10^{-3}\ \text{m}.
+$$
+
+Ainsi,
+
+$$
+\boxed{z_{eq}\approx -4.17\ \text{mm}}
+$$
+
+Le signe négatif signifie que le centre de gravité du glaçon se trouve $4.17$ mm sous la surface de l'eau à l'équilibre.
 
 ### 4. Établir l'équation différentielle vérifiée par la position du glaçon.
 
 Le PFD donne
 
 $$
-\begin{aligned}
-\rho_{\text{glace}}l^2L\dfrac{d^2z}{dt^2} &= - \rho_{\text{glace}}l^2Lg\\
-&+\rho_{\text{anis}}Llg\\
-&\times\left(\dfrac{l}{2}-z\right)\\
-&-\eta Ll\dfrac{dz}{dt}
-\end{aligned}
+\rho_{\text{glace}}l^2L\dfrac{d^2z}{dt^2} = - \rho_{\text{glace}}l^2Lg +\rho_{\text{anis}}Llg\left(\dfrac{l}{2}-z\right) -\eta Ll\dfrac{dz}{dt}.
 $$
 
-Ce qui, après manipulation, donne
+En divisant par $\rho_{\text{glace}}l^2L$ et en regroupant les termes en $z$, on obtient
 
 $$
-\begin{aligned}
-&\dfrac{d^2z}{dt^2} +\dfrac{\eta}{ \rho_{\text{glace}}l}\dfrac{dz}{dt}\\
-&+\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\dfrac{g}{l}z\\
-&= g\left(\dfrac{1}{2}\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}-1\right)
-\end{aligned}
+\boxed{\dfrac{d^2z}{dt^2} +\dfrac{\eta}{\rho_{\text{glace}}l}\dfrac{dz}{dt} +\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\dfrac{g}{l}z = g\left(\dfrac{1}{2}\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}-1\right)}
 $$
 
 ### 5. Vérifier que l'on retrouve bien l'expression de la position d'équilibre.
 
-A l'équilibre
+À l'équilibre, $z$ est constant, donc
 
 $$
-\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\dfrac{g}{l}z_{eq}= g\left(\dfrac{1}{2}\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}-1\right)
+\dfrac{dz}{dt}=0 \qquad\text{et}\qquad \dfrac{d^2z}{dt^2}=0.
+$$
+
+On obtient alors
+
+$$
+\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\dfrac{g}{l}z_{eq} = g\left(\dfrac{1}{2}\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}-1\right),
 $$
 
 soit
 
 $$
-\begin{aligned}
-z_{eq} &= \dfrac{1}{2}l\\
-&-\dfrac{\rho_{\text{glace}}}{\rho_{\text{anis}}}l
-\end{aligned}
+\boxed{z_{eq} = \left(\dfrac{1}{2}-\dfrac{\rho_{\text{glace}}}{\rho_{\text{anis}}}\right)l}
 $$
 
 ### 6. Réécrire l'équation différentielle en exprimant le second membre en fonction de $z_{eq}$.
 
+D'après l'expression précédente de $z_{eq}$,
+
 $$
-\begin{aligned}
-&\dfrac{d^2z}{dt^2} +\dfrac{\eta}{ \rho_{\text{glace}}l}\dfrac{dz}{dt}\\
-&+\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\dfrac{g}{l}z\\
-&= \dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\dfrac{g}{l}z_{eq}
-\end{aligned}
+g\left(\dfrac{1}{2}\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}-1\right) = \dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\dfrac{g}{l}z_{eq}.
+$$
+
+L'équation différentielle peut donc s'écrire
+
+$$
+\boxed{\dfrac{d^2z}{dt^2} +\dfrac{\eta}{\rho_{\text{glace}}l}\dfrac{dz}{dt} +\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\dfrac{g}{l}z = \dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\dfrac{g}{l}z_{eq}}
 $$
 
 ### 7. En posant $Z = z-z_{eq}$, mettre cette équation sous la forme canonique.
 
-On peut remarquer que $\dfrac{dZ}{dt} = \dfrac{dz}{dt}-\dfrac{dz_{eq}}{dt} = \dfrac{dz}{dt}$ (de même pour $\dfrac{d^2Z}{dt^2}$). Donc l'équation différentielle devient :
+Comme $z_{eq}$ est constant,
+
+$$
+\dfrac{dZ}{dt}=\dfrac{dz}{dt} \qquad\text{et}\qquad \dfrac{d^2Z}{dt^2}=\dfrac{d^2z}{dt^2}.
+$$
+
+L'équation différentielle devient donc
 
 $$
 \begin{aligned}
-& \dfrac{d^2Z}{dt^2} +\dfrac{\eta}{ \rho_{\text{glace}}l}\\
-&\times\dfrac{dZ}{dt}+\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\\
-&\times\dfrac{g}{l}\left(z-z_{eq}\right) = 0\\
-&\implies \dfrac{d^2Z}{dt^2} + \dfrac{\eta}{\rho_{\text{glace}}l}\\
-&\times\dfrac{dZ}{dt}+\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\\
-&\times\dfrac{g}{l}Z = 0
+&\dfrac{d^2Z}{dt^2} +\dfrac{\eta}{\rho_{\text{glace}}l}\dfrac{dZ}{dt} +\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\dfrac{g}{l}\left(z-z_{eq}\right)=0\\
+\implies\ &\boxed{\dfrac{d^2Z}{dt^2} +\dfrac{\eta}{\rho_{\text{glace}}l}\dfrac{dZ}{dt} +\dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\dfrac{g}{l}Z=0}
 \end{aligned}
 $$
 
+On compare cette expression à la forme canonique
+
 $$
-\boxed{\dfrac{d^2Z}{dt^2} + \dfrac{\eta}{\rho_{\text{glace}}l}\dfrac{dZ}{dt} + \dfrac{\rho_{\text{anis}}}{\rho_{\text{glace}}}\dfrac{g}{l}Z = 0}
+\dfrac{d^2Z}{dt^2} +\dfrac{\omega_0}{Q}\dfrac{dZ}{dt} +\omega_0^2Z=0.
 $$
 
 Par identification,
 
 $$
-\boxed{Q = \dfrac{1}{\eta}\sqrt{ \rho_{\text{glace}} \rho_{\text{anis}}lg}}
+\omega_0^2= \dfrac{\rho_{\text{anis}}g}{\rho_{\text{glace}}l} \qquad\text{et}\qquad \dfrac{\omega_0}{Q} =\dfrac{\eta}{\rho_{\text{glace}}l}.
 $$
 
+On obtient donc
+
 $$
-\boxed{\omega_0 = \sqrt{\dfrac{ \rho_{\text{anis}}g}{ \rho_{\text{glace}}l}}}
+\boxed{\omega_0= \sqrt{\dfrac{\rho_{\text{anis}}g}{\rho_{\text{glace}}l}}}
+$$
+
+et
+
+$$
+\boxed{Q= \dfrac{1}{\eta}\sqrt{\rho_{\text{glace}}\rho_{\text{anis}}lg}}
 $$
 
 ### 8. Le régime est-il apériodique, critique ou pseudo-périodique ?
 
-Avec les valeurs numériques, on obtient &#36;Q = &#36;. On est donc en régime pseudo périodique.
+Calculons tout d'abord la pulsation propre :
+
+$$
+\omega_0 = \sqrt{\dfrac{1000\times9.81}{917\times10^{-2}}} \approx 32.7\ \text{rad.s}^{-1}.
+$$
+
+Le facteur de qualité vaut
+
+$$
+Q= \dfrac{1}{10^{-3}} \sqrt{917\times1000\times10^{-2}\times9.81} \approx 299.9.
+$$
+
+Ainsi,
+
+$$
+\boxed{Q\approx300}
+$$
+
+Le régime est pseudo-périodique lorsque $Q>\dfrac{1}{2}$. Ici, $Q\gg\dfrac{1}{2}$, donc le glaçon est en régime
+
+$$
+\boxed{\text{pseudo-périodique}}
+$$
+
+Le frottement est donc très faible devant les effets inertiels et la poussée d'Archimède : le glaçon va effectuer plusieurs oscillations autour de sa position d'équilibre avant de s'y stabiliser.
 
 ### 9. Quelle est l'équation du mouvement du glaçon ?
 
-L'équation du glaçon est de la forme
+Dans le cas d'un régime pseudo-périodique, la solution de l'équation différentielle vérifiée par $Z$ est de la forme
 
 $$
-\begin{aligned}
-Z(t) &= e^{\frac{-t}{\tau}}\\
-&\times\left(A\cos\left(w_P.t\right)+B\sin\left(w_P.t\right)\right)
-\end{aligned}
-$$
-
-$$
-A,B \in \R
+Z(t)= e^{-\frac{\omega_0}{2Q}t} \left[ A\cos(\omega_Pt)+B\sin(\omega_Pt) \right], \qquad A,B\in\mathbb{R},
 $$
 
 avec
 
 $$
-w_P = \sqrt{1-\dfrac{1}{4Q^2}}
+\boxed{\omega_P= \omega_0\sqrt{1-\dfrac{1}{4Q^2}}}
 $$
+
+On peut également introduire le temps caractéristique
+
+$$
+\boxed{\tau=\dfrac{2Q}{\omega_0}}
+$$
+
+de sorte que
+
+$$
+Z(t)= e^{-t/\tau} \left[ A\cos(\omega_Pt)+B\sin(\omega_Pt) \right].
+$$
+
+Comme $z=Z+z_{eq}$, l'équation générale du mouvement du glaçon est donc
+
+$$
+\boxed{z(t)=z_{eq} +e^{-t/\tau} \left[ A\cos(\omega_Pt)+B\sin(\omega_Pt) \right]}
+$$
+
+Le glaçon est lâché sans vitesse initiale. Si $h$ désigne la hauteur initiale du centre de gravité $G$ par rapport à la surface de l'eau, alors
+
+$$
+z(0)=h \qquad\text{et}\qquad \dfrac{dz}{dt}(0)=0.
+$$
+
+La première condition donne
+
+$$
+A=h-z_{eq}.
+$$
+
+En dérivant l'expression de $z(t)$ et en utilisant $\dot z(0)=0$, on obtient
+
+$$
+B=\dfrac{A}{\omega_P\tau}.
+$$
+
+Ainsi,
+
+$$
+\boxed{z(t)=z_{eq} +(h-z_{eq})e^{-t/\tau} \left[ \cos(\omega_Pt) +\dfrac{1}{\omega_P\tau}\sin(\omega_Pt) \right]}
+$$
+
+Le modèle de frottement est bien pratique pour nous, mais il s'agit d'une expression extrêmement simplifiée. Avec $\eta = 10^{-3}$ Pa.s, on obtient $Q = 300$ ce qui est un amortissement très faible. Le glaçon effectuerait des centaines d'oscillations avant de s'immobiliser, ce qui n'est évidemment pas ce qu'on observerait réellement dans un verre de pastis (on ne souhaite pas attendre aussi longtemps).
+
+On peut donc modifier le modèle de frottement. Le modèle initial
+
+$$
+F_\text{fr}= -\eta S\dot{z}
+$$
+
+peut être remplacé par un modèle de frottement quadratique lié à la traînée aérodynamique :
+
+$$
+F_\text{fr}= -\dfrac{1}{2}C_D\rho_{\text{anis}}S\left|\dot{z}\right|\dot{z}
+$$
+
+Ce modèle est dit « quadratique » car la force de frottement est proportionnelle au carré de la vitesse, et non uniquement à la vitesse. Avec un glaçon dont le mouvement est suivant sa petite dimension $l$, on prend $S=L l$ et l'équation devient alors :
+
+$$
+\rho_{\mathrm{glace}}Ll^2\ddot z = -\rho_{\mathrm{glace}}Ll^2g +\rho_{\mathrm{anis}}Ll g\left(\dfrac l2-z\right) -\dfrac12C_D\rho_{\mathrm{anis}}Ll|\dot z|\dot z.
+$$
+
+Donc :
+
+$$
+\boxed{\ddot z+ \dfrac{C_D\rho_{\mathrm{anis}}}{2\rho_{\mathrm{glace}}l} |\dot z|\dot z + \dfrac{\rho_{\mathrm{anis}}g}{\rho_{\mathrm{glace}}l}z = g\left( \dfrac{\rho_{\mathrm{anis}}}{2\rho_{\mathrm{glace}}}-1 \right)}
+$$
+
+**Attention :** avec ce modèle, l'équation n'est plus linéaire, donc on ne peut plus définir simplement un $Q$ constant ni utiliser la solution analytique précédente. Il faut résoudre numériquement l'EDO.
+
+On peut superposer les solutions pour les deux modèles de frottement. On observe très rapidement la différence entre les deux modèles, l'un étant bien plus amorti que l'autre.
+
+<Figure src="/latex/S9/glacon3.png" alt="Comparaison de la position du glaçon au cours du temps pour le frottement linéaire et le frottement quadratique, source S9_correction.tex" />
