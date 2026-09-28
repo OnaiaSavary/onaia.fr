@@ -545,13 +545,13 @@ body.is-menu-visible #page-wrapper:before {
     min-height: 24rem;
   }
 }
-#header nav > ul > li > a,
-#header nav > ul > li > a,
-#header .nav-main a {
+.nav-main a,
+.nav-main a:hover,
+.nav-main a:focus-visible {
   color: #2e3842 !important;
+  -webkit-text-fill-color: #2e3842 !important;
 }
 
-#header nav > ul > li > a::after,
-#header .nav-main a::after {
-  background: #2e3842;
+.nav-main a::after {
+  background: #2e3842 !important;
 }
