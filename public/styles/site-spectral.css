@@ -433,10 +433,10 @@ body.is-menu-visible #page-wrapper:before {
 .site-main .content-page-body .article-content .plot-embed,
 .site-main .content-page-body .article-content iframe.plot-embed {
   display: block;
-  width: 50%;
+  width: 100%;
   max-width: none;
   aspect-ratio: 16 / 10;
-  margin: 1.5rem auto;
+  margin: 0rem auto;
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: #fff;
 }
