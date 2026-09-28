@@ -34,7 +34,27 @@ body {
 a { color: inherit; }
 img { max-width: 100%; display: block; }
 
-body {
+body,
+body a,
+body button,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body p,
+body li,
+body .site-sub,
+body .nav-main a,
+body .eyebrow,
+body .hero-intro,
+body .hero-meta,
+body .section-label,
+body .meta,
+body .article-date,
+body .site-footer,
+body .footer-links a {
   color: #ffffff;
 }
 
