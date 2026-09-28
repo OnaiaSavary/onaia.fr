@@ -2792,7 +2792,7 @@ input, select, textarea {
 	}
 
 		.wrapper > .inner {
-			width: 60em;
+			width: 100em;
 			margin: 0 auto;
 		}
 
