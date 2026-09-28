@@ -1,0 +1,33 @@
+---
+title: "Une onde électromagnétique plane progressive"
+date: "2026-09-28"
+tags: ["physique", "électromagnétisme", "vulgarisation"]
+---
+
+import Figure from '../../components/Figure.astro'
+
+## Énoncé
+
+On considère une onde électromagnétique plane progressive monochromatique, se propageant dans le vide selon l'axe $x$. Le champ électrique $\overrightarrow{E}$ oscille selon $y$, le champ magnétique $\overrightarrow{B}$ selon $z$, perpendiculairement l'un à l'autre et à la direction de propagation :
+
+$$
+\overrightarrow{E}(x,t) = E_0\cos(kx-\omega t)\,\overrightarrow{e_y}, \qquad
+\overrightarrow{B}(x,t) = \dfrac{E_0}{c}\cos(kx-\omega t)\,\overrightarrow{e_z}
+$$
+
+avec $k = \dfrac{2\pi}{\lambda}$ le nombre d'onde, $\omega = 2\pi f = kc$ la pulsation, et $c$ la célérité de la lumière dans le vide.
+
+La figure ci-dessous représente $E$ et $B$ à un instant donné, animés dans le temps pour visualiser la propagation. Vous pouvez faire varier la longueur d'onde $\lambda$ et l'amplitude $E_0$ avec les curseurs.
+
+<iframe
+  src="/plots/onde-em.html"
+  title="Onde électromagnétique plane progressive interactive"
+  class="plot-embed"
+  loading="lazy"
+></iframe>
+
+On observe que $E$ et $B$ restent en phase et de même amplitude relative ($B_0 = E_0/c$), et que diminuer $\lambda$ resserre les oscillations le long de $x$ sans changer leur amplitude.
+
+## Correction
+
+*(le reste de l'article suit la structure habituelle des corrections)*

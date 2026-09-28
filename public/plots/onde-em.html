@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Onde électromagnétique plane progressive</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.32.0/plotly.min.js"></script>
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #0d1b2a;
+    --muted: #5a6672;
+    --accent-e: #2f6fed;
+    --accent-b: #ed4933;
+    --border: #dfdfdf;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Manrope', 'Segoe UI', sans-serif;
+  }
+  #wrap {
+    width: 100%;
+    padding: 0.75rem 1rem 1.25rem;
+  }
+  #plot {
+    width: 100%;
+    height: 440px;
+  }
+  .controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem 2rem;
+    margin-top: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+  .control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .control label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .control label span.val {
+    font-family: 'IBM Plex Mono', 'SFMono-Regular', monospace;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  input[type="range"] {
+    width: 100%;
+    accent-color: var(--accent-e);
+  }
+  .legend-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.6rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .legend-row .dot {
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+    margin-right: 0.4em;
+  }
+  .legend-row .e .dot { background: var(--accent-e); }
+  .legend-row .b .dot { background: var(--accent-b); }
+  .playbar {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+  }
+  .playbar button {
+    border: 1px solid var(--border);
+    background: #f6f7f8;
+    color: var(--ink);
+    padding: 0.4rem 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.82rem;
+  }
+  .playbar button:hover { background: #eceff1; }
+  @media (max-width: 520px) {
+    .controls { grid-template-columns: 1fr; }
+    #plot { height: 360px; }
+  }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="plot"></div>
+
+  <div class="legend-row">
+    <span class="e"><span class="dot"></span>Champ électrique E (plan xy)</span>
+    <span class="b"><span class="dot"></span>Champ magnétique B (plan xz)</span>
+  </div>
+
+  <div class="controls">
+    <div class="control">
+      <label for="lambda">Longueur d'onde &lambda; <span class="val" id="lambda-val">500 nm</span></label>
+      <input type="range" id="lambda" min="200" max="900" step="10" value="500" />
+    </div>
+    <div class="control">
+      <label for="amp">Amplitude E<sub>0</sub> <span class="val" id="amp-val">1.0</span></label>
+      <input type="range" id="amp" min="0.2" max="2.0" step="0.05" value="1.0" />
+    </div>
+  </div>
+
+  <div class="playbar">
+    <button id="playBtn">Pause</button>
+    <span style="font-size:0.82rem; color:var(--muted);">Propagation selon x, à la vitesse c</span>
+  </div>
+</div>
+
+<script>
+(function () {
+  const N = 220;
+  const X_MAX = 1800; // nm, fenêtre spatiale affichée
+  const c = 3e8;
+
+  const lambdaInput = document.getElementById('lambda');
+  const ampInput = document.getElementById('amp');
+  const lambdaVal = document.getElementById('lambda-val');
+  const ampVal = document.getElementById('amp-val');
+  const playBtn = document.getElementById('playBtn');
+
+  const xs = [];
+  for (let i = 0; i < N; i++) xs.push((i / (N - 1)) * X_MAX);
+
+  let t = 0;
+  let playing = true;
+  let lastFrame = performance.now();
+
+  function computeFields(lambdaNm, E0) {
+    const k = 2 * Math.PI / lambdaNm; // rad/nm
+    const freq = c / (lambdaNm * 1e-9); // Hz
+    const omega = 2 * Math.PI * freq;
+    const ey = [];
+    const bz = [];
+    for (let i = 0; i < N; i++) {
+      const phase = k * xs[i] - omega * t;
+      ey.push(E0 * Math.cos(phase));
+      bz.push(E0 * Math.cos(phase));
+    }
+    return { ey, bz, freq };
+  }
+
+  function buildTraces(lambdaNm, E0) {
+    const { ey, bz, freq } = computeFields(lambdaNm, E0);
+    const zerosE = xs.map(() => 0);
+
+    const eTrace = {
+      type: 'scatter3d',
+      mode: 'lines',
+      x: xs, y: ey, z: zerosE,
+      line: { color: '#2f6fed', width: 6 },
+      name: 'E (y)'
+    };
+    const bTrace = {
+      type: 'scatter3d',
+      mode: 'lines',
+      x: xs, y: zerosE, z: bz,
+      line: { color: '#ed4933', width: 6 },
+      name: 'B (z)'
+    };
+    // axe de propagation
+    const axisTrace = {
+      type: 'scatter3d',
+      mode: 'lines',
+      x: [0, X_MAX], y: [0, 0], z: [0, 0],
+      line: { color: '#9aa5b1', width: 2, dash: 'dot' },
+      showlegend: false,
+      hoverinfo: 'skip'
+    };
+
+    return { traces: [eTrace, bTrace, axisTrace], freq };
+  }
+
+  const initial = buildTraces(parseFloat(lambdaInput.value), parseFloat(ampInput.value));
+
+  const layout = {
+    margin: { l: 0, r: 0, t: 10, b: 0 },
+    scene: {
+      xaxis: { title: 'x (propagation, nm)', range: [0, X_MAX], color: '#5a6672' },
+      yaxis: { title: 'E (u.a.)', range: [-2.2, 2.2], color: '#5a6672' },
+      zaxis: { title: 'B (u.a.)', range: [-2.2, 2.2], color: '#5a6672' },
+      aspectratio: { x: 2.2, y: 0.8, z: 0.8 },
+      camera: { eye: { x: 1.6, y: 1.5, z: 1.1 } }
+    },
+    paper_bgcolor: 'rgba(0,0,0,0)',
+    showlegend: false
+  };
+
+  Plotly.newPlot('plot', initial.traces, layout, {
+    displayModeBar: false,
+    responsive: true
+  });
+
+  function updateLabels(lambdaNm, E0) {
+    lambdaVal.textContent = lambdaNm.toFixed(0) + ' nm';
+    ampVal.textContent = E0.toFixed(2);
+  }
+
+  function redraw() {
+    const lambdaNm = parseFloat(lambdaInput.value);
+    const E0 = parseFloat(ampInput.value);
+    updateLabels(lambdaNm, E0);
+    const { traces } = buildTraces(lambdaNm, E0);
+    Plotly.animate('plot', {
+      data: [
+        { x: traces[0].x, y: traces[0].y, z: traces[0].z },
+        { x: traces[1].x, y: traces[1].y, z: traces[1].z }
+      ]
+    }, {
+      transition: { duration: 0 },
+      frame: { duration: 0, redraw: true }
+    });
+  }
+
+  lambdaInput.addEventListener('input', redraw);
+  ampInput.addEventListener('input', redraw);
+
+  playBtn.addEventListener('click', function () {
+    playing = !playing;
+    playBtn.textContent = playing ? 'Pause' : 'Lecture';
+    if (playing) {
+      lastFrame = performance.now();
+      requestAnimationFrame(loop);
+    }
+  });
+
+  function loop(now) {
+    if (!playing) return;
+    const dt = (now - lastFrame) / 1000;
+    lastFrame = now;
+    // temps "ralenti" pour que l'oscillation reste visible à l'écran
+    t += dt * 1.2e-15;
+    redraw();
+    requestAnimationFrame(loop);
+  }
+
+  updateLabels(parseFloat(lambdaInput.value), parseFloat(ampInput.value));
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
