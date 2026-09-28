@@ -430,6 +430,23 @@ body.is-menu-visible #page-wrapper:before {
   background: #fff;
 }
 
+.site-main .content-page-body .article-content .plot-embed,
+.site-main .content-page-body .article-content iframe.plot-embed {
+  display: block;
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 16 / 10;
+  margin: 1.5rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #fff;
+}
+
+@media screen and (max-width: 736px) {
+  .site-main .content-page-body .article-content .plot-embed {
+    aspect-ratio: 4 / 5;
+  }
+}
+
 .latex-document {
   display: block;
   width: 100%;
