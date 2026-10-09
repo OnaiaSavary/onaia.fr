@@ -1,0 +1,63 @@
+---
+import ContentPage from '../components/ContentPage.astro';
+---
+<ContentPage
+  title="Climate visualizations"
+  description="Interactive daily visualizations of ERA5 geopotential height and temperature or precipitation indices."
+  image="/images/mt180.png"
+  intro="Daily atmospheric and climate indicators for 2026."
+>
+  <section class="visualization-list" aria-label="Interactive climate visualizations">
+    <article class="visualization-item">
+      <h2>Z500 and 2-metre temperature</h2>
+      <p>Explore daily 500 hPa geopotential height and 2-metre temperature anomalies throughout 2026.</p>
+      <p><a href="/visualizations/zg500_t2m_2026.html" target="_blank" rel="noreferrer">Open visualization in a new tab</a></p>
+      <iframe
+        class="visualization-frame"
+        src="/visualizations/zg500_t2m_2026.html"
+        title="Interactive Z500 and 2-metre temperature visualization"
+        loading="lazy"
+      ></iframe>
+    </article>
+
+    <article class="visualization-item">
+      <h2>Z500 and SPI3</h2>
+      <p>Explore daily 500 hPa geopotential height alongside the 3-month Standardized Precipitation Index (SPI3) throughout 2026.</p>
+      <p><a href="/visualizations/zg500_spi3_2026.html" target="_blank" rel="noreferrer">Open visualization in a new tab</a></p>
+      <iframe
+        class="visualization-frame"
+        src="/visualizations/zg500_spi3_2026.html"
+        title="Interactive Z500 and SPI3 visualization"
+        loading="lazy"
+      ></iframe>
+    </article>
+  </section>
+</ContentPage>
+
+<style>
+  .visualization-item {
+    margin: 0 0 3rem;
+    padding: 0 0 2rem;
+    border-bottom: 1px solid #dfdfdf;
+  }
+
+  .visualization-item h2 {
+    margin-top: 0;
+  }
+
+  .visualization-frame {
+    display: block;
+    width: 100%;
+    height: min(88svh, 76rem);
+    min-height: 38rem;
+    border: 1px solid #dfdfdf;
+    background: #000;
+  }
+
+  @media screen and (max-width: 736px) {
+    .visualization-frame {
+      height: 78svh;
+      min-height: 32rem;
+    }
+  }
+</style>
