@@ -1,0 +1,7 @@
+Vos identifiants FTP
+Ces identifiants vous permettent de mettre vos fichiers en ligne, à placer dans le dossier « www » par défaut, grâce à un logiciel FTP.
+
+Nom d'hôte (serveur FTP) : ftp.cluster129.hosting.ovh.net
+Identifiant (login FTP) : onaiafh
+
+FwpAugJxu9qEZqe9zXhwTGThnxGEd

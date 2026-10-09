@@ -4,6 +4,8 @@ export interface Props {
   description?: string;
 }
 const { title, description } = Astro.props;
+const canonicalPath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const canonicalUrl = new URL(canonicalPath, Astro.site?.origin ?? Astro.url.origin);
 ---
 <!doctype html>
 <html lang="en">
@@ -12,6 +14,7 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title ? `${title} — Onaïa Savary` : 'Onaïa Savary'}</title>
     <meta name="description" content={description ?? 'Personal website of Onaïa Savary, PhD student in climatology.'} />
+    <link rel="canonical" href={canonicalUrl.href} />
     <meta name="theme-color" content="#2e3842" />
     <link rel="icon" type="image/png" href="/images/mt180_2.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
