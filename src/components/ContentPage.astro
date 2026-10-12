@@ -6,9 +6,10 @@ export interface Props {
   description: string;
   image: string;
   intro?: string;
+  sectionIntro?: string;
 }
 
-const { title, description, image, intro } = Astro.props;
+const { title, description, image, intro, sectionIntro } = Astro.props;
 ---
 <PageLayout {title} {description}>
   <div class="content-page">
@@ -20,8 +21,18 @@ const { title, description, image, intro } = Astro.props;
     </header>
     <section class="wrapper style5 content-page-body">
       <div class="inner">
+        {sectionIntro && <p class="content-page-intro">{sectionIntro}</p>}
         <slot />
       </div>
     </section>
   </div>
 </PageLayout>
+
+<style>
+  .content-page-intro {
+    max-width: 75ch;
+    margin: 0 0 2rem;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+</style>

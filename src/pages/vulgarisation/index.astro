@@ -1,5 +1,9 @@
 ---
+import { getCollection } from 'astro:content';
 import ContentPage from '../../components/ContentPage.astro';
+
+const articles = await getCollection('vulgarisation');
+const summariesBySlug = Object.fromEntries(articles.map((article) => [article.slug, article.data.summary]));
 ---
 <ContentPage
   title="Vulgarisation"
@@ -39,12 +43,15 @@ import ContentPage from '../../components/ContentPage.astro';
       <h2>Articles de vulgarisation scientifique</h2>
       <article id="glacon-ricard" class="outreach-entry">
         <h3><a href="/vulgarisation/glacon-ricard/">Un glaçon dans un pastis</a></h3>
+        {summariesBySlug['glacon-ricard'] && <p>{summariesBySlug['glacon-ricard']}</p>}
       </article>
       <article id="onde-electromagnetique" class="outreach-entry">
         <h3><a href="/vulgarisation/onde-electromagnetique/"> Test figure interactive </a></h3>
+        {summariesBySlug['onde-electromagnetique'] && <p>{summariesBySlug['onde-electromagnetique']}</p>}
       </article>
       <article id="seismic-building" class="outreach-entry">
         <h3><a href="/vulgarisation/modelisation-sismique-batiments/">Modélisation d'un bâtiment sous séisme</a></h3>
+        {summariesBySlug['modelisation-sismique-batiments'] && <p>{summariesBySlug['modelisation-sismique-batiments']}</p>}
       </article>
     </section>
   </section>
