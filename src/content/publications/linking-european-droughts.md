@@ -1,5 +1,5 @@
 ---
-title: "Relier les sécheresses européennes aux régimes météorologiques tout au long de l’année"
+title: "Linking European droughts to year-round weather regimes"
 authors:
   - "Onaïa Savary"
   - "Constantin Ardilouze"
@@ -12,6 +12,6 @@ pdf: "https://wcd.copernicus.org/articles/7/223/2026/wcd-7-223-2026.pdf"
 published: "28 janvier 2026"
 topics:
   - "Sécheresses"
-  - "Régimes météorologiques"
+  - "Régimes de temps"
 featured: true
 ---
