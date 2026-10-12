@@ -4,14 +4,14 @@ import { getCollection } from 'astro:content';
 
 const featured = await getCollection('publications');
 ---
-<PageLayout title="Home" description="Onaïa Savary is a PhD student in climatology studying European droughts, atmospheric circulation and climate change.">
-  <section id="banner" aria-label="Research introduction">
+<PageLayout title="Accueil" description="Onaïa Savary prépare un doctorat en climatologie. Ses recherches portent sur les sécheresses européennes, la circulation atmosphérique et le changement climatique.">
+  <section id="banner" aria-label="Présentation des recherches">
     <div class="inner">
-      <p class="hero-kicker">PhD student in climatology</p>
+      <p class="hero-kicker">Doctorat en climatologie</p>
       <h2>ONAÏA<br />SAVARY</h2>
-      <p class="hero-intro">I study the predictability and evolution of European droughts, with a focus on the role of atmospheric circulation.</p>
+      <p class="hero-intro">J’étudie la prévisibilité et l’évolution des sécheresses en Europe, en m’intéressant particulièrement au rôle de la circulation atmosphérique.</p>
       <ul class="actions special">
-        <li><a href="#research" class="button primary scrolly">Explore my research</a></li>
+        <li><a href="#research" class="button primary scrolly">Découvrir mes recherches</a></li>
       </ul>
     </div>
   </section>
@@ -19,50 +19,70 @@ const featured = await getCollection('publications');
   <section id="research" class="wrapper style1 special">
     <div class="inner">
       <header class="major">
-        <h2>Understanding droughts in a changing climate</h2>
-        <p>My work examines European drought predictability, atmospheric circulation regimes, and how they evolve in a changing climate.</p>
+        <h2>Comprendre les sécheresses dans un climat en mutation</h2>
+        <p>Mes travaux portent sur la prévisibilité des sécheresses en Europe, les régimes de circulation atmosphérique et leur évolution dans un climat en mutation.</p>
       </header>
       <ul class="features">
-        <li class="icon solid fa-cloud-sun"><h3>Predictability</h3><p>I study the conditions that make droughts more or less predictable.</p></li>
-        <li class="icon solid fa-wind"><h3>Atmospheric circulation</h3><p>Large-scale atmospheric patterns play a central role in precipitation deficits.</p></li>
-        <li class="icon solid fa-temperature-high"><h3>Changing climate</h3><p>These mechanisms are studied in the context of climate change.</p></li>
+        <li class="icon solid fa-cloud-sun"><h3>Prévisibilité</h3><p>J’étudie les conditions qui rendent les sécheresses plus ou moins prévisibles.</p></li>
+        <li class="icon solid fa-wind"><h3>Circulation atmosphérique</h3><p>Les configurations atmosphériques de grande échelle jouent un rôle central dans les déficits de précipitations.</p></li>
+        <li class="icon solid fa-temperature-high"><h3>Climat en mutation</h3><p>J’étudie ces mécanismes dans le contexte du changement climatique.</p></li>
       </ul>
     </div>
   </section>
 
   <section id="topics" class="wrapper alt style2">
     <section class="spotlight">
-      <div class="image"><img src="/images/article.png" alt="Illustration of climate research" /></div>
-      <div class="content"><h2>Research</h2><p>I study how large-scale atmospheric patterns shape precipitation deficits and how this relationship may change with climate change.</p><a class="button" href="/research/">Research overview</a></div>
+      <div class="image"><img src="/images/article.png" alt="Illustration de recherche en climatologie" /></div>
+      <div class="content"><h2>Recherche</h2><p>J’étudie comment les configurations atmosphériques de grande échelle influencent les déficits de précipitations et comment ce lien peut évoluer avec le changement climatique.</p><a class="button" href="/research/">Présentation de mes recherches</a></div>
     </section>
     <section class="spotlight">
-      <div class="image"><img src="/images/mt180.png" alt="Science communication presentation" /></div>
-      <div class="content"><h2>Outreach</h2><p>Talks, podcasts and resources that bring climate science to wider audiences.</p><a class="button" href="/vulgarisation/">Explore outreach</a></div>
+      <div class="image"><img src="/images/mt180.png" alt="Présentation de vulgarisation scientifique" /></div>
+      <div class="content"><h2>Vulgarisation</h2><p>Conférences, podcasts et ressources pour faire découvrir les sciences du climat au plus grand nombre.</p><a class="button" href="/vulgarisation/">Découvrir la vulgarisation</a></div>
     </section>
+  </section>
+
+  <section id="climate-change" class="wrapper style1 special">
+    <div class="inner">
+      <header class="major">
+        <h2>Changement climatique</h2>
+        <p>Mes recherches étudient l’influence du changement climatique sur le lien entre circulation atmosphérique à grande échelle et sécheresses en Europe.</p>
+      </header>
+      <p><a class="button" href="/research/#climate-change">En savoir plus sur cet axe de recherche</a></p>
+    </div>
+  </section>
+
+  <section id="enseignement" class="wrapper style3 special">
+    <div class="inner">
+      <header class="major">
+        <h2>Enseignement</h2>
+        <p>Ma formation en génie civil à l’École normale supérieure Paris-Saclay comprenait une préparation à l’agrégation et aux métiers de l’enseignement des sciences de l’ingénieur.</p>
+      </header>
+      <p><a class="button" href="/cv/#enseignement">Découvrir mon parcours en enseignement</a></p>
+    </div>
   </section>
 
   <section id="access" class="wrapper style3 special">
     <div class="inner">
-      <header class="major"><h2>Explore the site</h2><p>Find my academic background, conference contributions, posters and science communication work.</p></header>
+      <header class="major"><h2>Explorer le site</h2><p>Retrouvez mon parcours, mes contributions aux conférences, mes affiches scientifiques et mes travaux de vulgarisation.</p></header>
       <ul class="features">
-        <li class="icon solid fa-graduation-cap"><h3><a href="/cv/">Curriculum Vitae</a></h3><p>Education, experience and skills.</p></li>
-        <li class="icon solid fa-comments"><h3><a href="/conferences/">Conferences</a></h3><p>Contributions to climate science meetings.</p></li>
-        <li class="icon solid fa-images"><h3><a href="/posters/">Posters</a></h3><p>Visual summaries of research projects.</p></li>
+        <li class="icon solid fa-graduation-cap"><h3><a href="/cv/">Curriculum vitæ</a></h3><p>Formation, expérience et compétences.</p></li>
+        <li class="icon solid fa-comments"><h3><a href="/conferences/">Conférences</a></h3><p>Contributions à des rencontres scientifiques en climatologie.</p></li>
+        <li class="icon solid fa-images"><h3><a href="/posters/">Affiches scientifiques</a></h3><p>Synthèses visuelles de projets de recherche.</p></li>
       </ul>
     </div>
   </section>
 
   <section id="cta" class="wrapper style4">
     <div class="inner">
-      <header><h2>Get in touch</h2><p>For scientific questions, invitations or collaboration, feel free to get in touch.</p></header>
-      <ul class="actions stacked"><li><a class="button fit primary" href="mailto:onaia.savary@ens-paris-saclay.fr">Contact me</a></li></ul>
+      <header><h2>Me contacter</h2><p>Pour toute question scientifique, invitation ou proposition de collaboration, n’hésitez pas à me contacter.</p></header>
+      <ul class="actions stacked"><li><a class="button fit primary" href="mailto:onaia.savary@ens-paris-saclay.fr">Envoyer un courriel</a></li></ul>
     </div>
   </section>
 
   {featured.filter(p => p.data.featured).length > 0 && (
     <section class="wrapper style1 special home-featured">
       <div class="inner">
-        <header class="major"><h2>Featured publication</h2></header>
+        <header class="major"><h2>Publication à la une</h2></header>
         {featured.filter(p => p.data.featured).map(p => <p><a href={p.data.url}><strong>{p.data.title}</strong></a><br />{p.data.authors?.join(', ')} — {p.data.year}</p>)}
       </div>
     </section>

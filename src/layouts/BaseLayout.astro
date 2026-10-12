@@ -8,12 +8,12 @@ const canonicalPath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `$
 const canonicalUrl = new URL(canonicalPath, Astro.site?.origin ?? Astro.url.origin);
 ---
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title ? `${title} — Onaïa Savary` : 'Onaïa Savary'}</title>
-    <meta name="description" content={description ?? 'Personal website of Onaïa Savary, PhD student in climatology.'} />
+    <meta name="description" content={description ?? 'Site personnel d’Onaïa Savary, en doctorat de climatologie.'} />
     <link rel="canonical" href={canonicalUrl.href} />
     <meta name="theme-color" content="#2e3842" />
     <link rel="icon" type="image/png" href="/images/mt180_2.png" />

@@ -6,35 +6,40 @@ const pubs = await getCollection('publications');
 const researchProjects = [
   {
     id: 'drought-predictability',
-    title: 'Drought predictability in a changing climate',
-    description: 'This PhD aims to study the link between large-scale atmospheric circulation and precipitation deficits (droughts) in Europe. The influence of climate change on this relationship is also studied.'
+    title: 'Prévisibilité des sécheresses dans un climat en mutation',
+    description: 'Cette thèse étudie le lien entre la circulation atmosphérique à grande échelle et les déficits de précipitations (sécheresses) en Europe, ainsi que l’influence du changement climatique sur cette relation.'
   }
 ];
 ---
 <ContentPage
-  title="Research"
-  description="Research interests, project and scientific publications by Onaïa Savary."
+  title="Recherche"
+  description="Axes de recherche, projet et publications scientifiques d’Onaïa Savary."
   image="/images/mt180.png"
-  intro="European drought predictability, atmospheric circulation and climate change."
+  intro="Prévisibilité des sécheresses en Europe, circulation atmosphérique et changement climatique."
 >
   <section id="research-interests" class="editorial-section">
-    <h2>Research interests</h2>
-    <p>My research focuses on the predictability and evolution of droughts in Europe, with an emphasis on atmospheric circulation and weather regimes.</p>
+    <h2>Axes de recherche</h2>
+    <p>Mes recherches portent sur la prévisibilité et l’évolution des sécheresses en Europe, avec un intérêt particulier pour la circulation atmosphérique et les régimes météorologiques.</p>
     <ul>
-      <li>Drought predictability</li>
-      <li>Atmospheric circulation and weather regimes</li>
-      <li>Climate change and European droughts</li>
+      <li>Prévisibilité des sécheresses</li>
+      <li>Circulation atmosphérique et régimes météorologiques</li>
+      <li>Changement climatique et sécheresses européennes</li>
     </ul>
   </section>
 
   <section id="research-projects" class="editorial-section">
-    <h2>Research projects</h2>
+    <h2>Projets de recherche</h2>
     {researchProjects.map((project) => (
       <article id={project.id} class="research-project">
         <h3>{project.title}</h3>
         <p>{project.description}</p>
       </article>
     ))}
+  </section>
+
+  <section id="climate-change" class="editorial-section">
+    <h2>Changement climatique</h2>
+    <p>J’étudie comment le changement climatique influence le lien entre les régimes de circulation atmosphérique et les déficits de précipitations en Europe, ainsi que l’évolution de la prévisibilité des sécheresses dans un climat qui change.</p>
   </section>
 
   <section id="publications" class="editorial-section">
@@ -44,9 +49,9 @@ const researchProjects = [
         <article id={publication.slug} class="research-publication">
           <h3><a href={publication.data.url ?? `https://doi.org/${publication.data.doi}`} target="_blank" rel="noreferrer">{publication.data.title}</a></h3>
           <p>{publication.data.authors.join(', ')} — <em>{publication.data.journal}</em> ({publication.data.year})</p>
-          {publication.data.published && <p>Published: {publication.data.published}</p>}
-          {publication.data.doi && <p>DOI: <a href={`https://doi.org/${publication.data.doi}`} target="_blank" rel="noreferrer">{publication.data.doi}</a></p>}
-          {publication.data.pdf && <p><a href={publication.data.pdf} target="_blank" rel="noreferrer">Read the article (PDF)</a></p>}
+          {publication.data.published && <p>Publié le : {publication.data.published}</p>}
+          {publication.data.doi && <p>DOI : <a href={`https://doi.org/${publication.data.doi}`} target="_blank" rel="noreferrer">{publication.data.doi}</a></p>}
+          {publication.data.pdf && <p><a href={publication.data.pdf} target="_blank" rel="noreferrer">Lire l’article (PDF)</a></p>}
         </article>
       ))}
     </div>

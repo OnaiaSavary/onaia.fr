@@ -1,57 +1,60 @@
 ---
 import ContentPage from '../components/ContentPage.astro';
 ---
-<ContentPage title="Curriculum Vitae" description="Academic curriculum vitae of Onaïa Savary." image="/spectral/images/banner.jpg" intro="Education, research and professional experience.">
+<ContentPage title="Curriculum vitæ" description="Parcours universitaire, expériences professionnelles et compétences d’Onaïa Savary." image="/spectral/images/banner.jpg" intro="Formation, recherche et expérience professionnelle.">
     <section class="cv">
       <header class="cv-heading">
         <h2>M. Onaïa Savary</h2>
-        <p>Ph.D student in climatology</p>
-        <p>Agrégé of Industrial Engineering Sciences</p>
+        <p>Doctorat en climatologie</p>
+        <p>Agrégation de sciences industrielles de l’ingénieur</p>
         <p>Ecole Normale Supérieure de Paris-Saclay</p>
         <p>+33(0) 7 70 18 56 54</p>
         <p><a href="mailto:onaia.savary@ens-paris-saclay.fr">onaia.savary@ens-paris-saclay.fr</a></p>
-        <p><a href="https://www.linkedin.com/in/onaia-savary/" target="_blank" rel="noreferrer">LinkedIn Profile</a></p>
+        <p><a href="https://www.linkedin.com/in/onaia-savary/" target="_blank" rel="noreferrer">Profil LinkedIn</a></p>
       </header>
 
       <div class="cv-pdf">
         <details class="media-disclosure">
-          <summary>View CV (PDF)</summary>
-          <p class="download"><a href="/cv/CV_SAVARY.pdf" download>Download CV (PDF)</a></p>
-          <object class="pdf-preview" data="/cv/CV_SAVARY.pdf#view=FitH" type="application/pdf" aria-label="Onaïa Savary curriculum vitae preview">
-            <p>PDF preview unavailable. <a href="/cv/CV_SAVARY.pdf">Open the CV PDF</a>.</p>
+          <summary>Voir le CV (PDF)</summary>
+          <p class="download"><a href="/cv/CV_SAVARY.pdf" download>Télécharger le CV (PDF)</a></p>
+          <object class="pdf-preview" data="/cv/CV_SAVARY.pdf#view=FitH" type="application/pdf" aria-label="Aperçu du curriculum vitæ d’Onaïa Savary">
+            <p>L’aperçu PDF n’est pas disponible. <a href="/cv/CV_SAVARY.pdf">Ouvrir le CV PDF</a>.</p>
           </object>
         </details>
       </div>
 
-      <h2>EDUCATIONAL BACKGROUND</h2>
+      <h2>FORMATION</h2>
       <ul class="cv-list">
-        <li><h3>PhD - Climatology</h3><p><strong>Centre Nationale de Recherche en Météorologie (CNRM/Météo-France)</strong></p><p>This PhD aims to study the link between large-scale atmospheric circulation and precipitation deficits (droughts) in Europe. The influence of climate change on this relationship is also studied. Full title : Drought predictability in a changing climate</p><time>October 2024 – Today</time></li>
-        <li><h3>Master 2 - Fluid mechanics</h3><p><strong>Ecole Polytechnique &amp; Sorbonne University</strong></p><p>Obtained a Master's degree in fluid mechanics. Courses followed : Hydrodynamic instabilities, Advanced experimental methods, Numerical methods for fluid mechanics, Geophysical and astrophysical fluid dynamics, Multiscale hydrodynamic phenomena, Turbulence dynamics, Aerodynamics, Interfaces</p><time>September 2023 – July 2024</time></li>
-        <li><h3>Master 2 - Civil Engineering, Post-baccalaureat teacher training</h3><p>Ecole Normale Supérieure – Paris Saclay</p><p>Obtained a Master's degree majored in civil engineering while preparating for the Agregation (competitive French exam). Continuation of high level scientific courses in the field of civil engineering, numerical analysis, material sciences and fluid mechanics. Areas of study: Numerical analysis, Fluid mechanics, Material science, Physics of heat transfer in materials, Fundamental Acoustics.<br />Ranked second in France in the competitive examination for the agrégation of engineering sciences, construction engineering section.</p><time>September 2021 – July 2023</time></li>
-        <li><h3>Classe Préparatoire aux grandes écoles</h3><p>Lycée Déodat de Séverac, Toulouse</p><p>Competitive national entrance exam to the grandes ecoles. Obtained a bachelor's degree in engineering sciences</p><time>September 2017 – July 2020</time></li>
+        <li><h3>Doctorat en climatologie</h3><p><strong>Centre national de recherches météorologiques (CNRM/Météo-France)</strong></p><p>Cette thèse étudie le lien entre la circulation atmosphérique à grande échelle et les déficits de précipitations (sécheresses) en Europe, ainsi que l’influence du changement climatique sur cette relation. Titre complet : Prévisibilité des sécheresses dans un climat en mutation.</p><time>Octobre 2024 – aujourd’hui</time></li>
+        <li><h3>Master 2 — Mécanique des fluides</h3><p><strong>École polytechnique et Sorbonne Université</strong></p><p>Obtention d’un master en mécanique des fluides. Cours suivis : instabilités hydrodynamiques, méthodes expérimentales avancées, méthodes numériques en mécanique des fluides, dynamique des fluides géophysiques et astrophysiques, phénomènes hydrodynamiques multi-échelles, dynamique de la turbulence, aérodynamique et interfaces.</p><time>Septembre 2023 – juillet 2024</time></li>
+        <li><h3>Master 2 — Génie civil, préparation à l’enseignement après le baccalauréat</h3><p>École normale supérieure Paris-Saclay</p><p>Obtention d’un master spécialisé en génie civil tout en préparant l’agrégation. Poursuite d’enseignements scientifiques de haut niveau en génie civil, analyse numérique, science des matériaux et mécanique des fluides. Domaines étudiés : analyse numérique, mécanique des fluides, science des matériaux, transferts thermiques dans les matériaux et acoustique fondamentale.<br />Classée deuxième au concours national de l’agrégation de sciences industrielles de l’ingénieur, option ingénierie de la construction.</p><time>Septembre 2021 – juillet 2023</time></li>
+        <li><h3>Classe préparatoire aux grandes écoles</h3><p>Lycée Déodat-de-Séverac, Toulouse</p><p>Classe préparatoire aux concours nationaux d’entrée dans les grandes écoles. Obtention d’une licence en sciences de l’ingénieur.</p><time>Septembre 2017 – juillet 2020</time></li>
       </ul>
 
-      <h2>WORK EXPERIENCE</h2>
+      <h2 id="enseignement">ENSEIGNEMENT</h2>
+      <p>Formation aux métiers de l’enseignement des sciences de l’ingénieur dans le cadre du master 2 en génie civil à l’École normale supérieure Paris-Saclay et de la préparation à l’agrégation (2021–2023).</p>
+
+      <h2>EXPÉRIENCE PROFESSIONNELLE</h2>
       <ul class="cv-list">
-        <li><h3>Master 2 internship with a duration of 6 months</h3><p>Performed at Centre Nationale de Recherche en Météorologie (CNRM/MétéoFrance) under the direction of Constantin Ardilouze and Hervé Douville. Subject : Droughts predictability in Europe.</p><time>February 2024 - August 2024</time></li>
-        <li><h3>Master 1 internship with a duration of 3 months</h3><p>Performed at École Polytechnique Fédérale de Lausanne under the direction of Cécile Oliver-Leblond and Katrin Bayer. Subject : Design and preparation of a new experimental test setup for direct shear test of stone-mortar interface.</p><time>March 2022 - June 2022</time></li>
+        <li><h3>Stage de master 2 — 6 mois</h3><p>Stage effectué au Centre national de recherches météorologiques (CNRM/Météo-France), sous la direction de Constantin Ardilouze et Hervé Douville. Sujet : prévisibilité des sécheresses en Europe.</p><time>Février 2024 – août 2024</time></li>
+        <li><h3>Stage de master 1 — 3 mois</h3><p>Stage effectué à l’École polytechnique fédérale de Lausanne sous la direction de Cécile Oliver-Leblond et Katrin Bayer. Sujet : conception et préparation d’un nouveau dispositif expérimental pour l’essai de cisaillement direct d’une interface pierre-mortier.</p><time>Mars 2022 – juin 2022</time></li>
       </ul>
 
-      <h2>PROJECT EXPERIENCE</h2>
+      <h2>PROJETS</h2>
       <ul class="cv-list">
-        <li><h3>Première Expérience Immersive de Recherche (first immersive research experiment)</h3><p>6 months research work under the collaboration of Fabrice Gatuingt and Guillaume Hervé Secourgeon. Topic: Development of a structural damping model - Application to a BA model under impact.</p><time>2021-2022</time></li>
+        <li><h3>Première Expérience Immersive de Recherche</h3><p>Six mois de travaux de recherche en collaboration avec Fabrice Gatuingt et Guillaume Hervé Secourgeon. Sujet : développement d’un modèle d’amortissement structurel — application à un modèle de bâtiment sous impact.</p><time>2021–2022</time></li>
       </ul>
 
-      <h2>ASSOCIATIVE</h2>
+      <h2>ENGAGEMENT ASSOCIATIF</h2>
       <ul class="cv-list">
-        <li><h3>Organization of blood collections</h3><p>Organization of blood collections at the Ecole Normale Supérieure Paris Saclay, in collaboration with the Etablissement Français du Sang. Capacity of each blood collection: 100 donors.</p><time>2021-2023</time></li>
-        <li><h3>Vice President of the Student Office</h3><p>Participation in the decision making and organization of the student life on the campus of the Ecole Normale Supérieure Paris Saclay. Maintaining relationships with cultural collaborators such as the Louvre museum or the Cité des sciences in Paris. Organization and supervision of student teams and communication of the highlights of the association's life to an audience of 1200 students.</p><time>2021-2022</time></li>
+        <li><h3>Organisation de collectes de sang</h3><p>Organisation de collectes de sang à l’École normale supérieure Paris-Saclay, en collaboration avec l’Établissement français du sang. Capacité de chaque collecte : 100 donneurs.</p><time>2021–2023</time></li>
+        <li><h3>Vice-présidente du bureau des élèves</h3><p>Participation aux décisions et à l’organisation de la vie étudiante sur le campus de l’École normale supérieure Paris-Saclay. Relations avec des partenaires culturels comme le musée du Louvre et la Cité des sciences à Paris. Organisation et encadrement d’équipes étudiantes, et communication des temps forts de l’association auprès de 1 200 étudiants.</p><time>2021–2022</time></li>
       </ul>
 
-      <h2>LANGUAGE SKILLS</h2>
-      <ul><li><strong>English</strong> Full professional capacity<br />International English Language Testing System : 7/10<br />Owner of a Scientific Writing Assignment Program</li><li><strong>Spanish</strong> Beginner intermediate</li></ul>
+      <h2>LANGUES</h2>
+      <ul><li><strong>Anglais</strong> Maîtrise professionnelle complète<br />Système international de test de la langue anglaise (IELTS) : 7/10<br />Programme de rédaction scientifique</li><li><strong>Espagnol</strong> Niveau débutant à intermédiaire</li></ul>
 
-      <h2>SOFTWARES</h2>
+      <h2>LOGICIELS</h2>
       <ul class="software-list"><li>Matlab</li><li>Python V.3</li><li>Revit</li><li>Autocad</li><li>Robot</li><li>SolidWorks</li><li>Word</li><li>Powerpoint</li><li>Excel</li><li>LaTex</li><li>Audacity</li><li>Arduino</li></ul>
     </section>
 </ContentPage>
